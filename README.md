@@ -1,3 +1,37 @@
+# Sigue Ese Hashtag
+
+Proyecto para repasar los elementos vistos en la clase de desarrollo web entorno servidor.
+
+---------
+
+La idea es tener un área de administración en la que los usuarios dados de alta pueden establecer una lista de hashtag a los que seguir.
+
+El registro de usuarios nuevos no está abierto. Los usuarios se crean en la base de datos aunque ellos luego pueden gestionar su información: nombre, email y contraseña.
+
+Los usuarios podrá recuperar su contraseña si la han olvidado.
+
+---------
+
+Cada hora habrá un proceso que busque post públicos en Instagram, Facebook y Twitter.
+
+La información de esos post se guardará en la base de datos.
+
+---------
+
+Habrá una sección pública en la web donde se podrán ver estos post (Instagram, Facebook y Twitter).
+
+No habrá paginación pero sí será un scroll infinito.
+
+
+Entrega de la solución: 30 abril.
+
+
+-> Clonar proyecto base. (Yo )
+-> Pensar un ER. Queries que hay que realizar
+-> Comenzar un diseño de pantallas.
+
+
+
 # web-estructura-proyecto
 Estructura de un proyecto completo web
 

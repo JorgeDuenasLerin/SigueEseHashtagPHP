@@ -1,0 +1,25 @@
+@import url('reset.css');
+
+/*colocacion general de los elementos*/
+header{
+  height: 10em;
+  padding-top:1em;
+  background-image: url();
+  background-size: 1930px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  border: 1px solid red;
+}
+/*a{
+  display: none;
+}*/
+/*para colocar los enlaces al login ,perfil cerrar sesion*/
+nav{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav > a{
+  margin-right: 30px;
+}

@@ -2,7 +2,7 @@
 
 if (preg_match('/\.(?:css|js|ico|png|jpg|jpeg|gif)$/', $_SERVER["REQUEST_URI"])){
     return false;    // servir la petición tal cual es.
-}else {
+}else {//si es un fichero php
 
     $ROOT = realpath(__DIR__."/..");
 

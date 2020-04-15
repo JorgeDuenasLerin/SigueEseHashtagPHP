@@ -17,14 +17,14 @@ VALUES
 
 
 /*INSERT DE PUBLICACIONES*/
-INSERT INTO PUBLICACION (ID,NOMBRE,CONTENIDO,IMAGEN,FECHA,APLICACION,ID_HASTAG)
+INSERT INTO PUBLICACION (ID,NOMBRE,CONTENIDO,IMAGEN,FECHA,APLICACION)
  VALUES
-(1,'Jacinto','#Aprobados','#Aprobados','imagen','2020-04-05','tiwtter',1),
-(2,'pepe','#Aprobados','#Aprobados lorem ','imagen','2020-04-05','tiwtter',1),
-(3,'Rafael','#FelizVerano','#FelizVerano','imagen','2020-04-05','tiwtter',2),
-(4,'Rafael','#FelizVerano','#FelizVerano lorem','imagen','2020-04-05','tiwtter',2),
-(5,'Manuel','#JorgeEresUnCrack','#JorgeEresUnCrack','imagen','2020-04-05','tiwtter',3),
-(6,'Manuel','#JorgeEresUnCrack','#JorgeEresUnCrack lorem','imagen','2020-04-05','tiwtter',3);
+(1,'Jacinto','#Aprobados','#Aprobados','imagen','2020-04-05','tiwtter'),
+(2,'pepe','#Aprobados','#Aprobados lorem ','imagen','2020-04-05','tiwtter'),
+(3,'Rafael','#FelizVerano','#FelizVerano','imagen','2020-04-05','tiwtter'),
+(4,'Rafael','#FelizVerano','#FelizVerano lorem','imagen','2020-04-05','tiwtter'),
+(5,'Manuel','#JorgeEresUnCrack','#JorgeEresUnCrack','imagen','2020-04-05','tiwtter'),
+(6,'Manuel','#JorgeEresUnCrack','#JorgeEresUnCrack lorem','imagen','2020-04-05','tiwtter');
 
 
 INSERT INTO HASPUB(ID,ID_HASTAG,ID_PUBLICACION)

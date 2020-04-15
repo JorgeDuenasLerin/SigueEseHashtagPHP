@@ -1,8 +1,8 @@
 
-/*DROP DATABASE hastag;*/
-CREATE DATABASE hastag;
-CREATE USER 'hastag'@'localhost' IDENTIFIED BY 'hastag';
-GRANT ALL PRIVILEGES ON hastag.* TO 'hastag'@'localhost'/* WITH GRANT OPTION*/;
+/*DROP DATABASE hashtag;*/
+CREATE DATABASE hashtag;
+CREATE USER 'hashtag'@'localhost' IDENTIFIED BY 'hashtag';
+GRANT ALL PRIVILEGES ON hashtag.* TO 'hashtag'@'localhost'/* WITH GRANT OPTION*/;
 
 /*use hastag;*/
 /* user Hastag
@@ -11,6 +11,5 @@ GRANT ALL PRIVILEGES ON hastag.* TO 'hastag'@'localhost'/* WITH GRANT OPTION*/;
   */
 
   /* un scrip para bases dedatos este como root
-  
-  y otro para crear usuario*/
 
+  y otro para crear usuario*/

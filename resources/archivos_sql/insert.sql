@@ -19,12 +19,12 @@ VALUES
 /*INSERT DE PUBLICACIONES*/
 INSERT INTO PUBLICACION (ID,NOMBRE,CONTENIDO,IMAGEN,FECHA,APLICACION)
  VALUES
-(1,'Jacinto','#Aprobados','#Aprobados','imagen','2020-04-05','tiwtter'),
-(2,'pepe','#Aprobados','#Aprobados lorem ','imagen','2020-04-05','tiwtter'),
-(3,'Rafael','#FelizVerano','#FelizVerano','imagen','2020-04-05','tiwtter'),
-(4,'Rafael','#FelizVerano','#FelizVerano lorem','imagen','2020-04-05','tiwtter'),
-(5,'Manuel','#JorgeEresUnCrack','#JorgeEresUnCrack','imagen','2020-04-05','tiwtter'),
-(6,'Manuel','#JorgeEresUnCrack','#JorgeEresUnCrack lorem','imagen','2020-04-05','tiwtter');
+(1,'Jacinto','#Aprobados','imagen','2020-04-05','tiwtter'),
+(2,'pepe','#Aprobados','imagen','2020-04-05','tiwtter'),
+(3,'Rafael','#FelizVerano','imagen','2020-04-05','tiwtter'),
+(4,'Rafael','#FelizVerano','imagen','2020-04-05','tiwtter'),
+(5,'Manuel','#JorgeEresUnCrack','imagen','2020-04-05','tiwtter'),
+(6,'Manuel','#JorgeEresUnCrack','imagen','2020-04-05','tiwtter');
 
 
 INSERT INTO HASPUB(ID,ID_HASTAG,ID_PUBLICACION)

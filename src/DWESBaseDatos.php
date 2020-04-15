@@ -36,8 +36,8 @@ class DWESBaseDatos {
 
     function inicializa(
         $basedatos,         // Nombre debe ser especificado O el archivo si es SQLite
-        $usuario  = 'root', // Ignorado si es SQLite
-        $pass     = '1234', // Ignorado si es SQLite
+        $usuario  = 'hastag', // Ignorado si es SQLite
+        $pass     = 'hastag', // Ignorado si es SQLite
         $motor    = 'mysql',
         $serverIp = 'localhost',
         $charset  = 'utf8mb4',

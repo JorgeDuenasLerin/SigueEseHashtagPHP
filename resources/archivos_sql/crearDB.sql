@@ -1,10 +1,10 @@
 
-DROP DATABASE hastag;
+/*DROP DATABASE hastag;*/
 CREATE DATABASE hastag;
 CREATE USER 'hastag'@'localhost' IDENTIFIED BY 'hastag';
-GRANT ALL PRIVILEGES ON hastag.* TO 'hastag'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON hastag.* TO 'hastag'@'localhost'/* WITH GRANT OPTION*/;
 
-use hastag;
+/*use hastag;*/
 /* user Hastag
   pass hastag
   DB hastag
@@ -13,3 +13,4 @@ use hastag;
   /* un scrip para bases dedatos este como root
   
   y otro para crear usuario*/
+

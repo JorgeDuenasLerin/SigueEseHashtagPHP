@@ -20,9 +20,18 @@ VALUES
 INSERT INTO PUBLICACION (ID,NOMBRE,CONTENIDO,IMAGEN,FECHA,ID_HASTAG)
  VALUES
 (1,'Jacinto','#Aprobados','#Aprobados','imagen','2020-04-05',1),
-(2,'Rafael','#FelizVerano','#FelizVerano','imagen','2020-04-05',2),
-(3,'Manuel','#JorgeEresUnCrack','#JorgeEresUnCrack','imagen','2020-04-05',3)
+(2,'pepe','#Aprobados','#Aprobados lorem ','imagen','2020-04-05',1),
+(3,'Rafael','#FelizVerano','#FelizVerano','imagen','2020-04-05',2),
+(4,'Rafael','#FelizVerano','#FelizVerano lorem','imagen','2020-04-05',2),
+(5,'Manuel','#JorgeEresUnCrack','#JorgeEresUnCrack','imagen','2020-04-05',3),
+(6,'Manuel','#JorgeEresUnCrack','#JorgeEresUnCrack lorem','imagen','2020-04-05',3)
 
 
 INSERT INTO HASPUB(ID_HASTAG,ID_PUBLICACION)
 VALUES
+(1,1),
+(1,2),
+(2,3),
+(2,4),
+(3,5),
+(3,6)

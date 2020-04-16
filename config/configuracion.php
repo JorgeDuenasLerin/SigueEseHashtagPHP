@@ -12,8 +12,12 @@ $config = [
 
 spl_autoload_register(function ($name){
   global $ROOT;
-  
-  $class_file = "$ROOT/src/$name.php";
-  require($class_file);
+  if(file_exists($class_file = "$ROOT/src/$name.php")){
+    require($class_file);
+  }else{
+    if(file_exists($class_file = "$ROOT/src/Manager/$name.php")){
+      require($class_file);
+    }
+  }
 });
 ?>

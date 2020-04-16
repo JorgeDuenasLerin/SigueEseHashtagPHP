@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 class PublicacionManager implements IDWESEntidadManager{
 
   public static function getAll(){
     $db = DWESBaseDatos::obtenerInstancia();
-    $db->ejecuta('SELECT * FROM PUBLICACION');
+    $db->ejecuta("SELECT * FROM PUBLICACION");
     return $db->obtenDatos();
   }
 
@@ -16,7 +16,7 @@ class PublicacionManager implements IDWESEntidadManager{
 
   public static function insert(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
-    $db->ejecuta("INSERT INTO PUBLICACION 
+    $db->ejecuta("INSERT INTO PUBLICACION
                     (ID,NOMBRE,CONTENIDO,IMAGEN,FECHA,APLICACION)
                    VALUES(?,?,?,?,?,?)",
                    $campos);
@@ -24,7 +24,7 @@ class PublicacionManager implements IDWESEntidadManager{
 
   public static function update($id, ...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
-    $db->ejecuta("UPDATE PUBLICACION 
+    $db->ejecuta("UPDATE PUBLICACION
                   SET ID = ?,
                       NOMBRE = ?,
                       CONTENIDO = ?,

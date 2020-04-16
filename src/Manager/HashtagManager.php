@@ -5,7 +5,7 @@
 
     public static function getAll(){
       $db = DWESBaseDatos::obtenerInstancia();
-			$db->ejecuta('SELECT * FROM HASHTAG');
+			$db->ejecuta("SELECT * FROM HASHTAG");
 			return $db->obtenDatos();
     }
 
@@ -21,7 +21,7 @@
       $db = DWESBaseDatos::obtenerInstancia();
       //TODO: Cuidado con el campo autoincremental
 			$db->ejecuta("INSERT INTO HASHTAG (ID,NOMBRE,ID_USUARIO)
-                    VALUES(?,?,?)",
+                    VALUES(?,?,?);",
                     $campos);
     }
 

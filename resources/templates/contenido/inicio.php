@@ -6,12 +6,15 @@
 Información sacada de la base de datos
 
 */
-$resultado = HashtagManager::getAll();
+//$resultado = HashtagManager::getAll();
+$resultadoUser = UsuarioManager::getAll();
+
 /*$resultados = [
     ['algo11', 'valor12', 'cosa13'],
     ['algo21', 'valor22', 'cosa23'],
   ];*/
-  print_r($resultado);
+  //print_r($resultado);
+  print_r($resultadoUser);
 
  ?>
 <link rel="stylesheet" href="/css/inicio.css">

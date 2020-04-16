@@ -13,9 +13,9 @@
       $db = DWESBaseDatos::obtenerInstancia();
       // TODO: Consulta preparada
       // "SELECT * FROM HASTAG WHERE ID = ?"
-      $db->ejecuta("SELECT * FROM HASHTAG "." WHERE ID = '$id'");
+      $db->ejecuta("SELECT * FROM HASHTAG  WHERE ID = ?");
       return $db->obtenDatos()[0];
-    };
+    }
 
     public static function insert(...$campos){
       $db = DWESBaseDatos::obtenerInstancia();

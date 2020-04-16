@@ -5,7 +5,7 @@
 
     public static function getAll(){
       $db = DWESBaseDatos::obtenerInstancia();
-			$db->ejecuta('SELECT ID,NOMBRE FROM HASHTAG');
+			$db->ejecuta('SELECT * FROM HASHTAG');
 			return $db->obtenDatos();
     }
 
@@ -36,6 +36,7 @@
 			$db = DWESBaseDatos::obtenerInstancia();
       //TODO: Preparar consulta
 			$db->ejecuta("DELETE FROM HASHTAG WHERE ID = ?",$id);
-		}
+    }
+  }
 
 ?>

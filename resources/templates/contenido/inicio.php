@@ -6,12 +6,12 @@
 Información sacada de la base de datos
 
 */
-/*$resultado = PublicacionManager::getAll();*/
-$resultados = [
+$resultado = HashtagManager::getAll();
+/*$resultados = [
     ['algo11', 'valor12', 'cosa13'],
     ['algo21', 'valor22', 'cosa23'],
-  ];
-  print_r($resultados);
+  ];*/
+  print_r($resultado);
 
  ?>
 <link rel="stylesheet" href="/css/inicio.css">

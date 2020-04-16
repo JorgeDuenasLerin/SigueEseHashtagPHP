@@ -13,9 +13,9 @@ $resultados = [
   ];
 
  ?>
-
+<link rel="stylesheet" href="/css/inicio.css">
 <h1>Pag1</h1>
-<div class="">
+<div class="inicio">
   Contenido 1
   <p>
     <pre>

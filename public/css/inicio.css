@@ -1,0 +1,9 @@
+@import url('reset.css');
+@import url('root.css');
+
+.inicio{
+  height: 70vh;
+  width: 70%;
+  margin: auto;
+  color: red;
+}

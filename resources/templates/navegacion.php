@@ -21,8 +21,8 @@ global $ROOT;
   </div>
   <nav>
     <div class="">
-      <a href="pagina1.php">Pag1</a>
-      <a href="pagina2.php">Pag2</a>
+      <a href="inicio.php">Inicio</a>
+      <a href="login.php">login</a>
       <a href="paginaajax.php">AJAX</a>
     </div>
   </nav>

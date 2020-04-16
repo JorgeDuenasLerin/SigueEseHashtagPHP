@@ -20,7 +20,7 @@
     public static function insert(...$campos){
       $db = DWESBaseDatos::obtenerInstancia();
       //TODO: Cuidado con el campo autoincremental
-			$db->ejecuta("INSERT INTO HASHTAG (ID,NOMBRE,ID_USUARIO) 
+			$db->ejecuta("INSERT INTO HASHTAG (ID,NOMBRE,ID_USUARIO)
                     VALUES(?,?,?)",
                     $campos);
     }
@@ -29,7 +29,7 @@
       $db = DWESBaseDatos::obtenerInstancia();
       //TODO: Actualizar nombre XXXX para id N
       //TODO: Preparar consultas
-			$db->ejecuta("UPDATE HASHTAG SET ID = ? WHERE ID = ?",$campos);
+			$db->ejecuta("UPDATE HASHTAG SET NOMBRE = ? WHERE ID = ?",$campos);
     }
 
     public static function delete($id){

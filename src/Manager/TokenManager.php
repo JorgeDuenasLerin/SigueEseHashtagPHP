@@ -16,7 +16,7 @@ class TokenManager implements IDWESEntidadManager{
 
   public static function insert(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
-    $db->ejecuta("INSERT INTO TOKEN 
+    $db->ejecuta("INSERT INTO TOKEN
                     (ID,ID_HASHTAG,ID_USUARIO)
                    VALUES(?,?,?)",
                    $campos);
@@ -24,7 +24,7 @@ class TokenManager implements IDWESEntidadManager{
 
   public static function update($id, ...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
-    $db->ejecuta("UPDATE TOKEN 
+    $db->ejecuta("UPDATE TOKEN
                   SET ID = ?,
                       ID_HASHTAG = ?,
                       ID_USUARIO = ?

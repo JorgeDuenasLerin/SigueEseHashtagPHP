@@ -33,7 +33,7 @@ if (preg_match('/\.(?:css|js|ico|png|jpg|jpeg|gif)$/', $_SERVER["REQUEST_URI"]))
     //echo "<pre>";
     //print_r($_SERVER);
     //echo "</pre>";
-    if(
+  /*  if(
         // Según SO servirá en servidor real
         (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')
         ||
@@ -41,9 +41,9 @@ if (preg_match('/\.(?:css|js|ico|png|jpg|jpeg|gif)$/', $_SERVER["REQUEST_URI"]))
         ($_SERVER['HTTP_SEC_FETCH_MODE'] == 'cors')
       ) {
         require_once("$ROOT/resources/templates/contenido$ruta_contenido");
-    } else {
+    } else {*/
         require_once("$ROOT/resources/templates/template.php");
-    }
+  //  }
 }
 
 ?>

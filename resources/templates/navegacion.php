@@ -20,7 +20,7 @@ global $ROOT;
     <h3>Encuentra tu hastag</h3>
   </div>
   <nav>
-    <div class="">
+    <div class="menu">
       <a href="inicio.php">Inicio</a>
       <a href="login.php">login</a>
       <a href="paginaajax.php">AJAX</a>

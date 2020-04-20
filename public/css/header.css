@@ -5,22 +5,29 @@
 header{
   height: 10em;
   padding-top:1em;
-  background-image: url();
-  background-size: 1930px;
+  background-color: var(--colorFondoHastag);
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   border: 1px solid red;
 }
-/*a{
-  display: none;
-}*/
+nav > div > a{
+text-decoration: none;
+color: white ;
+}
 /*para colocar los enlaces al login ,perfil cerrar sesion*/
 nav{
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  background-color: rgb(33, 97, 140);
+  width:14em;
+  height: 3em;
 }
-nav > a{
-  margin-right: 30px;
+nav > div > a{
+  margin: 10px;
+}
+
+nav > div > a:hover{
+  font-size: 1.2em;
 }

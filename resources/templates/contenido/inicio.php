@@ -7,7 +7,7 @@ Información sacada de la base de datos
 
 */
 //$resultado = HashtagManager::getAll();
-$resultadoUser = UsuarioManager::getAll();
+//$resultadoUser = UsuarioManager::getAll();
 
 /*$resultados = [
     ['algo11', 'valor12', 'cosa13'],
@@ -18,7 +18,7 @@ $resultadoUser = UsuarioManager::getAll();
 
  ?>
 <link rel="stylesheet" href="/css/inicio.css">
-<h1>Pag1</h1>
+<h1>Inicio</h1>
 <div class="inicio">
   Contenido 1
   <p>
@@ -30,8 +30,10 @@ $resultadoUser = UsuarioManager::getAll();
     }
     ?>
     </pre>
+    
   </p>
-  <!--aquí meteré las viñetas con div despues haremos un foreach para meter todos los hashtag
+  <!-- aquí meteré las viñetas con div despues haremos un foreach para meter todos los hashtag -->
+  <p><a href="liastadoHashtag.php">ejemplo publicacion</a></p>
 
     <?php
     /*foreach($resultado as $fila){*/?>

@@ -1,9 +1,9 @@
 <?php
 
-/*require("$ROOT/src/Manager/HashtagManager.php");
-
 $datos = HashtagManager::getAll();
+print_r($datos);
 
+/*require("$ROOT/src/Manager/HashtagManager.php");
   print_r($datos);*/
 
 

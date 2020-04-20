@@ -5,8 +5,11 @@ $config = [
   'title' => 'Estructura de proyecto web',
   'content' => 'Estructura de proyecto web',
   'content_text' => 'Información sacada del config',
-  'db_engine' => 'sqlite',
-  'db_file' => 'resources/test.sqlite3',
+  'db_engine' => 'mysql',
+  //'db_file' => 'resources/test.sqlite3',
+  'db_user' => 'hashtag',
+  'db_pass' => 'hashtag',
+  'db_name' => 'hashtag',
   'ruta_defecto' => '/inicio.php'
 ];
 

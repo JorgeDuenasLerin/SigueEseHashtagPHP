@@ -22,16 +22,19 @@ class PublicacionManager implements IDWESEntidadManager{
                    $campos);
   }
 
+  PublicacionManager::update(17, ["Blabla", "Blabla","Blabla", "Blabla","Blabla"])
+
   public static function update($id, ...$campos){
+    $parametros = $campos;
+    $parametros []= $id;
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("UPDATE PUBLICACION
-                  SET ID = ?,
-                      NOMBRE = ?,
+                  SET NOMBRE = ?,
                       CONTENIDO = ?,
                       IMAGEN = ?,
                       FECHA = ?,
                       APLICACION = ?
-                   WHERE ID =?",$campos);
+                   WHERE ID =?",);
   }
 
   public static function delete($id){

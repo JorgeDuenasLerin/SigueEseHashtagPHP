@@ -1,0 +1,9 @@
+@import url('reset.css');
+@import url('root.css');
+
+table > thead{
+  background-color: MediumPurple;
+}
+table > tbody{
+  background-color: Thistle;
+}

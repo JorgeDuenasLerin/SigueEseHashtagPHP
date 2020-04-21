@@ -17,24 +17,21 @@ class PublicacionManager implements IDWESEntidadManager{
   public static function insert(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("INSERT INTO PUBLICACION
-                    (ID,NOMBRE,CONTENIDO,IMAGEN,FECHA,APLICACION)
-                   VALUES(?,?,?,?,?,?)",
+                    (NOMBRE,CONTENIDO,IMAGEN,APLICACION)
+                   VALUES(?,?,?,?)",
                    $campos);
   }
 
-  PublicacionManager::update(17, ["Blabla", "Blabla","Blabla", "Blabla","Blabla"])
-
   public static function update($id, ...$campos){
     $parametros = $campos;
-    $parametros []= $id;
+    array_push($parametros,$id);
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("UPDATE PUBLICACION
                   SET NOMBRE = ?,
                       CONTENIDO = ?,
                       IMAGEN = ?,
-                      FECHA = ?,
                       APLICACION = ?
-                   WHERE ID =?",);
+                   WHERE ID =?",$parametros);
   }
 
   public static function delete($id){
@@ -42,12 +39,6 @@ class PublicacionManager implements IDWESEntidadManager{
     $db->ejecuta("DELETE FROM PUBLICACION WHERE ID=?",$id);
   }
 
-
-
-
-
 }
-
-
 
 ?>

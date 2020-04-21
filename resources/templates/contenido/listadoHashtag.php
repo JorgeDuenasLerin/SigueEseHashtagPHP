@@ -26,8 +26,8 @@ print_r($datos);
 					<tr>
 						<?php /*foreach($fila as $key => $campo) {*/?>
 
-							<td><?=$key?></td>
-              <td><?=$campo?></td>
+							<td><?=/*$key?></td>
+              <td><?=/*$campo?></td>
 						<?php/* }*/ ?>
 					</tr>
 				<?php /*}*/ ?>

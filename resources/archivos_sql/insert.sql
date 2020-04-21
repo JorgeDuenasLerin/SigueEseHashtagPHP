@@ -1,5 +1,4 @@
 
-
 /*INSERT DE USUARIOS*/
 INSERT INTO USUARIO (ID,NOMBRE,CONTRASEÑA,EMAIL)
  VALUES
@@ -26,12 +25,21 @@ INSERT INTO PUBLICACION (ID,NOMBRE,CONTENIDO,IMAGEN,FECHA,APLICACION)
 (5,'Manuel','#JorgeEresUnCrack','imagen','2020-04-05','tiwtter'),
 (6,'Manuel','#JorgeEresUnCrack','imagen','2020-04-05','tiwtter');
 
+/*INSERT DE TOKEN */
+INSERT INTO TOKEN (ID,EMAIL,TOKEN,ID_USUARIO)
+VALUES
+(1,"pepito@hotmail.com",1111111111,1),
+(2,"pepito@hotmail.com",3333333333,2),
+(3,"pepito@hotmail.com",5555555555,3);
 
+
+
+/*INSERT DE HASHPUB*/
 INSERT INTO HASHPUB(ID,ID_HASHTAG,ID_PUBLICACION)
 VALUES
 (1,1,1),
 (2,1,2),
 (3,2,3),
 (4,2,4),
-(5,3,5), 
+(5,3,5),
 (6,3,6);

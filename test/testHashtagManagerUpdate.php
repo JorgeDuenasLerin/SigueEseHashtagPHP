@@ -2,8 +2,8 @@
 
 require("testGeneral.php");
 
-
-$datos = HashtagManager::insert("Algo", 1);
+/*id nombre id_usuario*/
+$datos = HashtagManager::update(1, "mostaza", 1);
 
 $datos = HashtagManager::getAll();
 

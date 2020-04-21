@@ -11,8 +11,6 @@
 
     public static function getById($id){
       $db = DWESBaseDatos::obtenerInstancia();
-      // TODO: Consulta preparada
-      // "SELECT * FROM HASTAG WHERE ID = ?"
       $db->ejecuta("SELECT * FROM HASHTAG  WHERE ID = ?",$id);
       return $db->obtenDatos()[0];
     }
@@ -20,21 +18,20 @@
     public static function insert(...$campos){
       $db = DWESBaseDatos::obtenerInstancia();
       //TODO: Cuidado con el campo autoincremental
-			$db->ejecuta("INSERT INTO HASHTAG (ID,NOMBRE,ID_USUARIO)
-                    VALUES(?,?,?);",
+			$db->ejecuta("INSERT INTO HASHTAG (NOMBRE,ID_USUARIO)
+                    VALUES(?,?);",
                     $campos);
     }
 
     public static function update($id, ...$campos){
+      $parametros = $campos;
+      array_push($parametros, $id);
       $db = DWESBaseDatos::obtenerInstancia();
-      //TODO: Actualizar nombre XXXX para id N
-      //TODO: Preparar consultas
-			$db->ejecuta("UPDATE HASHTAG SET NOMBRE = ? $campos WHERE ID = ?",$id);
+			$db->ejecuta("UPDATE HASHTAG SET NOMBRE = ? ,ID_USUARIO = ?  WHERE ID = ?",$parametros);
     }
 
     public static function delete($id){
 			$db = DWESBaseDatos::obtenerInstancia();
-      //TODO: Preparar consulta
 			$db->ejecuta("DELETE FROM HASHTAG WHERE ID = ?",$id);
     }
   }

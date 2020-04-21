@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class TokenManager implements IDWESEntidadManager{
 
@@ -13,22 +13,24 @@ class TokenManager implements IDWESEntidadManager{
     $db->ejecuta("SELECT * FROM TOKEN WHERE ID = ?",$id);
     return $db->obtenDatos()[0];
   }
-
+/*EMAIL,TOKEN,ID_USUARIO*/
   public static function insert(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("INSERT INTO TOKEN
-                    (ID,ID_HASHTAG,ID_USUARIO)
+                    (EMAIL,TOKEN,ID_USUARIO)
                    VALUES(?,?,?)",
                    $campos);
   }
 
   public static function update($id, ...$campos){
+    $parametros = $campos;
+    array_push($parametros,$id);
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("UPDATE TOKEN
-                  SET ID = ?,
-                      ID_HASHTAG = ?,
+                  SET EMAIL = ?,
+                      TOKEN = ?,
                       ID_USUARIO = ?
-                   WHERE ID =?",$campos);
+                   WHERE ID = ? ",$parametros);
   }
 
   public static function delete($id){

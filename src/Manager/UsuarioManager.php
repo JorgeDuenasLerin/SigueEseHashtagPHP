@@ -5,8 +5,8 @@
 
     public static function autentificando($nombre){
       $db = DWESBaseDatos::obtenerInstancia();
-      $db->ejecuta("SELECT id,nombre,pass,email 
-                    FROM  USUARIO 
+      $db->ejecuta("SELECT id,nombre,pass,email
+                    FROM  USUARIO
                     WHERE NOMBRE = ? ",
                     $nombre);
       return $db->obtenDatos();
@@ -18,32 +18,25 @@
     }
     public static function getById($id){
       $db = DWESBaseDatos::obtenerInstancia();
-      $db->ejecuta("SELECT * FROM USUARIO WHERE ID = ?", $id);
-      $fila = $db->obtenDatos()[0];
-      print_r($fila);
-      return
-      new Usuario(
-        $fila['id'],
-        $fila['nombre'],
-        $fila['pass'],
-        $fila['email']
-      );
+      $db->ejecuta("SELECT * FROM USUARIO WHERE ID = ?",$id);
+      return $db->obtenDatos()[0];
     }
     public static function insert(...$campos){
       $db = DWESBaseDatos::obtenerInstancia();
-      $db->ejecuta("INSERT INTO USUARIO (nombre, pass, email)
+      $db->ejecuta("INSERT INTO USUARIO (NOMBRE, CONTRASEÑA , EMAIL)
                     VALUES (?, ?, ?)",
                     $campos);
-      return $db->getLastId();
     }
     public static function update($id, ...$campos){
+      $parametros = $campos;
+      array_push($parametros,$id);
       $db = DWESBaseDatos::obtenerInstancia();
-       $db->ejecuta("UPDATE USUARIO
-                    SET NOMbRE = ?,
-                        PASS = ?,
+      $db->ejecuta("UPDATE USUARIO
+                    SET NOMBRE = ?,
+                        CONTRASEÑA = ?,
                         EMAIL = ?
                     WHERE ID = ?",
-                    $campos);
+                    $parametros);
     }
     public static function delete($id){
       $db = DWESBaseDatos::obtenerInstancia();

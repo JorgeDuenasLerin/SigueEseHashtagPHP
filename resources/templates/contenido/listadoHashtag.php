@@ -1,6 +1,6 @@
 <?php
 
-$datos = HashtagManager::getAll();
+$datos = publicaciongManager::getById($id);
 print_r($datos);
 
 
@@ -21,7 +21,7 @@ print_r($datos);
             <?php foreach($datos as $fila) { ?>
 					<tr>
 							<td><?=$fila['ID']?></td>
-              <td><?=$fila['NOMBRE']?></td>
+              <td><a href="detallePublicacion.php"><?=$fila['NOMBRE']?></a></td>
 					</tr>
           <?php } ?>
 			</tbody>

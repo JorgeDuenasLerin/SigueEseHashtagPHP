@@ -9,7 +9,7 @@ print_r($datos);
 <link rel="stylesheet" href="/css/listadohashtag.css">
 <h1>listado publicacion de un hastag</h1>
 <div class="">
-  <table border="2" >
+  <table border="2">
 			<thead>
 				<tr>
               <th>ID</th>

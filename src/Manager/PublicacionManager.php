@@ -39,6 +39,18 @@ class PublicacionManager implements IDWESEntidadManager{
     $db->ejecuta("DELETE FROM PUBLICACION WHERE ID=?",$id);
   }
 
+
+  // ...
+  /*
+
+  SQL para la función: getByHastagId
+
+  SELECT pu.*
+  FROM HASHPUB hp
+    LEFT JOIN PUBLICACION pu ON hp.ID_PUBLICACION = pu.ID
+  WHERE hp.ID_HASHTAG = 2
+  */
+
 }
 
 ?>

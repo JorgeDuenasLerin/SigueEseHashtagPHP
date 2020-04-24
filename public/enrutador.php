@@ -10,6 +10,7 @@ if (preg_match('/\.(?:css|js|ico|png|jpg|jpeg|gif)$/', $_SERVER["REQUEST_URI"]))
 
     // Requerir los ficheros necesarios
     require_once("$ROOT/src/db.php");
+    require_once("$ROOT/src/funcionesComunes.php");
 
     // Enruto la petción
     $uri = $_SERVER['REQUEST_URI'];

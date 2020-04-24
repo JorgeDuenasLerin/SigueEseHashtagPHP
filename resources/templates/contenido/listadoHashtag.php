@@ -1,5 +1,20 @@
 <?php
 
+
+if(isset($_GET['id'])){
+  $id = $_GET['id'];
+} else {
+  // Pintar erro no encontrado
+  // lanzar un 404
+
+}
+$publicaciones = PublicacionManager::getByHastagId($id);
+
+
+
+
+/*
+
 if(isset($_GET['id'])){
   $id = $_GET['id'];
 }
@@ -24,6 +39,7 @@ print_r('datos publicaciones ');
 print_r('<br>');
 print_r($publicaciones);
 
+*/
 
 ?>
 
@@ -42,7 +58,7 @@ print_r($publicaciones);
 				</tr>
 			</thead>
 
-			<tbody>           
+			<tbody>
 
             <?php foreach($publicaciones as $fila) { ?>
 

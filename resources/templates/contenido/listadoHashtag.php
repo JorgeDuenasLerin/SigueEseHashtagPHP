@@ -4,9 +4,11 @@ if(isset($_GET['id'])){
   $id = $_GET['id'];
 }
 print_r($id);
+$hashPub = HashpubManager::getById($id);
+print_r($hashPub);
+$datos = PublicacionManager::getById($hashPub);
 
-$datos = PublicacionManager::getById($id);
-
+print_r('datos hsahpub');
 print_r($datos);
 
 

@@ -11,7 +11,7 @@
     public static function getById($id){
       $db = DWESBaseDatos::obtenerInstancia();
       $db->ejecuta("SELECT * FROM HASHPUB WHERE ID = ?",$id);
-      return $db->obtenDatos()[0];
+      return $db->obtenDatos();
     }
     public static function insert(...$campos){
       $db = DWESBaseDatos::obtenerInstancia();

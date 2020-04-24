@@ -11,7 +11,7 @@ class TokenManager implements IDWESEntidadManager{
   public static function getById($id){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("SELECT * FROM TOKEN WHERE ID = ?",$id);
-    return $db->obtenDatos()[0];
+    return $db->obtenDatos();
   }
 /*EMAIL,TOKEN,ID_USUARIO*/
   public static function insert(...$campos){

@@ -13,6 +13,16 @@
       $db->ejecuta("SELECT * FROM HASHPUB WHERE ID = ?",$id);
       return $db->obtenDatos();
     }
+    public static function getByIdHashtag($id){
+      $db = DWESBaseDatos::obtenerInstancia();
+      $db->ejecuta("SELECT ID_PUBLICACION FROM HASHPUB WHERE ID_HASHTAG = ?",$id);
+      return $db->obtenDatos();
+    }
+    public static function getByIdPublicacion($id){
+      $db = DWESBaseDatos::obtenerInstancia();
+      $db->ejecuta("SELECT * FROM HASHPUB WHERE ID_PUBLICACION = ?",$id);
+      return $db->obtenDatos();
+    }
     public static function insert(...$campos){
       $db = DWESBaseDatos::obtenerInstancia();
       $db->ejecuta("INSERT INTO HASHPUB (ID_HASHTAG, ID_PUBLICACION)

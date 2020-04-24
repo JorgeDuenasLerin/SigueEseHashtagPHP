@@ -3,13 +3,25 @@
 if(isset($_GET['id'])){
   $id = $_GET['id'];
 }
+print_r('el id recibido es :');
 print_r($id);
-$hashPub = HashpubManager::getById($id);
-print_r($hashPub);
+print_r('<br>');
+$hashPub = HashpubManager::getByIdHashtag($id);
+
+foreach($hashPub as $datos){
+  print_r('<br>');
+print_r($datos['ID_PUBLICACION']);
+$publicaciones =  PublicacionManager::getById($datos['ID_PUBLICACION']);
+print_r('<br>');
+print_r($publicaciones);
+}
+
+
 $datos = PublicacionManager::getById($hashPub);
 
-print_r('datos hsahpub');
-print_r($datos);
+print_r('datos hsahpub ');
+print_r('<br>');
+print_r($publicaciones);
 
 
 ?>
@@ -30,7 +42,11 @@ print_r($datos);
 			</thead>
 
 			<tbody>
+<<<<<<< HEAD
             <?php foreach($hashpub as $fila) { ?>
+=======
+            <?php foreach($publicaciones as $fila) { ?>
+>>>>>>> 1240bccee08ddca56980115eacee682fd0916318
 					<tr>
 							<td><?=$fila['ID']?></td>
               <td><?=$fila['NOMBRE']?></td>

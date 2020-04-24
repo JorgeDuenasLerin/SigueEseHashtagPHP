@@ -7,19 +7,20 @@ print_r('el id recibido es :');
 print_r($id);
 print_r('<br>');
 $hashPub = HashpubManager::getByIdHashtag($id);
-
+print_r('<br> haspub');
+print_r($hashPub);
 foreach($hashPub as $datos){
   print_r('<br>');
-print_r($datos['ID_PUBLICACION']);
-$publicaciones =  PublicacionManager::getById($datos['ID_PUBLICACION']);
-print_r('<br>');
-print_r($publicaciones);
+  print_r($datos['ID_PUBLICACION']);
+  $publicaciones =  PublicacionManager::getById($datos['ID_PUBLICACION']);
+  print_r('<br>');
+  print_r($publicaciones);
 }
 
 
 $datos = PublicacionManager::getById($hashPub);
-
-print_r('datos hsahpub ');
+print_r('<br>');
+print_r('datos publicaciones ');
 print_r('<br>');
 print_r($publicaciones);
 

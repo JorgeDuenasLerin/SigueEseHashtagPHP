@@ -3,7 +3,7 @@
 require("testGeneral.php");
 
 
-$datos = HashpubManager::insert(1,2);
+$datos = HashpubManager::insert(2,3);
 
 $datos = HashpubManager::getAll();
 

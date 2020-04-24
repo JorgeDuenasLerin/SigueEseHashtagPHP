@@ -43,7 +43,11 @@ print_r($publicaciones);
 			</thead>
 
 			<tbody>
+<<<<<<< HEAD
+            <?php foreach($hashpub as $fila) { ?>
+=======
             <?php foreach($publicaciones as $fila) { ?>
+>>>>>>> 1240bccee08ddca56980115eacee682fd0916318
 					<tr>
 							<td><?=$fila['ID']?></td>
               <td><?=$fila['NOMBRE']?></td>

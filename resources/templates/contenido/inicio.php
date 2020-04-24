@@ -7,14 +7,8 @@ Información sacada de la base de datos
 
 */
 $datos = HashtagManager::getAll();
-//$resultadoUser = UsuarioManager::getAll();
 
-/*$resultados = [
-    ['algo11', 'valor12', 'cosa13'],
-    ['algo21', 'valor22', 'cosa23'],
-  ];*/
-  //print_r($resultado);
-  print_r($resultadoUser);
+print_r($datos);
 
  ?>
 <link rel="stylesheet" href="/css/inicio.css">
@@ -33,14 +27,16 @@ $datos = HashtagManager::getAll();
             <?php foreach($datos as $fila) { ?>
 					<tr>
 							<td><?=$fila['ID']?></td>
-              <td><?=$fila['NOMBRE']?></td>
+              <td>
+              <a href="listadoHashtag.php?id=<?= $fila['ID']?>"><?=$fila['NOMBRE']?></a>
+              </td>
 					</tr>
           <?php } ?>
 			</tbody>
 
 		</table>
   <!-- aquí meteré las viñetas con div despues haremos un foreach para meter todos los hashtag -->
-  <p><a href="listadoHashtag.php">ejemplo publicacion</a></p>
+  
 
     <?php
     /*foreach($resultado as $fila){*/?>

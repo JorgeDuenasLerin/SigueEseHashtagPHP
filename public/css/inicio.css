@@ -7,3 +7,9 @@
   margin: auto;
   color: red;
 }
+table > thead{
+  background-color: MediumPurple;
+}
+table > tbody{
+  background-color: Thistle;
+}

@@ -18,7 +18,7 @@ foreach($hashPub as $datos){
 }
 
 
-//$datos = PublicacionManager::getById($hashPub);
+$datos = PublicacionManager::getById($hashPub);
 print_r('<br>');
 print_r('datos publicaciones ');
 print_r('<br>');

@@ -1,12 +1,21 @@
+<?php 
+  if(isset($_GET['id'])){
+    $id = $_GET['id'];
+  }
+$datos = PublicacionManager::getById($id);
+print_r($datos);
+
+
+?>
+
+
+
 <h1>#EjemploPublicacion</h1>
 <div class="">
-  <figure>
-    <img src="" alt="">
-    <div>aqui una foto </div>
-  </figure>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-  <br><br><br>
-  <p>nombre usuario</p>
-  <p>aplicacion etc</p>
+  <?php foreach($datos as $fila ){?>
+    <P><?=$fila['APLICACION'] ?></P>
+    <figure><?=$fila['IMAGEN'] ?></figure>
+    <p><?=$fila['HASHTAG'] ?> <?=$fila['CONTENIDO'] ?></p>
+    <p><?=$fila['NOMBRE'] ?>   <?=$fila['FECHA'] ?></p>
+  <?php } ?>
 </div>

@@ -30,7 +30,7 @@ print_r($datos);
 			</thead>
 
 			<tbody>
-            <?php foreach($datos as $fila) { ?>
+            <?php foreach($hashpub as $fila) { ?>
 					<tr>
 							<td><?=$fila['ID']?></td>
               <td><?=$fila['NOMBRE']?></td>

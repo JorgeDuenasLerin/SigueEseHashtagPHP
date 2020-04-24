@@ -1,7 +1,7 @@
 <?php
 
 
-  class usuarioManager implements IDWESEntidadManager{
+  class UsuarioManager implements IDWESEntidadManager{
 
     public static function autentificando($nombre){
       $db = DWESBaseDatos::obtenerInstancia();

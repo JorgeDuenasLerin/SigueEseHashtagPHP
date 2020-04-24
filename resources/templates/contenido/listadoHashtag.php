@@ -14,13 +14,8 @@ print_r($datos);
 
 <link rel="stylesheet" href="/css/listadohashtag.css">
 <h1>listado publicacion de un hastag</h1>
-<<<<<<< HEAD
 <div class="">
-  <table border="2">
-=======
-<div class="listadoHashtag">
   <table border="2" >
->>>>>>> 478693eba30cd9403c51d0a1e01720b46ab131e2
 			<thead>
 				<tr>
               <th>ID</th>

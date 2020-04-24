@@ -6,36 +6,44 @@
 Información sacada de la base de datos
 
 */
-//$resultado = HashtagManager::getAll();
-//$resultadoUser = UsuarioManager::getAll();
+$datos = HashtagManager::getAll();
 
-
-$resultados = [
-    ['algo11', 'valor12', 'cosa13'],
-    ['algo21', 'valor22', 'cosa23'],
-  ];
-  //print_r($resultado);
-  print_r($resultados);
+print_r($datos);
 
  ?>
 <link rel="stylesheet" href="/css/inicio.css">
 <h1>Inicio</h1>
 <div class="inicio">
   Contenido 1
-  <p>
-    <pre>
-      hola
-    <?php
-    foreach($resultados as $fila) {
-      print_r($fila);
-    }
-    ?>
-    </pre>
+  <table border="2" >
+			<thead>
+				<tr>
+              <th>ID</th>
+              <th>Nombre Hashtag</th>
+				</tr>
+			</thead>
 
-  </p>
+			<tbody>
+            <?php foreach($datos as $fila) { ?>
+					<tr>
+							<td><?=$fila['ID']?></td>
+              <td>
+              <a href="listadoHashtag.php?id=<?= $fila['ID']?>"><?=$fila['NOMBRE']?></a>
+              </td>
+					</tr>
+          <?php } ?>
+			</tbody>
+
+		</table>
   <!-- aquí meteré las viñetas con div despues haremos un foreach para meter todos los hashtag -->
-  <p><a href="listadoHashtag.php">ejemplo publicacion</a></p>
+  
 
     <?php
-  /*  foreach($resultado as $fila){}*/?>
+    /*foreach($resultado as $fila){*/?>
+          <div class="viñetas">
+    <h1></h1>
+    <img src="" alt="#coronavirus">
+    <p>contenido referente al hashtag</p>
+    <p>nombre del usuario</p> <p>fecha de la publicacion</p> <p>nombre de la aplicacion</p>
+    </div>-->
 </div>

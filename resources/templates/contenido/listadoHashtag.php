@@ -48,8 +48,12 @@ print_r($publicaciones);
 
 					<tr>
 							<td><?=$fila['ID']?></td>
-              <td><?=$fila['NOMBRE']?></td>
-              <td><?=$fila['CONTENIDO']?></td>
+              <td>
+                <a href="detallePublicacion.php?id=<?= $fila['ID']?>"><?=$fila['NOMBRE']?></a>
+              </td>
+              <td>
+                <a href="detallePublicacion.php?id=<?= $fila['ID']?>"><?=$fila['CONTENIDO']?></a>
+              </td>
               <td><?=$fila['IMAGEN']?></td>
               <td><?=$fila['FECHA']?></td>
               <td><?=$fila['APLICACION']?></td>

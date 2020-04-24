@@ -1,9 +1,57 @@
 <?php
+$errores = [];
+$info = ['nombre' => '','pass' => '',];
 
+if( count($_POST) > 0 ){
+  //crear clase gestiona errores
+  gestionaErrores($_POST, $info, $errores);
+    if($errores == null ){
+      $datos = UsuarioManager::autentificado($info['NOMBRE'])[0];
+      $id = $datos['ID'];
+ 
+      if( $datos != null && password_verify($info['PASS'], $datos['PASS']) ){
+        $_SESSION['autentificado'] = true;
+        $_SESSION['ID'] = $id;
+ 
+        //RECUERDAME
+        if( $_POST['recuerdame'] == true ){
+          $token = getToken();                                    //generamos un token y lo convertimos a hash
+          //ViajesManager::insertCookieSesion([$token, $id]);       //insertamos el token en la base de datos
+         CookieManager::insert($token, $id);
+          setcookie('recuerdame', $token, time()+(24*60*60*7));  //se establece la cookie de recuerdame
+        }
+ 
+        header("Location: inicio.php");
+        die();
+      }else{
+        $errores['db'] = 'El usuario o la contraseña no estan registrados';
+      }
+    }
+  }
 
 
 ?>
 <link rel="stylesheet" href="/css/login.css">
  <div class="login">
-
+   <form class="" action="login.php" method="post">
+     <input type="text" name="nombre" value="<?=$info['NOMBRE']?>" placeholder="Introduce tu nombre">
+     <?php if( isset($errores['NOMBRE'])) { ?>
+       <br><span class='error'><?=$errores['NOMBRE']?></span><br>
+     <?php } ?>
+     <br>
+     <input type="password" name="pass" value="" placeholder="Introduce tu contraseña">
+     <?php if( isset($errores['PASS'])) { ?>
+       <br><span class='error'><?=$errores['PASS']?></span><br>
+     <?php } ?>
+     <br>
+     <label for="recuerdame">Recuerdame</label> <input type="checkbox" name="recuerdame" value="true" id="recuerdame">
+     <br>
+     <a href="password.php" id="olvidadoContraseña">¿Has olvidado tu contraseña?</a>
+     <br>
+     <input type="submit" name="enviar" value="Enviar">
+      
+      <?php if( isset($errores['db'])) { ?>
+        <br><br><span class='error'><?=$errores['db']?></span><br>
+      <?php } ?>
+   </form>
  </div>

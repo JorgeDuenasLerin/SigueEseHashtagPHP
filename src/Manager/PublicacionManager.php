@@ -39,6 +39,16 @@ class PublicacionManager implements IDWESEntidadManager{
     $db->ejecuta("DELETE FROM PUBLICACION WHERE ID=?",$id);
   }
 
+public static function getByHastagId($id){
+  $db = DWESBaseDatos::obtenerInstancia();
+  $db->ejecuta("SELECT *
+                FROM HASHPUB 
+                LEFT JOIN PUBLICACION 
+                ON HASHPUB.ID_PUBLICACION = PUBLICACION.ID
+                WHERE HASHPUB.ID_HASHTAG = ?",$id);
+  return $db->obtenDatos();
+
+}
 
   // ...
   /*

@@ -31,3 +31,8 @@ nav > div > a{
 nav > div > a:hover{
   font-size: 1.2em;
 }
+
+img{
+  width:50%;
+  height: 50%;
+}

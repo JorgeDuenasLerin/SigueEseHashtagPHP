@@ -14,10 +14,11 @@ global $ROOT;
 ?>
 <link rel="stylesheet" href="css/header.css">
 <header>
-  <a href="inicio.php"><img id="logo" src="">aqui el logo </a>
+  <a href="inicio.php">
+  <img src="imagenes/hashtag.png" alt="logo de la empresa"></a>
+
   <div>
-    <h1>HASTAG</h1>
-    <h3>Encuentra tu hastag</h3>
+    <h3>Encuentra tu hashtag</h3>
   </div>
   <nav>
     <div class="menu">

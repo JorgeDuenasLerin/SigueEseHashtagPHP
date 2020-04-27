@@ -13,6 +13,10 @@ div.detallePublicacion > figure {
   width:15em ;
   height: 15em;
 }
+div.detallePublicacion > figure > img{
+  background-color: teal;
+width: 100%;
+}
 #contenido{
   padding: 1em;
 }

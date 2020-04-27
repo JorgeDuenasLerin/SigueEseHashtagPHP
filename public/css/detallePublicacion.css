@@ -1,0 +1,12 @@
+@import url('reset.css');
+@import url('root.css');
+
+.detallePublicacion{
+  background-color: var(--colorOpacidad);
+  margin: 0 auto;
+  width: 35em;
+  height: 25em;
+}
+div.detallePublicacion > figure {
+  margin: 0 auto;
+}

@@ -8,14 +8,15 @@ print_r($datos);
 
 ?>
 
-
+<link rel="stylesheet" href="/css/detallePublicacion.css">
 
 <h1>#EjemploPublicacion</h1>
-<div class="">
+<div class="detallePublicacion">
   <?php foreach($datos as $fila ){?>
-    <P><?=$fila['APLICACION'] ?></P>
+    
     <figure><?=$fila['IMAGEN'] ?></figure>
     <p><?=$fila['HASHTAG'] ?> <?=$fila['CONTENIDO'] ?></p>
     <p><?=$fila['NOMBRE'] ?>   <?=$fila['FECHA'] ?></p>
+    <P><?=$fila['APLICACION'] ?></P>
   <?php } ?>
 </div>

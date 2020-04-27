@@ -14,9 +14,9 @@ print_r($datos);
 <div class="detallePublicacion">
   <?php foreach($datos as $fila ){?>
     
-    <figure><?=$fila['IMAGEN'] ?></figure>
-    <p><?=$fila['HASHTAG'] ?> <?=$fila['CONTENIDO'] ?></p>
-    <p><?=$fila['USUARIO'] ?>   <?=$fila['FECHA'] ?></p>
-    <P><?=$fila['APLICACION'] ?></P>
+    <figure><img src="<?=$fila['IMAGEN'] ?>" alt=""></figure>
+    <p id='contenido'><?=$fila['HASHTAG'] ?> <?=$fila['CONTENIDO'] ?></p>
+    <p id='usuario'><?=$fila['USUARIO'] ?>   <?=$fila['FECHA'] ?></p>
+    <P id='aplicacion'><?=$fila['APLICACION'] ?></P>
   <?php } ?>
 </div>

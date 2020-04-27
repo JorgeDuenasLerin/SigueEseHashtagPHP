@@ -7,7 +7,7 @@
 	/*
 	-> filter_var — Filtra una variable con el filtro que se indique
 			filter_var ( mixed $variable [, int $filter = FILTER_DEFAULT [, mixed $options ]] ) : mixed
-			
+
 	-> password_hash — Crea un hash de contraseña
 			password_hash ( string $password , integer $algo [, array $options ] ) : string
 
@@ -16,23 +16,23 @@
 	*/
 	$datos = UsuarioManager::getById(1);
 	$_SESSION['id']= 1;
-	$nombre="";
+	$usuario="";
 	$email="";
 	$contraseña="";
-	$nombreComprueba="";
+	$usuarioComprueba="";
 	$emailComprueba="";
 	$contraseñaComprueba="";
 	$errores = [];
 
 	if ( isset($_POST) && count($_POST)!=0 ) {
 
-		if (isset($_POST['nombre']) && strlen($_POST['nombre'])>=1 ) {
-			$nombre = limpiarCadena($_POST['nombre']);
-			if (isset($_POST['nombreComprueba']) && strlen($_POST['nombreComprueba'])>=1 ) {
-				$nombreComprueba = limpiarCadena($_POST['nombreComprueba']);
+		if (isset($_POST['usuario']) && strlen($_POST['usuario'])>=1 ) {
+			$usuario = limpiarCadena($_POST['nombre']);
+			if (isset($_POST['usuarioComprueba']) && strlen($_POST['usuarioComprueba'])>=1 ) {
+				$usuarioComprueba = limpiarCadena($_POST['usuarioComprueba']);
 			}
-			if(!($_POST['nombre'] === $_POST['nombreComprueba'])){
-				$errores['nombre'] = 'Deben coincidir los nombres.';
+			if(!($_POST['usuario'] === $_POST['usuarioComprueba'])){
+				$errores['usuario'] = 'Deben coincidir los usuarios.';
 			}
 		}
 		if (isset($_POST['email']) && filter_var($_POST['email'],FILTER_VALIDATE_EMAIL )) {
@@ -65,7 +65,6 @@
 						ConfiguracionUsuarioManager::updateContraseña($_SESSION['id'],$contraseña);
 				}
 			}
-
 			header('Location: inicio.php');
 			die();
 
@@ -77,14 +76,15 @@
 
 <main>
 
+	<link rel="stylesheet" href="/css/configuracion.css">
 	<form action="configuracionUsuario.php" method="POST">
 		<div class="configuracion">
 			<div>
 				<label>Cambiar Nombre del Usuario:</label><br>
-				<label> Nombre actual:<?=$datos['NOMBRE']?></label><br>
-				<input type="text" name="nombre" placeholder="Escriba el nombre nuevo" value="<?=$nombre?>"><br>
-				<input type="text" name="nombreComprueba" placeholder="Repita el nombre" value="<?=$nombreComprueba?>"><br>
-				<span class="<?= isset($errores['nombre'])?'error':'InvalidArgumentExceptionoError' ?>"><?=$errores['nombre']?></span><br>
+				<label> Nombre actual:<?=$datos['USUARIO']?></label><br>
+				<input type="text" name="usuario" placeholder="Escriba el usuario nuevo" value="<?=$usuario?>"><br>
+				<input type="text" name="usuarioComprueba" placeholder="Repita el usuario" value="<?=$usuarioComprueba?>"><br>
+				<span class="<?= isset($errores['usuario'])?'error':'noError' ?>"><?=$errores['usuario']?></span><br>
 			</div>
 
 			<div>

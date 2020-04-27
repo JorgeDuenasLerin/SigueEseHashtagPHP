@@ -84,7 +84,9 @@
 				<label> Nombre actual:<?=$datos['USUARIO']?></label><br>
 				<input type="text" name="usuario" placeholder="Escriba el usuario nuevo" value="<?=$usuario?>"><br>
 				<input type="text" name="usuarioComprueba" placeholder="Repita el usuario" value="<?=$usuarioComprueba?>"><br>
-				<span class="<?= isset($errores['usuario'])?'error':'noError' ?>"><?=$errores['usuario']?></span><br>
+				<?php if(isset($errores['usuario'])) { ?>
+					<span class="error"><?=$errores['usuario']?></span><br>
+				<?php } ?>
 			</div>
 
 			<div>

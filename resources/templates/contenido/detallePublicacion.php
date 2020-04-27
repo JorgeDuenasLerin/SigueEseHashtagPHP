@@ -16,7 +16,7 @@ print_r($datos);
     
     <figure><?=$fila['IMAGEN'] ?></figure>
     <p><?=$fila['HASHTAG'] ?> <?=$fila['CONTENIDO'] ?></p>
-    <p><?=$fila['NOMBRE'] ?>   <?=$fila['FECHA'] ?></p>
+    <p><?=$fila['USUARIO'] ?>   <?=$fila['FECHA'] ?></p>
     <P><?=$fila['APLICACION'] ?></P>
   <?php } ?>
 </div>

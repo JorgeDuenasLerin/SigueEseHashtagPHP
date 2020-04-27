@@ -7,6 +7,6 @@
   width: 35em;
   height: 25em;
 }
-div.detallePublicacion > figure {
+.detallePublicacion figure {
   margin: 0 auto;
 }

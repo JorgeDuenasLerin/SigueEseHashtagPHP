@@ -4,6 +4,17 @@
 
 <?php
 
+	/*
+	-> filter_var — Filtra una variable con el filtro que se indique
+			filter_var ( mixed $variable [, int $filter = FILTER_DEFAULT [, mixed $options ]] ) : mixed
+			
+	-> password_hash — Crea un hash de contraseña
+			password_hash ( string $password , integer $algo [, array $options ] ) : string
+
+	-> password_verify — Comprueba que la contraseña coincida con un hash
+			password_verify ( string $password , string $hash ) : bool
+	*/
+	$datos = UsuarioManager::getById(1);
 	$_SESSION['id']= 1;
 	$nombre="";
 	$email="";
@@ -12,7 +23,6 @@
 	$emailComprueba="";
 	$contraseñaComprueba="";
 	$errores = [];
-
 
 	if ( isset($_POST) && count($_POST)!=0 ) {
 
@@ -31,7 +41,7 @@
 				$emailComprueba = limpiarCadena($_POST['emailComprueba']);
 			}
 			if(!($_POST['email'] === $_POST['emailComprueba'])){
-				$errores['email'] = ' Deben coincidir los emails.';
+				$errores['email'] = 'Deben coincidir los emails.';
 			}
 		}
 		if (isset($_POST['contraseña']) && contraseñaValida($_POST['contraseña'],4) ) {
@@ -44,7 +54,7 @@
 		}
 
 		if (count($errores)==0 && count($_POST)>0) {
-			if($_SESSION['id'] ==  1{
+			if($_SESSION['id'] ==  1){
 					if($_POST['nombre']){
 						ConfiguracionUsuarioManager::updateNombre($_SESSION['id'],$nombre);
 				}
@@ -71,6 +81,7 @@
 		<div class="configuracion">
 			<div>
 				<label>Cambiar Nombre del Usuario:</label><br>
+				<label> Nombre actual:<?=$datos['NOMBRE']?></label><br>
 				<input type="text" name="nombre" placeholder="Escriba el nombre nuevo" value="<?=$nombre?>"><br>
 				<input type="text" name="nombreComprueba" placeholder="Repita el nombre" value="<?=$nombreComprueba?>"><br>
 				<span class="<?= isset($errores['nombre'])?'error':'InvalidArgumentExceptionoError' ?>"><?=$errores['nombre']?></span><br>
@@ -78,6 +89,7 @@
 
 			<div>
 				<label>Cambiar Email del Usuario:</label><br>
+				<label>Correo actual:<?=$datos['EMAIL']?></label><br>
 				<input type="text" name="email" placeholder="Escriba el email nuevo" value="<?=$email?>"><br>
 				<input type="text" name="emailComprueba" placeholder="Repita el email" value="<?=$emailComprueba?>"><br>
 				<span class="<?= isset($errores['email'])?'error':'noError' ?>"><?=$errores['email']?></span><br>
@@ -89,7 +101,6 @@
 				<input type="text" name="contraseñaComprueba" placeholder="Repita la contraseña" value="<?=$contraseñaComprueba?>"><br>
 				<span class="<?= isset($errores['contraseña'])?'error':'noError' ?>"><?=$errores['contraseña']?></span><br>
 			</div>
-
 
 			<input type="submit" name="cambiar" value="cambiar"><br>
 

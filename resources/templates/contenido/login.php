@@ -5,6 +5,7 @@ $info = ['USUARIO' => '','CONTRASEÑA' => '',];
 if( count($_POST) > 0 ){
   //crear clase gestiona errores
   gestionaErrores($_POST, $info, $errores);
+
     if($errores == null ){
       $datos = UsuarioManager::autentificado($info['USUARIO']);
       $id = $datos['ID'];
@@ -34,12 +35,12 @@ if( count($_POST) > 0 ){
 <link rel="stylesheet" href="/css/login.css">
  <div class="login">
    <form class="" action="login.php" method="post">
-     <input type="text" name="nombre" value="<?=$info['USUARIO']?>" placeholder="Introduce tu nombre">
+     <input type="text" name="usuario" value="<?=$info['USUARIO']?>" placeholder="Introduce tu nombre">
      <?php if( isset($errores['USUARIO'])) { ?>
        <br><span class='error'><?=$errores['USUARIO']?></span><br>
      <?php } ?>
      <br>
-     <input type="password" name="pass" value="" placeholder="Introduce tu contraseña">
+     <input type="password" name="contraseña" value="" placeholder="Introduce tu contraseña">
      <?php if( isset($errores['CONTRASEÑA'])) { ?>
        <br><span class='error'><?=$errores['CONTRASEÑA']?></span><br>
      <?php } ?>

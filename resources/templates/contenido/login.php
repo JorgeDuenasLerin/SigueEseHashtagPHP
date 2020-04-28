@@ -7,7 +7,9 @@ if( count($_POST) > 0 ){
   gestionaErrores($_POST, $info, $errores);
     if($errores == null ){
       $datos = UsuarioManager::autentificado($info['USUARIO']);
+      print_r($datos);
       $id = $datos['ID'];
+      
 
       if( $datos != null && password_verify($info['CONTRASEÑA'], $datos['CONTRASEÑA']) ){
         $_SESSION['autentificado'] = true;

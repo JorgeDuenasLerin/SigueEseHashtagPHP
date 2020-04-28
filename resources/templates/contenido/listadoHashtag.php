@@ -11,6 +11,8 @@ print_r($id);
 
 $datos = PublicacionManager::getByHashtagId($id);
 
+
+
 print_r($datos);
 
 

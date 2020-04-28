@@ -8,11 +8,10 @@ Información sacada de la base de datos
 */
 $datos = PublicacionManager::getAll();
 
-
-$id = $datos['ID'];
-$datoHastag = PublicacionManager::getByHashtagId($id);
+$datoPub = HashpubManager::getByIdPublicacion($id);
 
 print_r($datos);
+
 
  ?>
 <link rel="stylesheet" href="/css/inicio.css">
@@ -33,12 +32,14 @@ print_r($datos);
 			</thead>
 
 			<tbody>
-            <?php foreach($datos as $fila) { ?>
+            <?php foreach($datos as $fila) {
+              $datoPub = HashpubManager::getByIdPublicacion($fila['ID']);
+              foreach($datoPub as $fila2) { ?>
 					<tr>
 							<td><?=$fila['ID']?></td>
               <td><?=$fila['USUARIO']?></td>
               <td>
-                <a href="listadoHashtag.php?id=<?= $datoHastag['ID_HASGTAG']?>"><?=$fila['HASHTAG']?></a>
+                <a href="listadoHashtag.php?id=<?= $fila2['ID_HASHTAG']?>"><?=$fila['HASHTAG']?></a>
               </td>
               <td><?=$fila['CONTENIDO']?></td>
               <td><?=$fila['IMAGEN']?></td>
@@ -46,11 +47,9 @@ print_r($datos);
               <td><?=$fila['APLICACION']?></td>
 
 					</tr>
+            <?php } ?>
           <?php } ?>
 			</tbody>
 
 		</table>
-  <!-- aquí meteré las viñetas con div despues haremos un foreach para meter todos los hashtag -->
-
-
 </div>

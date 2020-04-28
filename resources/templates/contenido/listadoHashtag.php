@@ -11,8 +11,6 @@ print_r($id);
 
 $datos = PublicacionManager::getByHashtagId($id);
 
-
-
 print_r($datos);
 
 
@@ -38,12 +36,8 @@ print_r($datos);
         <?php foreach($datos as $fila) { ?>
 					<tr>
 							<td><?=$fila['ID']?></td>
-              <td>
-                <a href="detallePublicacion.php?id=<?= $fila['ID']?>"><?=$fila['USUARIO']?></a>
-              </td>
-              <td>
-                <a href="detallePublicacion.php?id=<?= $fila['ID']?>"><?=$fila['HASHTAG']?></a>
-              </td>
+              <td><?=$fila['USUARIO']?></td>
+              <td><?=$fila['HASHTAG']?></td>
               <td>
                 <a href="detallePublicacion.php?id=<?= $fila['ID']?>"><?=$fila['CONTENIDO']?></a>
               </td>

@@ -8,11 +8,11 @@ if( count($_POST) > 0 ){
     if($errores == null ){
       $datos = UsuarioManager::autentificado($info['NOMBRE'])[0];
       $id = $datos['ID'];
- 
+
       if( $datos != null && password_verify($info['PASS'], $datos['PASS']) ){
         $_SESSION['autentificado'] = true;
         $_SESSION['ID'] = $id;
- 
+
         //RECUERDAME
         if( $_POST['recuerdame'] == true ){
           $token = getToken();                                    //generamos un token y lo convertimos a hash
@@ -20,7 +20,7 @@ if( count($_POST) > 0 ){
          CookieManager::insert($token, $id);
           setcookie('recuerdame', $token, time()+(24*60*60*7));  //se establece la cookie de recuerdame
         }
- 
+
         header("Location: inicio.php");
         die();
       }else{
@@ -34,7 +34,7 @@ if( count($_POST) > 0 ){
 <link rel="stylesheet" href="/css/login.css">
  <div class="login">
    <form class="" action="login.php" method="post">
-     <input type="text" name="nombre" value="<?=$info['NOMBRE']?>" placeholder="Introduce tu nombre">
+     <input type="text" name="nombre" value="<?=$info['nombre']?>" placeholder="Introduce tu nombre">
      <?php if( isset($errores['NOMBRE'])) { ?>
        <br><span class='error'><?=$errores['NOMBRE']?></span><br>
      <?php } ?>
@@ -49,7 +49,7 @@ if( count($_POST) > 0 ){
      <a href="password.php" id="olvidadoContraseña">¿Has olvidado tu contraseña?</a>
      <br>
      <input type="submit" name="enviar" value="Enviar">
-      
+
       <?php if( isset($errores['db'])) { ?>
         <br><br><span class='error'><?=$errores['db']?></span><br>
       <?php } ?>

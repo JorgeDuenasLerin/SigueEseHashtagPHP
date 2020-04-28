@@ -94,14 +94,18 @@
 				<label>Correo actual:<?=$datos['EMAIL']?></label><br>
 				<input type="text" name="email" placeholder="Escriba el email nuevo" value="<?=$email?>"><br>
 				<input type="text" name="emailComprueba" placeholder="Repita el email" value="<?=$emailComprueba?>"><br>
-				<span class="<?= isset($errores['email'])?'error':'noError' ?>"><?=$errores['email']?></span><br>
+				<?php if(isset($errores['email'])) { ?>
+					<span class="error"><?=$errores['email']?></span><br>
+				<?php } ?>
 			</div>
 
 			<div>
 				<label>Cambiar contraseña</label><br>
 				<input type="text" name="contraseña" placeholder="Escriba su contraseña" value="<?=$contraseña?>"><br>
 				<input type="text" name="contraseñaComprueba" placeholder="Repita la contraseña" value="<?=$contraseñaComprueba?>"><br>
-				<span class="<?= isset($errores['contraseña'])?'error':'noError' ?>"><?=$errores['contraseña']?></span><br>
+				<?php if(isset($errores['contraseña'])) { ?>
+					<span class="error"><?=$errores['contraseña']?></span><br>
+				<?php } ?>
 			</div>
 
 			<input type="submit" name="cambiar" value="cambiar"><br>

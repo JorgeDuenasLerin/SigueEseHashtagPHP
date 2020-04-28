@@ -6,11 +6,10 @@ if(isset($_GET['id'])){
 } else {
   // Pintar erro no encontrado
   // lanzar un 404
-
 }
 print_r($id);
 
-$datos = PublicacionManager::getByHastagId($id);
+$datos = PublicacionManager::getByHashtagId($id);
 
 print_r($datos);
 
@@ -54,5 +53,5 @@ print_r($datos);
 
     </table>
     <p></p>
-  
+
 </div>

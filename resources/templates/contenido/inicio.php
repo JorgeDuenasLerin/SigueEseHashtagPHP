@@ -6,7 +6,7 @@
 Información sacada de la base de datos
 
 */
-$datos = HashtagManager::getAll();
+$datos = PublicacionManager::getAll();
 
 print_r($datos);
 
@@ -14,12 +14,17 @@ print_r($datos);
 <link rel="stylesheet" href="/css/inicio.css">
 <h1>Inicio</h1>
 <div class="inicio">
-  Contenido 1
+  <h1>Listado de los Hashtag</h1>
   <table border="2" >
 			<thead>
 				<tr>
               <th>ID</th>
-              <th>Nombre Hashtag</th>
+              <th>Nombre de Usuario</th>
+              <th># Hashtag</th>
+              <th>Contenido</th>
+              <th>Imagen</th>
+              <th>Fecha</th>
+              <th>Aplicación</th>
 				</tr>
 			</thead>
 
@@ -27,9 +32,15 @@ print_r($datos);
             <?php foreach($datos as $fila) { ?>
 					<tr>
 							<td><?=$fila['ID']?></td>
+              <td><?=$fila['USUARIO']?></td>
               <td>
-              <a href="listadoHashtag.php?id=<?= $fila['ID']?>"><?=$fila['NOMBRE']?></a>
+                <a href="listadoHashtag.php?id=<?= $fila['ID']?>"><?=$fila['HASHTAG']?></a>
               </td>
+              <td><?=$fila['CONTENIDO']?></td>
+              <td><?=$fila['IMAGEN']?></td>
+              <td><?=$fila['FECHA']?></td>
+              <td><?=$fila['APLICACION']?></td>
+
 					</tr>
           <?php } ?>
 			</tbody>

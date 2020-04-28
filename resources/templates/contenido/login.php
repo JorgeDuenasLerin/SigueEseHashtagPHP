@@ -7,8 +7,10 @@ if( count($_POST) > 0 ){
   gestionaErrores($_POST, $info, $errores);
 
     if($errores == null ){
-      $datos = UsuarioManager::autentificado($info['USUARIO']);
+      $datos = UsuarioManager::autentificado($info['USUARIO'])[0];
+      print_r($datos);
       $id = $datos['ID'];
+      
 
       if( $datos != null && password_verify($info['CONTRASEÑA'], $datos['CONTRASEÑA']) ){
         $_SESSION['autentificado'] = true;
@@ -35,12 +37,20 @@ if( count($_POST) > 0 ){
 <link rel="stylesheet" href="/css/login.css">
  <div class="login">
    <form class="" action="login.php" method="post">
+<<<<<<< HEAD
      <input type="text" name="usuario" value="<?=$info['USUARIO']?>" placeholder="Introduce tu nombre">
+=======
+     <input type="text" name="USUARIO" value="<?=$info['USUARIO']?>" placeholder="Introduce tu nombre">
+>>>>>>> 594565935f2dd8dc39785e7228c4d4b9d7b3a9a2
      <?php if( isset($errores['USUARIO'])) { ?>
        <br><span class='error'><?=$errores['USUARIO']?></span><br>
      <?php } ?>
      <br>
+<<<<<<< HEAD
      <input type="password" name="contraseña" value="" placeholder="Introduce tu contraseña">
+=======
+     <input type="password" name="CONTRASEÑA" value="" placeholder="Introduce tu contraseña">
+>>>>>>> 594565935f2dd8dc39785e7228c4d4b9d7b3a9a2
      <?php if( isset($errores['CONTRASEÑA'])) { ?>
        <br><span class='error'><?=$errores['CONTRASEÑA']?></span><br>
      <?php } ?>

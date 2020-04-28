@@ -4,12 +4,12 @@ $info = ['nombre' => '','pass' => '',];
 
 if( count($_POST) > 0 ){
   //crear clase gestiona errores
-  gestionaErrores($_POST, $info, $errores);
+  
     if($errores == null ){
-      $datos = UsuarioManager::autentificado($info['NOMBRE'])[0];
+      $datos = UsuarioManager::autentificado($info['USUARIO'])[0];
       $id = $datos['ID'];
 
-      if( $datos != null && password_verify($info['PASS'], $datos['PASS']) ){
+      if( $datos != null && password_verify($info['CONTRASEÑA'], $datos['CONTRASEÑA']) ){
         $_SESSION['autentificado'] = true;
         $_SESSION['ID'] = $id;
 
@@ -48,7 +48,7 @@ if( count($_POST) > 0 ){
      <br>
      <a href="password.php" id="olvidadoContraseña">¿Has olvidado tu contraseña?</a>
      <br>
-     <input type="submit" name="enviar" value="Enviar">
+     <input type="submit" name="enviar" value="Enviar" >
 
       <?php if( isset($errores['db'])) { ?>
         <br><br><span class='error'><?=$errores['db']?></span><br>

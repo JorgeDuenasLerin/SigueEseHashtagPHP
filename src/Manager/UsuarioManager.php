@@ -3,11 +3,11 @@
 
   class UsuarioManager implements IDWESEntidadManager{
 
-    public static function autentificando($nombre){
+    public static function autentificado($nombre){
       $db = DWESBaseDatos::obtenerInstancia();
-      $db->ejecuta("SELECT id,nombre,pass,email
+      $db->ejecuta("SELECT ID,USUARIO,CONTRASEÑA,EMAIL
                     FROM  USUARIO
-                    WHERE NOMBRE = ? ",
+                    WHERE USUARIO = ? ",
                     $nombre);
       return $db->obtenDatos();
     }

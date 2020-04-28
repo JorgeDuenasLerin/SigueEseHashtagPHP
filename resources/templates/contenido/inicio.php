@@ -8,6 +8,10 @@ Información sacada de la base de datos
 */
 $datos = PublicacionManager::getAll();
 
+
+$id = $datos['ID'];
+$datoHastag = PublicacionManager::getByHashtagId($id);
+
 print_r($datos);
 
  ?>
@@ -34,7 +38,7 @@ print_r($datos);
 							<td><?=$fila['ID']?></td>
               <td><?=$fila['USUARIO']?></td>
               <td>
-                <a href="listadoHashtag.php?id=<?= $fila['ID']?>"><?=$fila['HASHTAG']?></a>
+                <a href="listadoHashtag.php?id=<?= $datoHastag['ID_HASGTAG']?>"><?=$fila['HASHTAG']?></a>
               </td>
               <td><?=$fila['CONTENIDO']?></td>
               <td><?=$fila['IMAGEN']?></td>

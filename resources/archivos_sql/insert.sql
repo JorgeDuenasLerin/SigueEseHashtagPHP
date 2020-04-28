@@ -1,6 +1,6 @@
 
 /*INSERT DE USUARIOS*/
-INSERT INTO USUARIO (ID,NOMBRE,CONTRASEÑA,EMAIL)
+INSERT INTO USUARIO (ID,USUARIO,CONTRASEÑA,EMAIL)
  VALUES
  (1,'Juan','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','asd@asd.com'),/*1234*/
  (2,'Carlos','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','asdasd@asd.com'),/*1234*/

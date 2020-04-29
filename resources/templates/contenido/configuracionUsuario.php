@@ -66,7 +66,7 @@
 						ConfiguracionUsuarioManager::updateNombre($_SESSION['ID'],$usuario);
 				}
 				if($_POST['email']){
-						ConfiguracionUsuarioManager::updateCorreo($_SESSION['ID'],$email);
+						ConfiguracionUsuarioManager::updateEmail($_SESSION['ID'],$email);
 				}
 				if($_POST['contraseña']){
 						ConfiguracionUsuarioManager::updateContraseña($_SESSION['ID'],$contraseña);

@@ -3,15 +3,15 @@ session_start();
 global $ROOT;
 
 //cerrar sesion
-if(isset($_GET['cerrarSsion']) && $_GET['cerrarSesion'] == true){
+if(isset($_GET['cerrarSesion']) && $_GET['cerrarSesion'] == true){
   $_SESSION['autentificado'] = false;
   session_destroy();
 
-  header('location: inico.php');
+  header('location: inicio.php');
   die();
 }
-
-
+print_r($_SESSION);
+$uri = $_SERVER['REQUEST_URI'];
 //ubtenemos id del usuario
 if(isset($_GET['ID'])){
   $id = intval($_GET['ID']);

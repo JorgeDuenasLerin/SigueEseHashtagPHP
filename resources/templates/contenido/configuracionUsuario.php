@@ -62,14 +62,15 @@
 		if (count($errores)== 0 && count($_POST) > 0) {
 
 			if(isset($_SESSION['ID'])){
-					if($_POST['usuario']){
+				if($_POST['usuario']){
 						ConfiguracionUsuarioManager::updateNombre($_SESSION['ID'],$usuario);
 				}
 				if($_POST['email']){
 						ConfiguracionUsuarioManager::updateEmail($_SESSION['ID'],$email);
 				}
 				if($_POST['contraseña']){
-						ConfiguracionUsuarioManager::updateContraseña($_SESSION['ID'],$contraseña);
+						$contraseñaHash = password_hash($contraseña, PASSWORD_DEFAULT);
+						ConfiguracionUsuarioManager::updateContraseña($_SESSION['ID'],$contraseñaHash);
 				}
 			}
 			header('Location: configuracionUsuario.php');

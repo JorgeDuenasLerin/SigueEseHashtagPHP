@@ -12,11 +12,10 @@ class ConfiguracionUsuarioManager {
   }
 
   // modificar la contraseña
-  public static function updateContraseña($id,...$campo){
-    $campoHash = password_hash($campo, PASSWORD_DEFAULT);
-    $db = DWESBaseDatos::obtenerInstancia();
-    $parametros = $campoHash;
+  public static function updateContraseña($id,$campo){
+    $parametros = $campo;
     array_push($parametros,$id);
+    $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("UPDATE USUARIO SET CONTRASEÑA = ? WHERE ID = ? ", $parametros);
   }
 

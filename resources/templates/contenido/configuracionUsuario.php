@@ -87,6 +87,7 @@
 		<div class="configuracion">
 			<div>
 				<label>Cambiar Nombre del Usuario:</label><br>
+				<label> Nombre actual: <?=$datos['USUARIO']?></label><br>
 				<input type="text" name="usuario" placeholder="Escriba el usuario nuevo" value="<?=$usuario?>"><br>
 				<input type="text" name="usuarioComprueba" placeholder="Repita el usuario" value="<?=$usuarioComprueba?>"><br>
 				<?php if(isset($errores['usuario'])) { ?>
@@ -96,6 +97,7 @@
 
 			<div>
 				<label>Cambiar Email del Usuario:</label><br>
+				<label> Nombre actual: <?=$datos['EMAIL']?></label><br>
 				<input type="text" name="email" placeholder="Escriba el email nuevo" value="<?=$email?>"><br>
 				<input type="text" name="emailComprueba" placeholder="Repita el email" value="<?=$emailComprueba?>"><br>
 				<?php if(isset($errores['email'])) { ?>

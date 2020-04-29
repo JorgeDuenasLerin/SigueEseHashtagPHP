@@ -1,11 +1,5 @@
 <?php
-    /*
-    -> password_hash — Crea un hash de contraseña
-        password_hash ( string $password , integer $algo [, array $options ] ) : string
 
-    -> password_verify — Comprueba que la contraseña coincida con un hash
-        password_verify ( string $password , string $hash ) : bool
-    */
 class ConfiguracionUsuarioManager {
 
 

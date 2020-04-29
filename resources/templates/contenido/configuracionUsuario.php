@@ -14,8 +14,14 @@
 	-> password_verify — Comprueba que la contraseña coincida con un hash
 			password_verify ( string $password , string $hash ) : bool
 	*/
-	$datos = UsuarioManager::getById(1);
-	$_SESSION['id']= 1;
+
+	if(isset($_SESSION['ID'])){
+		$id = $_SESSION['ID'];
+	}
+
+	$datos = UsuarioManager::getById($id);
+
+	print_r($datos);
 	$usuario="";
 	$email="";
 	$contraseña="";
@@ -27,7 +33,7 @@
 	if ( isset($_POST) && count($_POST)!=0 ) {
 
 		if (isset($_POST['usuario']) && strlen($_POST['usuario'])>=1 ) {
-			$usuario = limpiarCadena($_POST['nombre']);
+			$usuario = limpiarCadena($_POST['usuario']);
 			if (isset($_POST['usuarioComprueba']) && strlen($_POST['usuarioComprueba'])>=1 ) {
 				$usuarioComprueba = limpiarCadena($_POST['usuarioComprueba']);
 			}
@@ -53,21 +59,21 @@
 			}
 		}
 
-		if (count($errores)==0 && count($_POST)>0) {
-			if($_SESSION['id'] ==  1){
-					if($_POST['nombre']){
-						ConfiguracionUsuarioManager::updateNombre($_SESSION['id'],$nombre);
+		if (count($errores)== 0 && count($_POST) > 0) {
+
+			if(isset($_SESSION['ID'])){
+					if($_POST['usuario']){
+						ConfiguracionUsuarioManager::updateNombre($_SESSION['ID'],$usuario);
 				}
-				if($_POST['correo']){
-						ConfiguracionUsuarioManager::updateCorreo($_SESSION['id'],$correo);
+				if($_POST['email']){
+						ConfiguracionUsuarioManager::updateCorreo($_SESSION['ID'],$email);
 				}
 				if($_POST['contraseña']){
-						ConfiguracionUsuarioManager::updateContraseña($_SESSION['id'],$contraseña);
+						ConfiguracionUsuarioManager::updateContraseña($_SESSION['ID'],$contraseña);
 				}
 			}
-			header('Location: inicio.php');
+			header('Location: configuracionUsuario.php');
 			die();
-
  		}
 }
 
@@ -81,7 +87,6 @@
 		<div class="configuracion">
 			<div>
 				<label>Cambiar Nombre del Usuario:</label><br>
-				<label> Nombre actual:<?=$datos['USUARIO']?></label><br>
 				<input type="text" name="usuario" placeholder="Escriba el usuario nuevo" value="<?=$usuario?>"><br>
 				<input type="text" name="usuarioComprueba" placeholder="Repita el usuario" value="<?=$usuarioComprueba?>"><br>
 				<?php if(isset($errores['usuario'])) { ?>
@@ -91,7 +96,6 @@
 
 			<div>
 				<label>Cambiar Email del Usuario:</label><br>
-				<label>Correo actual:<?=$datos['EMAIL']?></label><br>
 				<input type="text" name="email" placeholder="Escriba el email nuevo" value="<?=$email?>"><br>
 				<input type="text" name="emailComprueba" placeholder="Repita el email" value="<?=$emailComprueba?>"><br>
 				<?php if(isset($errores['email'])) { ?>

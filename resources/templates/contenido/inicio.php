@@ -8,8 +8,6 @@ Información sacada de la base de datos
 */
 $datos = PublicacionManager::getAll();
 
-$datoPub = HashpubManager::getByIdPublicacion($id);
-
 print_r($datos);
 
 

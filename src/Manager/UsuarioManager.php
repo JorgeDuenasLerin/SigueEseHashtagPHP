@@ -23,7 +23,7 @@
     }
     public static function insert(...$campos){
       $db = DWESBaseDatos::obtenerInstancia();
-      $db->ejecuta("INSERT INTO USUARIO (NOMBRE, CONTRASEÑA , EMAIL)
+      $db->ejecuta("INSERT INTO USUARIO (USUARIO, CONTRASEÑA , EMAIL)
                     VALUES (?, ?, ?)",
                     $campos);
     }
@@ -32,7 +32,7 @@
       array_push($parametros,$id);
       $db = DWESBaseDatos::obtenerInstancia();
       $db->ejecuta("UPDATE USUARIO
-                    SET NOMBRE = ?,
+                    SET USUARIO = ?,
                         CONTRASEÑA = ?,
                         EMAIL = ?
                     WHERE ID = ?",

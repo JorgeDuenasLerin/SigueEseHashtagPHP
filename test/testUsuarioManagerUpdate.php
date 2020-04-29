@@ -2,7 +2,7 @@
 
 require("testGeneral.php");
 
-$datos = UsuarioManager::update(4,"Paula","5d4f544f54df4d54f5","paloma@gmail.com");
+$datos = UsuarioManager::update(1,"Paula","$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O","paloma@gmail.com");
 
 $datos = UsuarioManager::getAll();
 

@@ -36,7 +36,7 @@ if(isset($_GET['ID'])){
     <a href="inicio.php">Inicio</a>
       <?php if(isset($_SESSION['autentificado']) && $_SESSION['autentificado'] == true ){ ?>
         <a href="perfil.php">Perfil</a>
-        <a href="incio.php?cerrarSesion=true" data-id=<?$_SESSION['ID']?> id='perfil'> Cerrar sesion</a>
+        <a href="incio.php?cerrarSesion=true"  id='perfil'> Cerrar sesion</a>
       <?php } elseif($uri != '/login.php'){?>
         <a href="login.php">login</a>
       <?php }?>

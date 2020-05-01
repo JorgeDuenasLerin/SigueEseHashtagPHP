@@ -6,7 +6,8 @@ global $ROOT;
 if(isset($_GET['cerrarSesion']) && $_GET['cerrarSesion'] == true){
   $_SESSION['autentificado'] = false;
   session_destroy();
-
+  setcookie("recuerdame", "", time() - 3600);     //destruir la cookie
+  
   header('location: inicio.php');
   die();
 }

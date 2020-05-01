@@ -1,6 +1,4 @@
 <?php
-
-
 as_debug($_GET['id'],"id recibido");
 
 if (isset($_GET)) {

@@ -1,15 +1,14 @@
 <?php
 
-/*print_r($_GET['ID']);*/
 
-if (isset($_GET) && count($_GET)!=0 ) {
-  if (isset($_GET['ID'])) {
-    $id = $_GET['ID'];
-    $eliminado = HashtagManager::delete($id);
-    print_r($eliminado);
-    print_r($id);
+as_debug($_GET['id'],"id recibido");
+
+if (isset($_GET)) {
+  if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    HashtagManager::delete($id);
   }
-
-print_r($eliminado);
-print_r($id);
+  header('Location: administrador.php');
+  die();
+}
 ?>

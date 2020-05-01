@@ -5,11 +5,15 @@
 if (isset($_GET) && count($_GET)!=0 ) {
   if (isset($_GET['ID'])) {
     $id = $_GET['ID'];
-    HashtagManager::delete($id);
+    $eliminado = HashtagManager::delete($id);
+    print_r($eliminado);
+    print_r($id);
   }
-  header('Location: administrador.php');
+
+  //header('Location: administrador.php');
   die();
 }
 
-
+print_r($eliminado);
+print_r($id);
 ?>

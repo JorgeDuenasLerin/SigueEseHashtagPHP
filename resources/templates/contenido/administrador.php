@@ -29,7 +29,7 @@ print_r($datosHash);
           <td><?=$fila['NOMBRE']?></td>
           <td><?=$fila['ID_USUARIO']?></td>
           <td>
-            <a href="Eliminar.php?id=<?= $fila['ID']?>">Eliminar</a>
+            <a href="eliminar.php?id=<?= $fila['ID']?>">Eliminar</a>
           </td>
         </tr>
         <?php }?>

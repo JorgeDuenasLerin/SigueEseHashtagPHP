@@ -26,11 +26,11 @@ INSERT INTO PUBLICACION (ID,USUARIO,HASHTAG,CONTENIDO,IMAGEN,FECHA,APLICACION)
 (6,'Manuel','#JorgeEresUnCrack',' Lorem ipsum dolor sit amet consectetur adipisicing elit. ','imagen','2020-04-05','tiwtter');
 
 /*INSERT DE TOKEN */
-INSERT INTO TOKEN (ID,EMAIL,TOKEN,ID_USUARIO)
+/*INSERT INTO TOKEN (ID,EMAIL,TOKEN,ID_USUARIO)
 VALUES
 (1,"pepito@hotmail.com",1111111111,1),
 (2,"pepito@hotmail.com",3333333333,2),
-(3,"pepito@hotmail.com",5555555555,3);
+(3,"pepito@hotmail.com",5555555555,3);*/
 
 
 

@@ -17,7 +17,6 @@
 
     public static function insert(...$campos){
       $db = DWESBaseDatos::obtenerInstancia();
-      //TODO: Cuidado con el campo autoincremental
 			$db->ejecuta("INSERT INTO HASHTAG (NOMBRE,ID_USUARIO)
                     VALUES(?,?);",
                     $campos);

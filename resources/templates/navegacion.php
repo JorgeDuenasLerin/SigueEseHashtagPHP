@@ -7,7 +7,7 @@ if(isset($_GET['cerrarSesion']) && $_GET['cerrarSesion'] == true){
   $_SESSION['autentificado'] = false;
   session_destroy();
   setcookie("recuerdame", "", time() - 3600);     //destruir la cookie
-  
+
   header('location: inicio.php');
   die();
 }
@@ -18,7 +18,7 @@ if(isset($_GET['ID'])){
   $id = intval($_GET['ID']);
 }
 
-//si tenemos cookie recuerdame 
+//si tenemos cookie recuerdame
 if(isset($_COOKIE['recuerdame'])){
   $token= $_COOKIE['recuerdame'];
 
@@ -52,6 +52,7 @@ if(isset($_COOKIE['recuerdame'])){
       <?php if(isset($_SESSION['autentificado']) && $_SESSION['autentificado'] == true ){ ?>
         <a href="perfil.php">Perfil</a>
         <a href="incio.php?cerrarSesion=true"  id='perfil'> Cerrar sesion</a>
+        <a href="administrador.php">Administrador</a>
       <?php } elseif($uri != '/login.php'){?>
         <a href="login.php">login</a>
       <?php }?>

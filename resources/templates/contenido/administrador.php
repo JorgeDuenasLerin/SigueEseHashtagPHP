@@ -20,9 +20,7 @@ print_r($datosHash);
           <th>Nombre</th>
           <th>Id_Usuario</th>
           <th>Eliminar</th>
-          <th>Agregar</th>
         </tr>
-
       </thead>
       <tbody>
         <?php foreach($datosHash as $fila){?>
@@ -33,11 +31,11 @@ print_r($datosHash);
           <td>
             <a href="Eliminar.php?id=<?= $fila['ID']?>">Eliminar</a>
           </td>
-          <td>
-              <a href="Agregar.php">Agregar</a>
-          </td>
         </tr>
         <?php }?>
       </tbody>
     </table>
+
+    <a href="Agregar.php">Agregar</a>
+
 </div>

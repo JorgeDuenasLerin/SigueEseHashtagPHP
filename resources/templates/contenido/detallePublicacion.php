@@ -4,8 +4,9 @@ areaPrivada();
   if(isset($_GET['id'])){
     $id = $_GET['id'];
   }
-$datos = PublicacionManager::getById($id);
+$datos = PublicacionManager::getPublicacionIdByHashtag($id);
 print_r($datos);
+as_debug($datos);
 
 
 ?>
@@ -17,7 +18,7 @@ print_r($datos);
   <?php foreach($datos as $fila ){?>
 
     <figure><img src="<?=$fila['IMAGEN'] ?>" alt=""></figure>
-    <p id='contenido'><?=$fila['HASHTAG'] ?> <?=$fila['CONTENIDO'] ?></p>
+    <p id='contenido'><?=$fila['NOMBRE'] ?> <?=$fila['CONTENIDO'] ?></p>
     <p id='usuario'><?=$fila['USUARIO'] ?>   <?=$fila['FECHA'] ?></p>
     <P id='aplicacion'><?=$fila['APLICACION'] ?></P>
   <?php } ?>

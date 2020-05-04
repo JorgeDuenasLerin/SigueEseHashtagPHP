@@ -73,6 +73,18 @@ class PublicacionManager implements IDWESEntidadManager{
     return $db->obtenDatos();
 
   }
+  public static function getPublicacionIdByHashtag($id){
+    $db = DWESBaseDatos::obtenerInstancia();
+    $db->ejecuta("SELECT *
+                  FROM HASHPUB
+                  LEFT JOIN PUBLICACION
+                  ON HASHPUB.ID_PUBLICACION = PUBLICACION.ID
+                  LEFT JOIN HASHTAG
+                  ON HASHPUB.ID_HASHTAG = HASHTAG.ID
+                  WHERE PUBLICACION.ID = ?",$id);
+    return $db->obtenDatos();
+
+  }
   public static function getByHashtag(){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("SELECT *

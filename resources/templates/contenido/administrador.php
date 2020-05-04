@@ -36,6 +36,6 @@ print_r($datosHash);
       </tbody>
     </table>
 
-    <a href="Agregar.php">Agregar</a>
+    <a href="agregar.php">Agregar</a>
 
 </div>

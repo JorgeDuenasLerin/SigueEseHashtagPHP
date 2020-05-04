@@ -26,9 +26,9 @@ print_r($datos);
               <th>ID</th>
               <th>Usuario </th>
               <th>Hastag </th>
-              <th>contenido </th>
+              <th>Contenido </th>
               <th>Fecha </th>
-              <th>aplicacion </th>
+              <th>Aplicacion </th>
 				</tr>
 			</thead>
 

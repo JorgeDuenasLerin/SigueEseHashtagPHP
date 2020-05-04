@@ -3,15 +3,11 @@
 
 if(isset($_GET['id'])){
   $id = $_GET['id'];
+  $datos = PublicacionManager::getByHashtagId($id);
 } else {
-  // Pintar erro no encontrado
-  // lanzar un 404
+  $datos = PublicacionManager::getAll();
 }
-print_r($id);
 
-$datos = PublicacionManager::getByHashtagId($id);
-
-print_r($datos);
 
 
 
@@ -37,7 +33,9 @@ print_r($datos);
 					<tr>
 							<td><?=$fila['ID']?></td>
               <td><?=$fila['USUARIO']?></td>
-              <td><?=$fila['HASHTAG']?></td>
+              <td>
+                <a href="listadoHashtag.php?id=<?= $fila['ID_HASHTAG']?>"><?=$fila['HASHTAG']?></a>
+              </td>
               <td>
                 <a href="detallePublicacion.php?id=<?= $fila['ID']?>"><?=$fila['CONTENIDO']?></a>
               </td>

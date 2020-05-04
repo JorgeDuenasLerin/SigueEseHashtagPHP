@@ -9,10 +9,9 @@ if( count($_POST) > 0 ){
     if($errores == null ){
       $datos = UsuarioManager::autentificado($info['USUARIO'])[0];
       print_r($datos);
-      $id = $datos['ID'];
-
 
       if( $datos != null && password_verify($info['CONTRASEÑA'], $datos['CONTRASEÑA']) ){
+        $id = $datos['ID'];
         $_SESSION['autentificado'] = true;
         $_SESSION['ID'] = $id;
 

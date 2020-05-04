@@ -1,36 +1,10 @@
 <?php
-session_start();
-global $ROOT;
 
-//cerrar sesion
-if(isset($_GET['cerrarSesion']) && $_GET['cerrarSesion'] == true){
-  $_SESSION['autentificado'] = false;
-  session_destroy();
-  setcookie("recuerdame", "", time() - 3600);     //destruir la cookie
-
-  header('location: inicio.php');
-  die();
-}
 print_r($_SESSION);
 $uri = $_SERVER['REQUEST_URI'];
 //ubtenemos id del usuario
 if(isset($_GET['ID'])){
   $id = intval($_GET['ID']);
-}
-
-//si tenemos cookie recuerdame
-if(isset($_COOKIE['recuerdame'])){
-  $token= $_COOKIE['recuerdame'];
-
-  $id_user = CookieManager::getById($token)[0]['ID_USUARIO'];     //comprobamos que el token existe en la base de datos
-
-  //token correcto
-  if( $id_user != null){
-    setcookie('recuerdame', $_COOKIE['recuerdame'], time()+(24*60*60*7));   //establecemos la cookie otra semana mas
-
-    $_SESSION['autentificado'] = true;      //autentificamos la sesion
-    $_SESSION['ID'] = $id_user;
-  }
 
 }
 
@@ -48,10 +22,10 @@ if(isset($_COOKIE['recuerdame'])){
   </div>
   <nav>
     <div class="menu">
-    <a href="inicio.php">Inicio</a>
+    <a href="listadoHashtag.php">Inicio</a>
       <?php if(isset($_SESSION['autentificado']) && $_SESSION['autentificado'] == true ){ ?>
         <a href="perfil.php">Perfil</a>
-        <a href="incio.php?cerrarSesion=true"  id='perfil'> Cerrar sesion</a>
+        <a href="listadoHashtag.php?cerrarSesion=true"  id='perfil'> Cerrar sesion</a>
         <a href="administrador.php">Administrador</a>
       <?php } elseif($uri != '/login.php'){?>
         <a href="login.php">login</a>

@@ -23,7 +23,7 @@ function gestionaErrores($post, &$info, &$errores){
 }
 
 function getToken(){
-  
+
   return rand(10000, 90000);
 }
 

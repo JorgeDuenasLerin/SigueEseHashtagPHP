@@ -1,6 +1,6 @@
 <?php
 
-class CookieManager implements IDWESEntidadManager 
+class CookieManager implements IDWESEntidadManager
 {
   public static function getAll(){
 

@@ -18,6 +18,7 @@ Son necesarias las variables
   </head>
   <body>
     <?php
+        require("$ROOT/resources/templates/autentificacion.php");
         require("$ROOT/resources/templates/navegacion.php");
         require("$ROOT/resources/templates/contenido$ruta_contenido");
         require("$ROOT/resources/templates/pie.php");

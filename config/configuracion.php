@@ -10,7 +10,7 @@ $config = [
   'db_user' => 'hashtag',
   'db_pass' => 'hashtag',
   'db_name' => 'hashtag',
-  'ruta_defecto' => '/inicio.php'
+  'ruta_defecto' => '/listadoHashtag.php'
 ];
 
 spl_autoload_register(function ($name){

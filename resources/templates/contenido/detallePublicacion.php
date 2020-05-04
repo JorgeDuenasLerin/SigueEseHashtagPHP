@@ -1,6 +1,6 @@
 <?php
 
-areaPrivada();
+
   if(isset($_GET['id'])){
     $id = $_GET['id'];
   }

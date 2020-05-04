@@ -14,7 +14,7 @@ if(isset($_GET['ID'])){
 ?>
 <link rel="stylesheet" href="css/header.css">
 <header>
-  <a href="inicio.php">
+  <a href="listadoHashtag.php">
   <img src="imagenes/hashtag.png" alt="logo de la empresa"></a>
 
   <div>

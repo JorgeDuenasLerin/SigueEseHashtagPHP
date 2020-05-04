@@ -38,7 +38,7 @@ class PublicacionManager implements IDWESEntidadManager{
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("DELETE FROM PUBLICACION WHERE ID=?",$id);
   }
-
+//esta obtiene publicaciones por id del hastag
   public static function getByHashtagId($id){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("SELECT *
@@ -49,7 +49,8 @@ class PublicacionManager implements IDWESEntidadManager{
     return $db->obtenDatos();
 
   }
-  public static function getPublicacionByHashtag(){
+  //esta obtiene todos los hastag y sus publcaciones
+  public static function getAllPublicacionByHashtag(){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("SELECT *
                   FROM HASHPUB

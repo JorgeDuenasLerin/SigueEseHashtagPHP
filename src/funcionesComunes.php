@@ -27,9 +27,6 @@ function areaPrivada(){
   		die();
   	}
 }
-function getToken(){
 
-  return rand(10000, 90000);
-}
 
 ?>

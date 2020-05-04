@@ -18,7 +18,7 @@ class PublicacionManager implements IDWESEntidadManager{
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("INSERT INTO PUBLICACION
                     (NOMBRE,CONTENIDO,IMAGEN,APLICACION)
-                   VALUES(?,?,?)",
+                   VALUES(?,?,?,?)",
                    $campos);
   }
 
@@ -55,7 +55,7 @@ class PublicacionManager implements IDWESEntidadManager{
     $db->ejecuta("SELECT *
                   FROM HASHPUB
                   LEFT JOIN PUBLICACION
-                  ON HASHPUB.ID_PUBLICACION = PUBLICACION.ID
+                  ON HASHPUB.ID_PUBLICACION = PUBLICACION.ID  
                   LEFT JOIN HASHTAG
                   ON HASHPUB.ID_HASHTAG = HASHTAG.ID");
     return $db->obtenDatos();

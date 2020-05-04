@@ -20,8 +20,8 @@ margin: 0 auto;
 nav{
   display: flex;
   justify-content: flex-end;
-  
-  background-color: rgb(33, 97, 140);
+
+  background-color: var(--colorCabeceras);
   padding: 1em;
   height: 3em;
 }

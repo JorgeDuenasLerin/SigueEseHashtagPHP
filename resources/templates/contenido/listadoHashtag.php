@@ -17,9 +17,9 @@ print_r($datos);
 
 ?>
 
-
-<h1>listado publicacion de un hastag</h1>
-<div class="">
+<link rel="stylesheet" href="/css/listadohashtag.css">
+<h1>Listado publicacion de un hashtag</h1><br><br>
+<div class="listado">
   <table border="2" >
 			<thead>
 				<tr>

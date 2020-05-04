@@ -5,10 +5,12 @@
   height: 100vh;
   width: 70%;
   margin: auto;
-  
+}
+h1{
+text-align:center;
 }
 table > thead{
-  background-color: MediumPurple;
+  background-color: var(--colorCabeceras);
 }
 table > tbody{
   background-color: Thistle;

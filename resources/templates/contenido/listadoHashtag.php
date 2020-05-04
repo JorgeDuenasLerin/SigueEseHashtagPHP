@@ -4,12 +4,20 @@
 areaPrivada();
 if(isset($_GET['id'])){
   $id = $_GET['id'];
+  as_debug($_GET);
+  $datos = PublicacionManager::getPublicacionByHashtagId($id);
+  
+} else if(isset($_GET['id_hashtag'])) {
+  $id = $_GET['id_hashtag'];
+  as_debug($_GET);
   $datos = PublicacionManager::getByHashtagId($id);
-} else {
-  $datos = PublicacionManager::getAll();
+  
+}else{
+  $datos = PublicacionManager::getPublicacionByHashtag();
 }
 
 
+as_debug($datos);
 
 
 ?>
@@ -35,7 +43,7 @@ if(isset($_GET['id'])){
 							<td><?=$fila['ID']?></td>
               <td><?=$fila['USUARIO']?></td>
               <td>
-                <a href="listadoHashtag.php?id=<?= $fila['ID_HASHTAG']?>"><?=$fila['HASHTAG']?></a>
+                <a href="listadoHashtag.php?id_hashtag=<?= $fila['ID_HASHTAG']?>"><?=$fila['NOMBRE']?></a>
               </td>
               <td>
                 <a href="detallePublicacion.php?id=<?= $fila['ID']?>"><?=$fila['CONTENIDO']?></a>

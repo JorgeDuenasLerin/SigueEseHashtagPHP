@@ -8,6 +8,8 @@ Información sacada de la base de datos
 */
 $datos = PublicacionManager::getAll();
 
+
+
 print_r($datos);
 
 

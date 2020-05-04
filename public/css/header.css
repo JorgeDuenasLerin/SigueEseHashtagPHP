@@ -14,14 +14,15 @@ header{
 nav > div > a{
 text-decoration: none;
 color: white ;
+margin: 0 auto;
 }
 /*para colocar los enlaces al login ,perfil cerrar sesion*/
 nav{
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  
   background-color: rgb(33, 97, 140);
-  width:14em;
+  padding: 1em;
   height: 3em;
 }
 nav > div > a{

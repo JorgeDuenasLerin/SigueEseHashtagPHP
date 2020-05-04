@@ -3,17 +3,8 @@
 if( $_SESSION['autentificado'] != true ){
   header('Location: login.php');
   exit;
-}print_r('<pre>');
-print_r('sesion');
-print_r('</pre>'); 
-print_r('<pre>');
-print_r($_SESSION);
-print_r('</pre>'); 
+}
 $user = UsuarioManager::getById($_SESSION['ID']);
-print_r('user');
-  print_r('<pre>');
-print_r($user);
-print_r('</pre>'); 
 
 
 ?>

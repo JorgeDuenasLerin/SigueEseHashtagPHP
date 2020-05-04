@@ -23,7 +23,6 @@ print_r($datos);
               <th>Nombre de Usuario</th>
               <th># Hashtag</th>
               <th>Contenido</th>
-              <th>Imagen</th>
               <th>Fecha</th>
               <th>Aplicación</th>
 				</tr>
@@ -40,7 +39,6 @@ print_r($datos);
                 <a href="listadoHashtag.php?id=<?= $fila2['ID_HASHTAG']?>"><?=$fila['HASHTAG']?></a>
               </td>
               <td><?=$fila['CONTENIDO']?></td>
-              <td><?=$fila['IMAGEN']?></td>
               <td><?=$fila['FECHA']?></td>
               <td><?=$fila['APLICACION']?></td>
 

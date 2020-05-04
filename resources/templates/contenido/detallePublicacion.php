@@ -17,7 +17,7 @@ as_debug($datos);
 <div class="detallePublicacion">
   <?php foreach($datos as $fila ){?>
 
-    <figure><img src="<?=$fila['IMAGEN'] ?>" alt=""></figure>
+    <figure><img src="<?=$fila['IMAGEN'] ?>.jpg" alt=""></figure>
     <p id='contenido'><?=$fila['NOMBRE'] ?> <?=$fila['CONTENIDO'] ?></p>
     <p id='usuario'><?=$fila['USUARIO'] ?>   <?=$fila['FECHA'] ?></p>
     <P id='aplicacion'><?=$fila['APLICACION'] ?></P>

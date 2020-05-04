@@ -13,7 +13,7 @@ if(isset($_GET['id'])){
   $id = $_GET['id_hashtag'];
   as_debug($_GET);
   $datos = PublicacionManager::getPublicacionByHashtagId($id);
-  
+
 }else{
   //esta obtiene todos los hastag y sus publcaciones
   $datos = PublicacionManager::getAllPublicacionByHashtag();

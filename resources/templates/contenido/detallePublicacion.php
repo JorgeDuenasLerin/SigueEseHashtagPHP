@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+areaPrivada();
   if(isset($_GET['id'])){
     $id = $_GET['id'];
   }
@@ -13,7 +15,7 @@ print_r($datos);
 <h1>#EjemploPublicacion</h1>
 <div class="detallePublicacion">
   <?php foreach($datos as $fila ){?>
-    
+
     <figure><img src="<?=$fila['IMAGEN'] ?>" alt=""></figure>
     <p id='contenido'><?=$fila['HASHTAG'] ?> <?=$fila['CONTENIDO'] ?></p>
     <p id='usuario'><?=$fila['USUARIO'] ?>   <?=$fila['FECHA'] ?></p>

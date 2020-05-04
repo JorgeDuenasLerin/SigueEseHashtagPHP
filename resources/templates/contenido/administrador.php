@@ -4,6 +4,8 @@
 /*
 Información sacada de la base de datos
 */
+
+areaPrivada();
 $datosHash = HashtagManager::getAll();
 
 print_r($datosHash);

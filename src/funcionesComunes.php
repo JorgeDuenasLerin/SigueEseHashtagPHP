@@ -21,7 +21,12 @@ function gestionaErrores($post, &$info, &$errores){
       }
   }
 }
-
+function areaPrivada(){
+  if (($_SESSION['autentificado'] != true)) {
+  		header('Location: inicio.php');
+  		die();
+  	}
+}
 function getToken(){
 
   return rand(10000, 90000);

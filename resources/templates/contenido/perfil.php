@@ -1,4 +1,4 @@
-<?php 
+<?php
 //para que si no esta autentificado te manda al login
 if( $_SESSION['autentificado'] != true ){
   header('Location: login.php');
@@ -19,4 +19,3 @@ $user = UsuarioManager::getById($_SESSION['ID']);
   <a href="configuracionUsuario.php?id=<?=$user['ID']?>">Editar Perfil</a>
 
   </div>
-

@@ -1,6 +1,7 @@
 <?php
 as_debug($_GET['id'],"id recibido");
 
+areaPrivada();
 if (isset($_GET)) {
   if (isset($_GET['id'])) {
     $id = $_GET['id'];

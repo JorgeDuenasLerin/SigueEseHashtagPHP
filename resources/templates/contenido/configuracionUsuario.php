@@ -15,6 +15,7 @@
 			password_verify ( string $password , string $hash ) : bool
 	*/
 
+	areaPrivada();
 	if(isset($_SESSION['ID'])){
 		$id = $_SESSION['ID'];
 	}

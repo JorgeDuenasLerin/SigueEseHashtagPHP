@@ -1,5 +1,6 @@
 <?php
 
+areaPrivada();
 $nombreHashtag = "";
 
 if (isset($_POST) && count($_POST)!=0 ) {

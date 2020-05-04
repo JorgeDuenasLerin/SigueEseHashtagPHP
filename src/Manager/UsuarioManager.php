@@ -9,7 +9,8 @@
                     FROM  USUARIO
                     WHERE USUARIO = ? ",
                     $nombre);
-      return $db->obtenDatos();
+      $datos =  $db->obtenDatos();
+      if(count($datos)>0) return $datos[0];
     }
     public static function getAll(){
       $db = DWESBaseDatos::obtenerInstancia();

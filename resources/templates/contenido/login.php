@@ -7,7 +7,7 @@ if( count($_POST) > 0 ){
   gestionaErrores($_POST, $info, $errores);
 
     if($errores == null ){
-      $datos = UsuarioManager::autentificado($info['USUARIO'])[0];
+      $datos = UsuarioManager::autentificado($info['USUARIO']);
       print_r($datos);
 
       if( $datos != null && password_verify($info['CONTRASEÑA'], $datos['CONTRASEÑA']) ){
@@ -19,7 +19,7 @@ if( count($_POST) > 0 ){
         if( $_POST['recuerdame'] == true ){
           $token = TokenManager::getToken();                                    //generamos un token y lo convertimos a hash
           //ViajesManager::insertCookieSesion([$token, $id]);       //insertamos el token en la base de datos
-         CookieManager::insert($token, $id);
+          CookieManager::insert($token, $id);
           setcookie('recuerdame', $token, time()+(24*60*60*7));  //se establece la cookie de recuerdame
         }
 

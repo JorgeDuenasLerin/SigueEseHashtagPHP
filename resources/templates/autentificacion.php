@@ -17,7 +17,7 @@ if(isset($_GET['cerrarSesion']) && $_GET['cerrarSesion'] == true){
 if(isset($_COOKIE['recuerdame'])){
   $token= $_COOKIE['recuerdame'];
 
-  $id_user = CookieManager::getById($token)[0]['ID_USUARIO'];     //comprobamos que el token existe en la base de datos
+  $id_user = CookieManager::getById($token)['ID_USUARIO'];     //comprobamos que el token existe en la base de datos
 
   //token correcto
   if( $id_user != null){

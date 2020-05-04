@@ -23,7 +23,7 @@ if( count($_POST) > 0 ){
           setcookie('recuerdame', $token, time()+(24*60*60*7));  //se establece la cookie de recuerdame
         }
 
-        header("Location: inicio.php");
+        header("Location: listadoHashtag.php");
         die();
       }else{
         $errores['db'] = 'El usuario o la contraseña no estan registrados';

@@ -9,7 +9,7 @@ if(isset($_GET['cerrarSesion']) && $_GET['cerrarSesion'] == true){
   session_destroy();
   setcookie("recuerdame", "", time() - 3600);     //destruir la cookie
 
-  header('location: inicio.php');
+  header('location: listadoHashtag.php');
   die();
 }
 

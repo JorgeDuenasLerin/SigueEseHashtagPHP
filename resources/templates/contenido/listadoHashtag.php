@@ -7,13 +7,18 @@ if(isset($_GET['id'])){
   $id = $_GET['id'];
   as_debug($_GET);
   $datos = PublicacionManager::getPublicacionByHashtagId($id);
-  
+
 } else if(isset($_GET['id_hashtag'])) {
   //esta obtiene publicaciones por id del hastag
   $id = $_GET['id_hashtag'];
   as_debug($_GET);
+<<<<<<< HEAD
+  $datos = PublicacionManager::getByHashtagId($id);
+
+=======
   $datos = PublicacionManager::getPublicacionByHashtagId($id);
   
+>>>>>>> 41d3afac3121dea800ed1d689b710077428697e6
 }else{
   //esta obtiene todos los hastag y sus publcaciones
   $datos = PublicacionManager::getAllPublicacionByHashtag();
@@ -36,7 +41,7 @@ as_debug($datos);
               <th>Hastag </th>
               <th>Contenido </th>
               <th>Fecha </th>
-              <th>Aplicacion </th>
+              <th>Aplicacion</th>
 				</tr>
 			</thead>
 

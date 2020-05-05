@@ -1,5 +1,4 @@
 <?php
-
 function as_debug($que, $msg=""){
   echo "<pre>";
   echo $msg;
@@ -22,10 +21,12 @@ function gestionaErrores($post, &$info, &$errores){
   }
 }
 function areaPrivada(){
-  if (($_SESSION['autentificado'] != true)) {
-  		header('Location: listadohashtag.php');
+  if (isset($_SESSION['autentificado'])) {
+    if(($_SESSION['autentificado'] != true)){
+  		header('Location: login.php');
   		die();
   	}
+  }
 }
 
 

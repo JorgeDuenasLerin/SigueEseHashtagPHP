@@ -20,7 +20,7 @@ if(isset($_COOKIE['recuerdame'])){
   $id_user = CookieManager::getById($token)['ID_USUARIO'];     //comprobamos que el token existe en la base de datos
 
   //token correcto
-  if( $id_user != null){
+  if($id_user != null){
     setcookie('recuerdame', $_COOKIE['recuerdame'], time()+(24*60*60*7));   //establecemos la cookie otra semana mas
 
     $_SESSION['autentificado'] = true;      //autentificamos la sesion

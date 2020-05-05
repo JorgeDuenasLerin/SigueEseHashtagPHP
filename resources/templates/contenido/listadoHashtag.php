@@ -25,7 +25,7 @@ if(isset($_GET['id'])){
 
 ?>
 
-<link rel="stylesheet" href="/css/listadohashtag.css">
+<link rel="stylesheet" href="/css/listadoHashtag.css">
 <h1>Listado publicacion de un hashtag</h1><br><br>
 <div class="listado">
   <table border="2" >

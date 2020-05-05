@@ -1,9 +1,7 @@
 <?php
 //para que si no esta autentificado te manda al login
-if( $_SESSION['autentificado'] != true ){
-  header('Location: login.php');
-  exit;
-}
+areaPrivada();
+
 $user = UsuarioManager::getById($_SESSION['ID']);
 
 

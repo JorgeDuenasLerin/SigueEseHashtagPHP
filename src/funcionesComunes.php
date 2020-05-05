@@ -21,10 +21,10 @@ function gestionaErrores($post, &$info, &$errores){
   }
 }
 function areaPrivada(){
-
-  if ($_SESSION['autentificado']!= true) {
-  	header('Location: login.php');
-  	die();
+  /*if(isset($_SESSION['autentificado']) && $_SESSION['autentificado'] != true ){*/
+  if($_SESSION['autentificado'] !=true){
+      header('Location: login.php');
+      die();
   }
 }
 

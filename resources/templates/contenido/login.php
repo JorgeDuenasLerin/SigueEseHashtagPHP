@@ -48,7 +48,7 @@ if( count($_POST) > 0 ){
      <br>
      <label for="recuerdame">Recuerdame</label> <input type="checkbox" name="recuerdame" value="true" id="recuerdame">
      <br>
-     <a href="password.php" id="olvidadoContraseña">¿Has olvidado tu contraseña?</a>
+     <a href="recuperarPass.php" id="olvidadoContraseña">¿Has olvidado tu contraseña?</a>
      <br>
      <input type="submit" name="enviar" value="Enviar" >
 

@@ -16,7 +16,7 @@ if( count($_POST) > 0 ){
         $_SESSION['ID'] = $id;
 
         //RECUERDAME
-        if( $_POST['recuerdame'] == true ){
+        if( isset($_POST['recuerdame']) && $_POST['recuerdame'] == true ){
           $token = TokenManager::getToken();                                    //generamos un token y lo convertimos a hash
           //ViajesManager::insertCookieSesion([$token, $id]);       //insertamos el token en la base de datos
           CookieManager::insert($token, $id);

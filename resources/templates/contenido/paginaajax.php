@@ -15,8 +15,9 @@ http.onreadystatechange = function(){
 http.send()
 </script>
 
-<h1>Pag AJAX</h1>
-<div class="">
+<link rel="stylesheet" href="css/general.css">
+<h1 class="centrar">Pag AJAX</h1>
+<div class="centrar">
   Página que realiza una petcición AJAX
 
   <p>El servidor dice:  </p>

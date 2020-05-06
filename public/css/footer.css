@@ -1,8 +1,13 @@
 @import url('reset.css');
 @import url('root.css');
 
+/*CLASES*/
+.centrar{
+  text-align: center;
+}
 footer{
-  background-color: var(--colorPrincipal);
+  color:white;
+  background-color: #1c1c1b/*var(--colorPrincipal)*/;
   height:  5em;
   text-align: center;
   padding-top: 1em;

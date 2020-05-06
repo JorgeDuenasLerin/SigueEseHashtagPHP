@@ -1,20 +1,13 @@
 <?php
 
-//require("$ROOT/src/Manager/PublicacionManager.php");
-/*
-Información sacada de la base de datos
-*/
-
 areaPrivada();
 $datosHash = HashtagManager::getAll();
 
-print_r($datosHash);
+?>
 
-
- ?>
-<link rel="stylesheet" href="/css/inicio.css">
-<h1>Administrar Hashtag</h1>
-<div>
+<link rel="stylesheet" href="/css/general.css">
+<h1 class="centrar">Administrar Hashtag</h1>
+<div class="tabla2">
     <table border="2">
       <thead>
         <tr>
@@ -37,7 +30,6 @@ print_r($datosHash);
         <?php }?>
       </tbody>
     </table>
-
-    <a href="agregar.php">Agregar</a>
-
+    <br><br>
+    <a href="agregar.php">Agregar Hashtag</a>
 </div>

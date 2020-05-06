@@ -1,14 +1,21 @@
 @import url('reset.css');
 @import url('root.css');
-
-.listado{
+/*CLASES*/
+.tabla{
   height: 100vh;
   width: 70%;
   margin: auto;
 }
-h1{
-text-align: center;
+.tabla2{
+  height: 100vh;
+  width: 50%;
+  margin: 0 auto;
 }
+.centrar{
+  text-align: center;
+  padding: 1em;
+}
+
 table > thead{
   background-color: var(--colorCabeceras);
   color:white;

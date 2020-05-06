@@ -1,6 +1,5 @@
 <?php
 
-
 if(isset($_GET['id'])){
 
   $id = $_GET['id'];
@@ -19,15 +18,13 @@ if(isset($_GET['id'])){
   $datos = PublicacionManager::getAllPublicacionByHashtag();
 }
 
-
 //as_debug($datos);
-
 
 ?>
 
-<link rel="stylesheet" href="/css/listadoHashtag.css">
-<h1>Listado publicacion de un hashtag</h1><br><br>
-<div class="listado">
+<link rel="stylesheet" href="/css/general.css">
+<h1 class="centrar">Listado publicacion de un hashtag</h1><br><br>
+<div class="tabla">
   <table border="2" >
 			<thead>
 				<tr>
@@ -56,7 +53,6 @@ if(isset($_GET['id'])){
 					</tr>
         <?php } ?>
 			</tbody>
-
     </table>
     <p></p>
 

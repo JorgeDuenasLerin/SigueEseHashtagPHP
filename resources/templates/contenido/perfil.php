@@ -6,9 +6,9 @@ $user = UsuarioManager::getById($_SESSION['ID']);
 
 
 ?>
-<link rel="stylesheet" href="/css/perfil.css">
+<link rel="stylesheet" href="/css/general.css">
 
-<div class="perfil">
+<div class="centrar">
   <h1>Perfil Privado</h1>
   <br><br>
   <h2>Nombre: <?=$user['USUARIO']?></h2>

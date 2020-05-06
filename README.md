@@ -85,3 +85,16 @@ Limpiar archivos README.md de los directorios
 # desde la ruta raíz
 $ bin/cleanreadme.sh
 ```
+
+## phpmailer
+
+desde la raiz
+```
+sudo apt-get install composer
+instala composer en el proyecto 
+```
+
+composer require phpmailer/phpmailer
+instala los autoload y la libreria phpmailer
+```
+

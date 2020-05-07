@@ -6,7 +6,9 @@
   require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
   require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 
-
+  $datosEmail['server']='smtp.gmail.com';
+  $datosEmail['correo']='pruebasprogramas.pruebas@gmail.com';
+  $datosEmail['pass']='Pruebas1234';
   $errores = [];
   $correo = '';
   $respuesta;
@@ -33,12 +35,12 @@
                               'allow_self_signed' => true
                               )
                             );
-  
+                            
       $mail->SMTPDebug  = 0;
       $mail->SMTPAuth   = TRUE;
       $mail->SMTPSecure = "tls";
       $mail->Port       = 587;                        //puerto
-      $mail->Host       = $datosEmail['server'];           //servid  or
+      $mail->Host       = $datosEmail['server'];           //servidor
       $mail->Username   = $datosEmail['correo'];      //tu correo
       $mail->Password   = $datosEmail['pass'];              //contraseña
   
@@ -74,6 +76,14 @@
   }
 
   }
+  echo "errores";
+  as_debug($errores);
+  echo "datos email";
+  as_debug($datosEmail);
+  echo "post";
+  as_debug($_POST);
+  echo "mail";
+  as_debug($mail);
 ?>
 
 <link rel="stylesheet" href="/css/password.css">

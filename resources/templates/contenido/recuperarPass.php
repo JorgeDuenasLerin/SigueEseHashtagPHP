@@ -60,7 +60,7 @@
         "<p>Hemos recibido una peticion para cambiar la contrase&#241;a,
           haga click en el siguiente enlace y sera redirigido
         </p>" .
-        "<a href='$http"."recuperarPassword.php?email=$correo&token=$token'>Recuperar contrase&#241;a</a>" .
+        "<a href='$http"."recuperarPass.php?email=$correo&token=$token'>Recuperar contrase&#241;a</a>" .
         "<br>" .
         "<p>Saludos</p>"
       ;
@@ -78,15 +78,11 @@
   }
 
   }
-  echo "errores";
-  as_debug($errores);
-  echo "datos email";
-  as_debug($datosEmail);
-  echo "post";
-  as_debug($_POST);
-  echo "mail";
-  as_debug($mail);
-?>
+  echo "respuesta";
+  as_debug($respuesta);
+  
+  
+  ?>
 
 <link rel="stylesheet" href="/css/password.css">
 <div class="password">

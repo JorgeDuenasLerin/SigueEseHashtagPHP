@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php 
   //REQUIRES
   require 'vendor/autoload.php';
@@ -11,7 +10,7 @@
 
   $datosEmail['server']='smtp.gmail.com';
   $datosEmail['correo']='pruebasprogramas.pruebas@gmail.com';
-  $datosEmail['pass']='Pruebas1234';
+  $datosEmail['pass']='icxaxkobzbpluwhc';
   $errores = [];
   $correo = '';
   $respuesta;
@@ -107,5 +106,3 @@
     </form>
   <?php } ?>
 </div>
-=======
->>>>>>> 64241433c3045c4b8fb0651c20142785f8fa5ac2

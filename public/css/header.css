@@ -19,6 +19,7 @@ h3{
   font: oblique bold 120% cursive;
   font-size:30px;
 }
+
 nav  a{
 text-decoration: none;
 color: white ;
@@ -44,7 +45,9 @@ img{
   width:50%;
   height:50%;
 }
-
+nav{
+  border-radius: 4em;
+}
 
 nav > ul{
  padding: 0;

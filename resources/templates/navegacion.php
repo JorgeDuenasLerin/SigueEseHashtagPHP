@@ -8,7 +8,6 @@ if(isset($_GET['ID'])){
 
 }
 
-
 //token
 
 ?>
@@ -21,7 +20,7 @@ if(isset($_GET['ID'])){
     <h3 class="color">Encuentra tu hashtag</h3>
   </div>
   <nav>
-    <ul id=”menu”>
+    <ul>
         <li><a href="listadoHashtag.php">Inicio</a></li>
       <?php if(isset($_SESSION['autentificado']) && $_SESSION['autentificado'] == true ){ ?>
         <li><a href="perfil.php">Perfil</a></li>

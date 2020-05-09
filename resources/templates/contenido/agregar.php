@@ -2,11 +2,12 @@
 
 areaPrivada();
 $nombreHashtag = "";
-
+$hashtag = "#";
 if (isset($_POST) && count($_POST)!=0 ) {
   if (isset($_POST['hashtag']) && strlen($_POST['hashtag'])>=1 ) {
     $nombreHashtag = clear_input($_POST['hashtag']);
-    HashtagManager::insert($nombreHashtag,$_SESSION['ID']);
+    $nombreCompleto = $hashtag . $nombreHashtag;
+    HashtagManager::insert($nombreCompleto,$_SESSION['ID']);
   }
   header('Location: administrador.php');
   die();

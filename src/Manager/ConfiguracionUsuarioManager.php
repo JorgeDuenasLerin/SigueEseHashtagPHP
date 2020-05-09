@@ -19,6 +19,13 @@ class ConfiguracionUsuarioManager {
     $db->ejecuta("UPDATE USUARIO SET CONTRASEÑA = ? WHERE ID = ? ", $parametros);
   }
 
+  // modificar la contraseña para el recuperar password.php
+  public static function updateContraseñaPassword($email,$campo){
+    $parametros [] = $campo;
+    array_push($parametros,$email);
+    $db = DWESBaseDatos::obtenerInstancia();
+    $db->ejecuta("UPDATE USUARIO SET CONTRASEÑA = ? WHERE EMAIL = ? ", $parametros);
+  }
   // modificar el Email
   public static function updateEmail($id,...$campo){
     $parametros = $campo;

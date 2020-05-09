@@ -11,7 +11,7 @@
     if (  isset($_POST['password']) &&
           $_POST['password'] != null &&
           isset($_POST['password2']) &&
-          $_POST['password'] != null &&
+          $_POST['password2'] != null &&
           $_POST['password'] == $_POST['password2']
         ){
 
@@ -19,7 +19,7 @@
 
       if (count($errores) == 0) {
 
-        ConfiguracionUsuarioManager::updateContraseña([$nuevaPassword, $email]);
+        ConfiguracionUsuarioManager::updateContraseñaPassword($email,$nuevaPassword);
 
         header("Location: login.php");
         die();
@@ -37,8 +37,11 @@
       $token = $_GET['token'];
 
       $tokenBD = TokenManager::getByEmail($email);
+      /*print_r($tokenBD);
+      print_r("posicion token");
+      print_r($tokenBD[0]['TOKEN']);*/
 
-      if( $tokenBD['token'] != null && $tokenBD['token'] == $token ){
+      if( $tokenBD[0]['TOKEN'] != null && $tokenBD[0]['TOKEN'] == $token){
         $tokenCorrecto =  true;
       }else{
         $tokenCorrecto =  false;

@@ -60,7 +60,7 @@
         "<p>Hemos recibido una peticion para cambiar la contrase&#241;a,
           haga click en el siguiente enlace y sera redirigido
         </p>" .
-        "<a href='$http"."recuperarPass.php?email=$correo&token=$token'>Recuperar contrase&#241;a</a>" .
+        "<a href='$http"."recuperarPassword.php?email=$correo&token=$token'>Recuperar contrase&#241;a</a>" .
         "<br>" .
         "<p>Saludos</p>"
       ;

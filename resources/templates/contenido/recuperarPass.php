@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
   //REQUIRES
   require 'vendor/autoload.php';
@@ -106,3 +107,5 @@
     </form>
   <?php } ?>
 </div>
+=======
+>>>>>>> 64241433c3045c4b8fb0651c20142785f8fa5ac2

@@ -10,7 +10,7 @@
 
   $datosEmail['server']='smtp.gmail.com';
   $datosEmail['correo']='pruebasprogramas.pruebas@gmail.com';
-  $datosEmail['pass']='icxaxkobzbpluwhc';
+  $datosEmail['pass']=$config['mail_password'];
   $errores = [];
   $correo = '';
   $respuesta;

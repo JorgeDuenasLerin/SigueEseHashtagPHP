@@ -10,8 +10,11 @@ $config = [
   'db_user' => 'hashtag',
   'db_pass' => 'hashtag',
   'db_name' => 'hashtag',
-  'ruta_defecto' => '/listadoHashtag.php'
+  'ruta_defecto' => '/listadoHashtag.php',
+  'mail_password' => 'cámbiala',
 ];
+
+require 'configuracion.privada.php';
 
 spl_autoload_register(function ($name){
   global $ROOT;

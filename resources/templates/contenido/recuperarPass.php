@@ -1,4 +1,4 @@
-<?php 
+<?php
   //REQUIRES
   require 'vendor/autoload.php';
   use PHPMailer\PHPMailer\PHPMailer;
@@ -24,12 +24,12 @@
     if ( $errores == null ) {
 
       $token = TokenManager::getToken();
-  
+
       //Inicializar
       $mail = new PHPMailer();
       $mail->IsSMTP();
       $mail->Mailer = "smtp";
-  
+
       $mail->SMTPOptions = array(
                               'ssl' => array(
                               'verify_peer' => false,
@@ -37,7 +37,7 @@
                               'allow_self_signed' => true
                               )
                             );
-                            
+
       $mail->SMTPDebug  = 0;
       $mail->SMTPAuth   = TRUE;
       $mail->SMTPSecure = "tls";
@@ -45,14 +45,14 @@
       $mail->Host       = $datosEmail['server'];           //servidor
       $mail->Username   = $datosEmail['correo'];      //tu correo
       $mail->Password   = $datosEmail['pass'];              //contraseña
-  
+
       $http = 'http://localhost:9000/';
       $mail->IsHTML(true);
       $mail->AddAddress($correo);    //destinatario
       $mail->SetFrom($datosEmail['correo'], "HASHTAG");                    // quien envia el correo
       //$mail->AddReplyTo("reply-to-email@domain", "reply-to-name");          para añadir otro destinatario
       //$mail->AddCC("cc-recipient-email@domain", "cc-recipient-name");       con copia oculta
-  
+
       $mail->Subject = "HASHTAG- Recuperar Password";                               //cabecera
       $content =
         "<h1>HASHTAG</1>".
@@ -80,12 +80,12 @@
   }
   echo "respuesta";
   as_debug($respuesta);
-  
-  
+
+
   ?>
 
-<link rel="stylesheet" href="/css/password.css">
-<div class="password">
+<link rel="stylesheet" href="/css/general.css">
+<div>
   <?php if( isset($respuesta) && $respuesta != null) { ?>
     <h4><?=$respuesta?></h4>
   <?php }else{ ?>

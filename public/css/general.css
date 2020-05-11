@@ -2,12 +2,12 @@
 @import url('root.css');
 /*CLASES*/
 .tabla{
-  height: 100vh;
+  height: 50vh;
   width: 70%;
   margin: 0 auto;
 }
 .tabla2{
-  height: 100vh;
+  height: 50vh;
   width: 38%;
   margin: 0 auto;
 }

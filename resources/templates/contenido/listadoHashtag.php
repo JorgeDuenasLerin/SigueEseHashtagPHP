@@ -3,7 +3,6 @@
 if(isset($_GET['id'])){
 
   $id = $_GET['id'];
-  //as_debug($_GET);
   $datos = PublicacionManager::getPublicacionByHashtagId($id);
 
 } else if(isset($_GET['id_hashtag'])) {
@@ -17,8 +16,6 @@ if(isset($_GET['id'])){
   //esta obtiene todos los hastag y sus publcaciones
   $datos = PublicacionManager::getAllPublicacionByHashtag();
 }
-
-//as_debug($datos);
 
 ?>
 
@@ -55,5 +52,4 @@ if(isset($_GET['id'])){
 			</tbody>
     </table>
     <p></p>
-
 </div>

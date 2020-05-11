@@ -8,7 +8,6 @@ if( count($_POST) > 0 ){
 
     if($errores == null ){
       $datos = UsuarioManager::autentificado($info['USUARIO']);
-      print_r($datos);
 
       if( $datos != null && password_verify($info['CONTRASEÑA'], $datos['CONTRASEÑA']) ){
         $id = $datos['ID'];

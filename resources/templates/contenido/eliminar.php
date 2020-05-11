@@ -1,5 +1,4 @@
 <?php
-as_debug($_GET['id'],"id recibido");
 
 areaPrivada();
 if (isset($_GET)) {

@@ -74,7 +74,6 @@
       TokenManager::insert($correo, $token);
       $respuesta = 'Hemos enviado un correo para recuperar la contraseña a: '. $correo;
     }
-
   }
   }
 

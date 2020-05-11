@@ -1,14 +1,8 @@
 <?php
-
-
   if(isset($_GET['id'])){
     $id = $_GET['id'];
   }
 $datos = PublicacionManager::getPublicacionIdByHashtag($id);
-print_r($datos);
-as_debug($datos);
-
-
 ?>
 
 <link rel="stylesheet" href="/css/detallePublicacion.css">

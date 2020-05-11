@@ -22,7 +22,6 @@
 
 	$datos = UsuarioManager::getById($id);
 
-	print_r($datos);
 	$usuario="";
 	$email="";
 	$contraseña="";
@@ -80,13 +79,11 @@
 }
 
 ?>
-
-
 <main>
 
-	<link rel="stylesheet" href="/css/configuracion.css">
+	<link rel="stylesheet" href="/css/general.css">
 	<form action="configuracionUsuario.php" method="POST">
-		<div class="configuracion">
+		<div class="centrar">
 			<div>
 				<label>Cambiar Nombre del Usuario:</label><br>
 				<label> Nombre actual: <?=$datos['USUARIO']?></label><br>

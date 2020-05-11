@@ -2,8 +2,6 @@
   $errores = [];
   $nuevaPassword;
 
-  //print_r($_POST);
-
   if ( count($_POST) > 0){
     $tokenCorrecto =  true;
     $email = $_POST['email'];
@@ -80,6 +78,4 @@
       <br>
       <a href="login.php">Login</a>
   <?php } ?>
-
-
 </div>

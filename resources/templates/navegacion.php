@@ -1,6 +1,5 @@
 <?php
 
-print_r($_SESSION);
 $uri = $_SERVER['REQUEST_URI'];
 //ubtenemos id del usuario
 if(isset($_GET['ID'])){

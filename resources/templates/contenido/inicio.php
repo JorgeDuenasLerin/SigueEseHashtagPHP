@@ -9,10 +9,6 @@ Información sacada de la base de datos
 $datos = PublicacionManager::getAll();
 
 
-
-print_r($datos);
-
-
  ?>
 <link rel="stylesheet" href="/css/inicio.css">
 <h1>Inicio</h1>

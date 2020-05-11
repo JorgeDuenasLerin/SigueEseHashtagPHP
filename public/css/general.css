@@ -4,11 +4,11 @@
 .tabla{
   height: 100vh;
   width: 70%;
-  margin: auto;
+  margin: 0 auto;
 }
 .tabla2{
   height: 100vh;
-  width: 50%;
+  width: 38%;
   margin: 0 auto;
 }
 .centrar{

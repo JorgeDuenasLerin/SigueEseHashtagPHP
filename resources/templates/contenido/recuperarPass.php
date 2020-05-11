@@ -8,8 +8,8 @@
   require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
   require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 
-  $datosEmail['server']='smtp.gmail.com';
-  $datosEmail['correo']='pruebasprogramas.pruebas@gmail.com';
+  $datosEmail['server']=$config['mail_server'];
+  $datosEmail['correo']=$config['mail_correo'];
   $datosEmail['pass']=$config['mail_password'];
   $errores = [];
   $correo = '';

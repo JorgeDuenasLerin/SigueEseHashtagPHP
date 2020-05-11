@@ -12,6 +12,8 @@ $config = [
   'db_name' => 'hashtag',
   'ruta_defecto' => '/listadoHashtag.php',
   'mail_password' => 'cámbiala',
+  'mail_correo' => 'miCorreo',
+  'mail_server' => 'server',
 ];
 
 require 'configuracion.privada.php';

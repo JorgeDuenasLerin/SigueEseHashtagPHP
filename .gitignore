@@ -2,5 +2,5 @@
 ./config/*
 ./config/!*.md
 ./config/!ejemplo.php
-./vendor/*
+vendor/*
 config/configuracion.privada.php

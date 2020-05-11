@@ -76,16 +76,12 @@
     }
 
   }
-
   }
-  echo "respuesta";
-  as_debug($respuesta);
-
 
   ?>
 
 <link rel="stylesheet" href="/css/general.css">
-<div>
+<div class="centrar">
   <?php if( isset($respuesta) && $respuesta != null) { ?>
     <h4><?=$respuesta?></h4>
   <?php }else{ ?>

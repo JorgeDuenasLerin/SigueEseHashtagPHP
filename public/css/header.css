@@ -13,7 +13,6 @@ header{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  border: 1px solid red;
 }
 h3{
   font: oblique bold 120% cursive;

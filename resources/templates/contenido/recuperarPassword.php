@@ -1,6 +1,8 @@
 <?php
   $errores = [];
   $nuevaPassword;
+  as_debug($_GET,"get");
+  as_debug($_POST,"post");
 
   if ( count($_POST) > 0){
     $tokenCorrecto =  true;
@@ -26,14 +28,9 @@
     }else{
       $errores = 'Error en la contraseña, pruebe de nuevo';
     }
-  }else if ( count($_GET) > 0 && count($_POST) > 0){
+  }/*else /*if ( count($_GET) > 0){
     if (  isset($_GET['email']) && $_GET['email'] != null &&
-          isset($_GET['token']) && $_GET['token'] != null &&
-          isset($_POST['emailOculto']) && $_POST['emailOculto'] != nul &&
-          isset($_POST['tokenOculto']) && $_POST['tokenOculto'] != null &&
-          $_POST['emailOculto'] == $_GET['email']  &&
-          $_POST['tokenOculto'] == $_GET['token']
-
+          isset($_GET['token']) && $_GET['token'] != null
         ) {
 
       $email = $_GET['email'];
@@ -44,7 +41,7 @@
       print_r("posicion token");
       print_r($tokenBD[0]['TOKEN']);*/
 
-      if( $tokenBD[0]['TOKEN'] != null && $tokenBD[0]['TOKEN'] == $token){
+    /*  if( $tokenBD[0]['TOKEN'] != null && $tokenBD[0]['TOKEN'] == $token){
         $tokenCorrecto =  true;
       }else{
         $tokenCorrecto =  false;
@@ -57,7 +54,7 @@
     header("Location: login.php");
     die();
   }
-
+  */
 ?>
 <link rel="stylesheet" href="/css/general.css">
 <div class="centrar">

@@ -95,7 +95,6 @@
       <?php } ?>
       <input type="submit" name="enviar" value="Enviar">
         <input type="hidden" name="emailOculto" value="<?=$correo?>">
-          <input type="hidden" name="tokenOculto" value="<?=$token?>">
     </form>
   <?php } ?>
 </div>

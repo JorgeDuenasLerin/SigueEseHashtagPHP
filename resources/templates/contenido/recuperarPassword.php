@@ -1,18 +1,29 @@
 <?php
   $errores = [];
   $nuevaPassword;
-  as_debug($_GET,"get");
-  as_debug($_POST,"post");
+
+  $tokenOculto = "";
+  $emailOculto = "";
 
   if ( count($_POST) > 0){
     $tokenCorrecto =  true;
     $email = $_POST['email'];
+    $token = $_POST['token'];
+
+    if(isset($_POST['emailOculto']) && $_POST['emailOculto'] != null){
+      $emailOculto = $_POST['emailOculto'];
+    }
+    if(isset($_POST['tokenOculto']) && $_POST['tokenOculto'] != null){
+      $tokenOculto = $_POST['tokenOculto'];
+    }
 
     if (  isset($_POST['password']) &&
           $_POST['password'] != null &&
           isset($_POST['password2']) &&
           $_POST['password2'] != null &&
-          $_POST['password'] == $_POST['password2']
+          $_POST['password'] == $_POST['password2'] &&
+          $emailOculto == $email &&
+          $tokenOculto == $token
         ){
 
       $nuevaPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -20,7 +31,8 @@
       if (count($errores) == 0) {
 
         ConfiguracionUsuarioManager::updateContraseñaPassword($email,$nuevaPassword);
-
+        //destruir token
+        $tokenOculto = destroy();
         header("Location: login.php");
         die();
       }
@@ -54,7 +66,7 @@
     header("Location: login.php");
     die();
   }
-  
+
 ?>
 <link rel="stylesheet" href="/css/general.css">
 <div class="centrar">
@@ -67,7 +79,14 @@
         <label for="password2">Repita la contraseña</label>
         <input type="password" name="password2">
         <input type="text" name="email" value="<?=$email?>" hidden>
+        <input type="text" name="token" value="<?=$token?>" hidden>
+
         <br>
+
+        <input type="hidden" name="emailOculto" value="<?=$email?>">
+        <input type="hidden" name="tokenOculto" value="<?=$token?>">
+
+
         <?php if( isset($errores) && $errores != null) { ?>
           <span class="error"><?=$errores?></span>
           <br>

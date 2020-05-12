@@ -14,17 +14,19 @@
   $errores = [];
   $correo = '';
   $respuesta;
+  $oculto = [];
 
   if ( count($_POST) > 0) {
     if ( isset($_POST['email']) && $_POST['email'] != null) {
       $correo = clear_input($_POST['email']);
+      /*$oculto['email'] = $correo;*/
     }else{
       $errores['email'] = 'Introduce un correo';
     }
     if ( $errores == null ) {
 
       $token = TokenManager::getToken();
-
+      /*$oculto['token'] = $token;*/
       //Inicializar
       $mail = new PHPMailer();
       $mail->IsSMTP();
@@ -94,7 +96,7 @@
         <br>
       <?php } ?>
       <input type="submit" name="enviar" value="Enviar">
-        <input type="hidden" name="emailOculto" value="<?=$correo?>">
+
     </form>
   <?php } ?>
 </div>

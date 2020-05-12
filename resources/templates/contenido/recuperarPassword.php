@@ -28,7 +28,7 @@
     }else{
       $errores = 'Error en la contraseña, pruebe de nuevo';
     }
-  }/*else /*if ( count($_GET) > 0){
+  }else if ( count($_GET) > 0){
     if (  isset($_GET['email']) && $_GET['email'] != null &&
           isset($_GET['token']) && $_GET['token'] != null
         ) {
@@ -41,7 +41,7 @@
       print_r("posicion token");
       print_r($tokenBD[0]['TOKEN']);*/
 
-    /*  if( $tokenBD[0]['TOKEN'] != null && $tokenBD[0]['TOKEN'] == $token){
+     if( $tokenBD[0]['TOKEN'] != null && $tokenBD[0]['TOKEN'] == $token){
         $tokenCorrecto =  true;
       }else{
         $tokenCorrecto =  false;
@@ -54,7 +54,7 @@
     header("Location: login.php");
     die();
   }
-  */
+  
 ?>
 <link rel="stylesheet" href="/css/general.css">
 <div class="centrar">

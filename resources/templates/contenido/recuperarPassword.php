@@ -26,9 +26,14 @@
     }else{
       $errores = 'Error en la contraseña, pruebe de nuevo';
     }
-  }else if ( count($_GET) > 0){
+  }else if ( count($_GET) > 0 && count($_POST) > 0){
     if (  isset($_GET['email']) && $_GET['email'] != null &&
-          isset($_GET['token']) && $_GET['token'] != null
+          isset($_GET['token']) && $_GET['token'] != null &&
+          isset($_POST['emailOculto']) && $_POST['emailOculto'] != nul &&
+          isset($_POST['tokenOculto']) && $_POST['tokenOculto'] != null &&
+          $_POST['emailOculto'] == $_GET['email']  &&
+          $_POST['tokenOculto'] == $_GET['token']
+
         ) {
 
       $email = $_GET['email'];

@@ -32,7 +32,7 @@
 
         ConfiguracionUsuarioManager::updateContraseñaPassword($email,$nuevaPassword);
         //destruir token
-        $tokenOculto = destroy();
+        //$tokenOculto = destroy();
         header("Location: login.php");
         die();
       }

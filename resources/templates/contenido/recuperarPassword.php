@@ -32,8 +32,12 @@
 
         ConfiguracionUsuarioManager::updateContraseñaPassword($email,$nuevaPassword);
         //destruir token
+<<<<<<< HEAD
+        //$tokenOculto = destroy();
+=======
         $tokenOculto = "";
         $emailOculto = "";
+>>>>>>> 4f1b630e63bae979842db1220d1e9ca9b6a2e12b
         header("Location: login.php");
         die();
       }

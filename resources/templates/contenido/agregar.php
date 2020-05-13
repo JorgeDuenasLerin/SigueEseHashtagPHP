@@ -16,7 +16,7 @@ if (isset($_POST) && count($_POST)!=0 ) {
 <link rel="stylesheet" href="/css/general.css">
 
 <h1 class="centrar">Formulario para ingresar un nuevo hashtag</h1>
-<form class="" action="agregar.php" method="post">
+<form class="centrar" action="agregar.php" method="post">
     <label> Ingrese el nuevo Hashtag</label><br>
   	<input type="text" name="hashtag" placeholder="Escriba aquí el nuevo hashtag" value="<?=$nombreHashtag?>"><br>
     <input type="submit" name="agregar" value="agregar"><br>

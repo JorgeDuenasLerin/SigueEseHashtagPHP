@@ -10,8 +10,8 @@ $usuario="telepizza";
 $hastag="#pizza";
 
 $turl = 'https://api.twitter.com';
-$petciónURL = "/1.1/search/tweets.json";
-$getfield = "?q=from:$usuario OR $hastag&tweet_mode=extended";
+$petciónURL = "/1.1/statuses/show.json";
+$getfield = "?id=1260512019276533760&tweet_mode=extended";
 $url = "$turl$petciónURL";
 $requestMethod = 'GET';
 
@@ -26,8 +26,5 @@ $data = $twitter->setGetfield($getfield)
 $phpData = json_decode($data);
 print_r($phpData);
 
-$o = $phpData->statuses[0];
-
-print_r($phpData->statuses[0]);
 
 ?>

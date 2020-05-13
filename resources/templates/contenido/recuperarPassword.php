@@ -17,6 +17,8 @@
       $tokenOculto = $_POST['tokenOculto'];
     }
 
+    // TODO: Verificar tokenOculto e email con base de datos
+
     if (  isset($_POST['password']) &&
           $_POST['password'] != null &&
           isset($_POST['password2']) &&
@@ -32,9 +34,11 @@
 
         ConfiguracionUsuarioManager::updateContraseñaPassword($email,$nuevaPassword);
         //destruir token
+        // TODO: Borrar de la base de datos (así se destruye de la base de datos)
 
         $tokenOculto = "";
         $emailOculto = "";
+
         header("Location: login.php");
         die();
       }
@@ -80,6 +84,11 @@
         <br>
         <label for="password2">Repita la contraseña</label>
         <input type="password" name="password2">
+
+        <!--
+          TODO: Quitar lo campos email y token visible
+        -->
+
         <input type="text" name="email" value="<?=$email?>" hidden>
         <input type="text" name="token" value="<?=$token?>" hidden>
 

@@ -19,14 +19,12 @@
   if ( count($_POST) > 0) {
     if ( isset($_POST['email']) && $_POST['email'] != null) {
       $correo = clear_input($_POST['email']);
-      /*$oculto['email'] = $correo;*/
     }else{
       $errores['email'] = 'Introduce un correo';
     }
     if ( $errores == null ) {
 
       $token = TokenManager::getToken();
-      /*$oculto['token'] = $token;*/
       //Inicializar
       $mail = new PHPMailer();
       $mail->IsSMTP();

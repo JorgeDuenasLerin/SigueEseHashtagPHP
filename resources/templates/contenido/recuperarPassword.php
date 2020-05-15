@@ -2,20 +2,20 @@
   $errores = [];
   $nuevaPassword;
 
-  $tokenOculto = "";
-  $emailOculto = "";
 
   if ( count($_POST) > 0){
     $tokenCorrecto =  true;
-    $email = $_POST['email'];
-    $token = $_POST['token'];
+    $email = $_POST['emailOculto'];
+    $token = $_POST['tokenOculto'];
 
-    if(isset($_POST['emailOculto']) && $_POST['emailOculto'] != null){
+    /*if(isset($_POST['emailOculto']) && $_POST['emailOculto'] != null){
       $emailOculto = $_POST['emailOculto'];
     }
     if(isset($_POST['tokenOculto']) && $_POST['tokenOculto'] != null){
       $tokenOculto = $_POST['tokenOculto'];
-    }
+    }*/
+
+    $tokenBD = TokenManager::getByEmail($email);
 
     // TODO: Verificar tokenOculto e email con base de datos
 
@@ -24,8 +24,10 @@
           isset($_POST['password2']) &&
           $_POST['password2'] != null &&
           $_POST['password'] == $_POST['password2'] &&
-          $emailOculto == $email &&
-          $tokenOculto == $token
+          $tokenBD[0]['TOKEN'] != null &&
+          $tokenBD[0]['TOKEN'] == $token &&
+          $tokenBD[0]['EMAIL'] != null &&
+          $tokenBD[0]['EMAIL'] == $email
         ){
 
       $nuevaPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -36,8 +38,7 @@
         //destruir token
         // TODO: Borrar de la base de datos (así se destruye de la base de datos)
 
-        $tokenOculto = "";
-        $emailOculto = "";
+        TokenManager::delete($email);
 
         header("Location: login.php");
         die();
@@ -88,9 +89,6 @@
         <!--
           TODO: Quitar lo campos email y token visible
         -->
-
-        <input type="text" name="email" value="<?=$email?>" hidden>
-        <input type="text" name="token" value="<?=$token?>" hidden>
 
         <br>
 

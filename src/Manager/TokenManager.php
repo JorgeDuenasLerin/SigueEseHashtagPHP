@@ -3,7 +3,6 @@
 class TokenManager implements IDWESEntidadManager{
 
 
-
   public static function getToken(){
     return bin2hex(random_bytes(64));
     /*return rand(10000, 90000);*/
@@ -39,9 +38,6 @@ class TokenManager implements IDWESEntidadManager{
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("DELETE FROM TOKEN WHERE EMAIL=?",$email);
   }
-
-
-
 
 }
 

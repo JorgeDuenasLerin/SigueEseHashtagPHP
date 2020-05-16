@@ -28,4 +28,35 @@ function areaPrivada(){
   }
 }
 
+  function peticionApi($hashtag){
+
+    require('vendor/autoload.php');
+
+    require("config/configuracion.php");
+    
+    $turl = 'https://api.twitter.com';
+    $petciónURL = "/1.1/search/tweets.json";
+    $getfield = "?q=from:$hashtag&tweet_mode=extended";
+    $url = "$turl$petciónURL";
+    $requestMethod = 'GET';
+
+    /*echo "$url";*/
+
+
+    $twitter = new TwitterAPIExchange($config);
+    $data = $twitter->setGetfield($getfield)
+        ->buildOauth($url, $requestMethod)
+        ->performRequest();
+
+    $phpData = json_decode($data);
+    //as_debug($phpData->statuses[0]);
+
+    print_r(count($phpData->statuses));
+
+    $obj = $phpData->statuses;
+
+    return $obj;
+
+  }
+
 ?>

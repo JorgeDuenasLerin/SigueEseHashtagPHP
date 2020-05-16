@@ -34,15 +34,26 @@ as_debug($o);
 /*print_r("id del usuario");
 as_debug($o[0]->id);*/
 
+
 ?>
 
 <link rel="stylesheet" href="/css/general.css">
 <h1 class="centrar">mostrar peticion twitter</h1><br><br>
 <div class="tabla">
     <?php foreach($o as $fila) { ?>
+<<<<<<< HEAD
         <p><?=$fila->{'created_at'}?></p>
         <p><?=$fila->{'id'}?></p>
         <p><?=$fila->{'full_text'}?></p>
+=======
+    <?php  print_r($fila)?>
+        <p><?=$fila["created_at"]?></p>
+        <p><?=$fila['id']?></p>
+        <p><?=$fila['full_text']?></p>
+        
+
+
+>>>>>>> 3118ff06ef1e24f7d0f1c7ac410feb5e06116e37
     <?php } ?>
 
 </div>

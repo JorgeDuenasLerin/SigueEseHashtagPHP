@@ -32,13 +32,15 @@ $o = $phpData->statuses[0];
 /*print_r($phpData->statuses[0]);*/
 as_debug($o);
 
+
 ?>
 
 <link rel="stylesheet" href="/css/general.css">
 <h1 class="centrar">mostrar peticion twitter</h1><br><br>
 <div class="tabla">
     <?php foreach($o as $fila) { ?>
-        <p><?=$fila['created_at']?></p>
+    <?php  print_r($fila)?>
+        <p><?=$fila["created_at"]?></p>
         <p><?=$fila['id']?></p>
         <p><?=$fila['full_text']?></p>
         

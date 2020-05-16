@@ -39,10 +39,8 @@ as_debug($o);
 <h1 class="centrar">mostrar peticion twitter</h1><br><br>
 <div class="tabla">
     <?php foreach($o as $fila) { ?>
-    <?php  print_r($fila)?>
-        <p><?=$fila["created_at"]?></p>
-        <p><?=$fila['id']?></p>
-        <p><?=$fila['full_text']?></p>
+    <?php  as_debug($fila)?>
+        
         
 
 

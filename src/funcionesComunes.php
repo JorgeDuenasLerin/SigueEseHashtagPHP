@@ -51,7 +51,7 @@ function areaPrivada(){
     $phpData = json_decode($data);
     //as_debug($phpData->statuses[0]);
 
-    print_r(count($phpData->statuses));
+    //print_r(count($phpData->statuses));
 
     $obj = $phpData->statuses;
 
@@ -77,7 +77,7 @@ function areaPrivada(){
         ->performRequest();
 
     $phpData = json_decode($data);
-    print_r($phpData);
+    //print_r($phpData);
 
     $obj = $phpData->statuses;
 

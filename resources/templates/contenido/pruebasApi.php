@@ -6,9 +6,9 @@ $obj = peticionApi($hashtag);
 $todoslosHashtag = HashtagManager::getAll();
 
 
-$tweet = peticionTweetByID($obj[0]->{$id});
-print_r($tweet);
-as_debug($tweet);
+$tweet = peticionTweetByID($obj['0']->{'id'});
+
+as_debug($tweet,'el tweet');
 
 
 foreach ($todoslosHashtag as $fila) {
@@ -17,8 +17,8 @@ foreach ($todoslosHashtag as $fila) {
         $insertContenido = $resultado['0']->full_text;
         $insertId = $resultado['0']->id_str;
       /*  PublicacionManager::insert($);*/
-        as_debug($insertId,"ejemplo de dato");
-        as_debug($resultado);
+        //as_debug($insertId,"ejemplo de dato");
+        //as_debug($resultado);
 }
 
 

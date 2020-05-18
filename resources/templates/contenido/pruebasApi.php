@@ -5,8 +5,8 @@ $obj = peticionApi($hashtag);
 
 $todoslosHashtag = HashtagManager::getAll();
 
-
-$tweet = peticionTweetByID($obj['0']->{'id'});
+$id = '1260512019276533760';
+$tweet = peticionTweetByID($id);
 
 as_debug($tweet,'el tweet');
 

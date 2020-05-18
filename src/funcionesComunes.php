@@ -77,9 +77,9 @@ function areaPrivada(){
         ->performRequest();
 
     $phpData = json_decode($data);
-    //print_r($phpData);
+    //as_debug($phpData);
 
-    $obj = $phpData->statuses;
+    $obj = $phpData;
 
     return $obj;
 

@@ -1,25 +1,35 @@
 <?php
 
-$hashtag = "#coronavirus";
+$hashtag = "#pizza";
 $obj = peticionApi($hashtag);
 
 $todoslosHashtag = HashtagManager::getAll();
 
-
+/*dentro de [media] -> [media-url] = es la imagen dentro del tweet*/
 $tweet = peticionTweetByID($obj['0']->{'id'});
 
-as_debug($tweet,'el tweet');
+/*as_debug($tweet,'el tweet');*/
+
+/*as_debug($obj);*/
 
 
+        $indice = 0;
 foreach ($todoslosHashtag as $fila) {
+
         $resultado = peticionApi($fila['NOMBRE']);
-        $insertFecha = $resultado['0']->created_at;
+        $ids = seleccionaById($resultado);
+
+        $array[$fila['NOMBRE']][$indice]=$ids;
+        $indice++;
+        /*$insertFecha = $resultado['0']->created_at;
         $insertContenido = $resultado['0']->full_text;
-        $insertId = $resultado['0']->id_str;
-      /*  PublicacionManager::insert($);*/
+        $insertId = $resultado['0']->id;*/
+      /*  PublicacionManager::insert();*/
         //as_debug($insertId,"ejemplo de dato");
         //as_debug($resultado);
 }
+
+      as_debug($array,"array de todo");
 
 
 
@@ -27,27 +37,3 @@ foreach ($todoslosHashtag as $fila) {
 <link rel="stylesheet" href="/css/general.css">
 
 <h1 class="centrar">Mostrar peticion twitter</h1><br><br>
-<div class="tabla">
-    <?php foreach($resultado as $fila) { ?>
-        <p><?=$fila->{'created_at'}?></p>
-        <p><?=$fila->{'id'}?></p>
-        <p><?=$fila->{'full_text'}?></p>
-    <?php } ?>
-
-    <h1>otro for </h1>
-    <?php foreach($obj as $fila) { ?>
-        <p><?=$fila->{'created_at'}?></p>
-        <p><?=$fila->{'id'}?></p>
-        <p><?=$fila->{'full_text'}?></p>
-        <h1>tweet nuevo</h1>
-        <br>
-        <br>
-
-    <?php } ?>
-
-</div>
-
-
-
-
-

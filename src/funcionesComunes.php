@@ -33,7 +33,7 @@ function areaPrivada(){
     require('vendor/autoload.php');
 
     require("config/configuracion.php");
-    
+
     $turl = 'https://api.twitter.com';
     $petciónURL = "/1.1/search/tweets.json";
     $getfield = "?q=from:$hashtag&tweet_mode=extended";
@@ -82,7 +82,18 @@ function areaPrivada(){
     $obj = $phpData;
 
     return $obj;
+  }
 
+
+  function seleccionaById($obj){
+
+    $resultadoId = [];
+    for($indice = 0; $indice < count($obj); $indice++){
+      $resultadoId[$indice] = $obj[$indice]->{'id'};
+    }
+
+    as_debug($resultadoId);
+    return $resultadoId;
 
   }
 

@@ -5,6 +5,12 @@ $obj = peticionApi($hashtag);
 
 $todoslosHashtag = HashtagManager::getAll();
 
+
+$tweet = peticionTweetByID($obj[0]->{$id});
+print_r($tweet);
+as_debug($tweet);
+
+
 foreach ($todoslosHashtag as $fila) {
         $resultado = peticionApi($fila['NOMBRE']);
         $insertFecha = $resultado['0']->created_at;
@@ -14,6 +20,7 @@ foreach ($todoslosHashtag as $fila) {
         as_debug($insertId,"ejemplo de dato");
         as_debug($resultado);
 }
+
 
 
 ?>
@@ -39,3 +46,8 @@ foreach ($todoslosHashtag as $fila) {
     <?php } ?>
 
 </div>
+
+
+
+
+

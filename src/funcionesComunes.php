@@ -58,5 +58,32 @@ function areaPrivada(){
     return $obj;
 
   }
+  function peticionTweetByID($id){
+    require('vendor/autoload.php');
+    require("config/configuracion.php");
+
+    $turl = 'https://api.twitter.com';
+    $petciónURL = "/1.1/statuses/show.json";
+    $getfield = "?id=$id&tweet_mode=extended";
+    $url = "$turl$petciónURL";
+    $requestMethod = 'GET';
+
+    echo "$url";
+
+
+    $twitter = new TwitterAPIExchange($config);
+    $data = $twitter->setGetfield($getfield)
+        ->buildOauth($url, $requestMethod)
+        ->performRequest();
+
+    $phpData = json_decode($data);
+    print_r($phpData);
+
+    $obj = $phpData->statuses;
+
+    return $obj;
+
+
+  }
 
 ?>

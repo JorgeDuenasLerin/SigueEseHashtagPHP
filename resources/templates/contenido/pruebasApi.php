@@ -6,6 +6,10 @@ $hashtag = "#coronavirus";
 $obj = peticionApi($hashtag);
 
 
+$tweet = peticionTweetByID($obj[0]->{$id});
+print_r($tweet);
+as_debug($tweet);
+
 
 ?>
 
@@ -23,3 +27,8 @@ $obj = peticionApi($hashtag);
     <?php } ?>
 
 </div>
+
+
+
+
+

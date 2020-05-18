@@ -4,14 +4,14 @@ $hashtag = "#coronavirus";
 $obj = peticionApi($hashtag);
 
 $todoslosHashtag = HashtagManager::getAll();
-$insert;
 
 foreach ($todoslosHashtag as $fila) {
         $resultado = peticionApi($fila['NOMBRE']);
         $insertFecha = $resultado['0']->created_at;
         $insertContenido = $resultado['0']->full_text;
-      /*  PublicacionManager::insert();*/
-        as_debug($insertFecha,"ejemlo de dato");
+        $insertId = $resultado['0']->id_str;
+      /*  PublicacionManager::insert($);*/
+        as_debug($insertId,"ejemplo de dato");
         as_debug($resultado);
 }
 

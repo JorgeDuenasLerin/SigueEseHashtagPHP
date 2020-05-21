@@ -8,7 +8,7 @@ $todoslosHashtag = HashtagManager::getAll();
 /*dentro de [media] -> [media-url] = es la imagen dentro del tweet*/
 $tweet = peticionTweetByID($obj['0']->{'id'});
 
-/*as_debug($tweet,'el tweet');*/
+as_debug($tweet,'el tweet');
 
 /*as_debug($obj);*/
 
@@ -29,7 +29,7 @@ foreach ($todoslosHashtag as $fila) {
         //as_debug($resultado);
 }
 
-      as_debug($array,"array de todo");
+      //as_debug($array,"array de todo");
 
 
 

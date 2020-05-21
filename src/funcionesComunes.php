@@ -97,4 +97,13 @@ function areaPrivada(){
 
   }
 
+  function crearDirectorio($hashtag,$tweet){
+    $ruta = "./public/imgs/'$hashtag'/'$tweet'/";
+    mkdir($ruta, 0777,false);
+  }
+  function descargaImg($algo){
+
+    
+  }
+
 ?>

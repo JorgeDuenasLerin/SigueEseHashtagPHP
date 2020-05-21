@@ -5,31 +5,45 @@ $obj = peticionApi($hashtag);
 
 $todoslosHashtag = HashtagManager::getAll();
 
-/*dentro de [media] -> [media-url] = es la imagen dentro del tweet*/
-$tweet = peticionTweetByID($obj['0']->{'id'});
-
-/*as_debug($tweet,'el tweet');*/
-
-/*as_debug($obj);*/
-
-
-        $indice = 0;
 foreach ($todoslosHashtag as $fila) {
 
         $resultado = peticionApi($fila['NOMBRE']);
         $ids = seleccionaById($resultado);
+        as_debug($ids,"ids principal");
 
-        $array[$fila['NOMBRE']][$indice]=$ids;
-        $indice++;
-        /*$insertFecha = $resultado['0']->created_at;
-        $insertContenido = $resultado['0']->full_text;
-        $insertId = $resultado['0']->id;*/
-      /*  PublicacionManager::insert();*/
-        //as_debug($insertId,"ejemplo de dato");
-        //as_debug($resultado);
+
+      for($indice = 0; $indice < count($ids); $indice++){
+
+           $tweet = peticionTweetByID($ids[$indice]);
+
+           $fecha = $tweet->{'created_at'};
+           $idExterno = $tweet->{'id'};
+           $contenido = $tweet->{'full_text'};
+           $usuario = $tweet->{'user'}->{'name'}; //o screen_name
+           $imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
+
+           as_debug($usuario,"usuario");
+           as_debug($fecha,"fecha");
+           as_debug($contenido,"contenido");
+           as_debug($imagen,"imagen");
+           as_debug($idExterno,"idExterno");
+
+           $twitter= "Twitter";
+           //USUARIO,CONTENIDO,IMAGEN,FECHA,APLICACION,ID_TWITTER
+           if($imagen != null){
+             PublicacionManager::insert($usuario,$contenido,$imagen,$fecha,$twitter,$idExterno);
+           }else{
+             $imagen = "null";
+             PublicacionManager::insert($usuario,$contenido,$imagen,$fecha,$twitter,$idExterno);
+           }
+
+      }
 }
 
-      as_debug($array,"array de todo");
+
+/*$tweet = peticionTweetByID($resultado[0]->{'id'});
+as_debug($tweet,'el tweet');
+      /*as_debug($array,"array de todo");*/
 
 
 

@@ -90,11 +90,9 @@ function areaPrivada(){
     $resultadoId = [];
     for($indice = 0; $indice < count($obj); $indice++){
       $resultadoId[$indice] = $obj[$indice]->{'id'};
-    }
-
-    as_debug($resultadoId);
+    } 
+  //  as_debug($resultadoId);
     return $resultadoId;
-
   }
 
 ?>

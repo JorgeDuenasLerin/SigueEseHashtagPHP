@@ -17,9 +17,8 @@ class PublicacionManager implements IDWESEntidadManager{
   public static function insert(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("INSERT INTO PUBLICACION
-                    (USUARIO,CONTENIDO,IMAGEN,APLICACION,ID_TWITTER)
-                   VALUES(?,?,?,?,?)",
-                   $campos);
+                    (USUARIO,CONTENIDO,IMAGEN,FECHA,APLICACION,ID_TWITTER)
+                   VALUES(?,?,?,?,?,?)",$campos);
   }
 
   public static function update($id, ...$campos){
@@ -30,6 +29,7 @@ class PublicacionManager implements IDWESEntidadManager{
                   SET USUARIO = ?,
                       CONTENIDO = ?,
                       IMAGEN = ?,
+                      FECHA = ?,
                       APLICACION = ?,
                       ID_TWITTER = ?
                    WHERE ID =?",$parametros);

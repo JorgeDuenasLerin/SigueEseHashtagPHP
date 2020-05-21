@@ -19,14 +19,14 @@ VALUES
 
 
 /*INSERT DE PUBLICACIONES*/
-INSERT INTO PUBLICACION (ID,USUARIO,CONTENIDO,IMAGEN,FECHA,APLICACION)
+INSERT INTO PUBLICACION (ID,USUARIO,CONTENIDO,IMAGEN,FECHA,APLICACION,ID_TWITTER)
  VALUES
-(1,'Jacinto',' Lorem ipsum dolor sit amet consectetur adipisicing elit. ','imagen','2020-04-05','tiwtter'),
-(2,'Pepe',' Lorem ipsum dolor sit amet consectetur adipisicing elit. ','imagen','2020-04-05','tiwtter'),
-(3,'Rafael',' Lorem ipsum dolor sit amet consectetur adipisicing elit. ','imagen','2020-04-05','tiwtter'),
-(4,'Rafael',' Lorem ipsum dolor sit amet consectetur adipisicing elit. ','imagen','2020-04-05','tiwtter'),
-(5,'Manuel',' Lorem ipsum dolor sit amet consectetur adipisicing elit. ','imagen','2020-04-05','tiwtter'),
-(6,'Manuel',' Lorem ipsum dolor sit amet consectetur adipisicing elit. ','imagen','2020-04-05','tiwtter');
+(1,'Jacinto',' Lorem ipsum dolor sit amet consectetur adipisicing elit. ','imagen','2020-04-05','twitter',17458236),
+(2,'Pepe',' Lorem ipsum dolor sit amet consectetur adipisicing elit. ','imagen','2020-04-05','twitter',45781259),
+(3,'Rafael',' Lorem ipsum dolor sit amet consectetur adipisicing elit. ','imagen','2020-04-05','twitter',41589304),
+(4,'Rafael',' Lorem ipsum dolor sit amet consectetur adipisicing elit. ','imagen','2020-04-05','twitter',02145786),
+(5,'Manuel',' Lorem ipsum dolor sit amet consectetur adipisicing elit. ','imagen','2020-04-05','twitter',02351458),
+(6,'Manuel',' Lorem ipsum dolor sit amet consectetur adipisicing elit. ','imagen','2020-04-05','twitter',14580236);
 
 /*INSERT DE TOKEN */
 /*INSERT INTO TOKEN (ID,EMAIL,TOKEN,ID_USUARIO)

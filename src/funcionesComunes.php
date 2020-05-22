@@ -120,16 +120,40 @@ function areaPrivada(){
 
   //funciona te crea el directorio
   function crearDirectorioSencillo($hashtag,$id,$imagen){
+    global $ROOT;
+    global $config;
+
+    as_debug($imagen, "url");
 
     $fichero = file_get_contents($imagen);
     //as_debug($fichero,"Fichero de la imagen ");
     //as_debug($fichero[count($fichero)-1],"imagen sola ");
+
+    $dirHashtag = "pizza";
+    $dirID = "1234";
+    $nombre = "imagendeTT.jpg";
+
+    $rutaSEHDir = "/$dirHashtag/$dirID/";
+    $rutaSEH = "$rutaSEHDir$nombre";
+
+    $rutaURLImagenParaBD = $config['img_in_url'] . $rutaSEH;
+    $rutaFísicaDeFichero = $ROOT . $config['img_path'] . $rutaSEH;
+
+
+    as_debug($rutaFísicaDeFichero, "Fichero físico en -> "); // Donde debéis guardar el fichero
+    as_debug($rutaURLImagenParaBD, "Ruta imgen en base de datos -> ");
+
+    mkdir($ROOT . $config['img_path'] . $rutaSEHDir, 0777, true);
+
+    file_put_contents($rutaFísicaDeFichero, $fichero);
+
+    /*
     $ruta = "./././public/imagenes/$hashtag/$id";
     as_debug($ruta,"Ruta ");
     mkdir($ruta,0777,true);
     //$rutaNueva = "./././public/imagenes/$hashtag/$id";
     //as_debug($rutaNueva,"Ruta nueva");
-    file_put_contents($ruta,$fichero);
+    file_put_contents($ruta,$fichero);*/
   }
 
   function descargaImg($algo){
@@ -137,4 +161,9 @@ function areaPrivada(){
 
   }
 
+
+function startsWith ($string, $startString) {
+    $len = strlen($startString);
+    return (substr($string, 0, $len) === $startString);
+}
 ?>

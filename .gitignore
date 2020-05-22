@@ -4,3 +4,4 @@
 ./config/!ejemplo.php
 vendor/*
 config/configuracion.privada.php
+uploaded/

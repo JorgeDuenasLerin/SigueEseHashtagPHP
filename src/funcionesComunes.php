@@ -90,18 +90,48 @@ function areaPrivada(){
     $resultadoId = [];
     for($indice = 0; $indice < count($obj); $indice++){
       $resultadoId[$indice] = $obj[$indice]->{'id'};
-    } 
+    }
   //  as_debug($resultadoId);
     return $resultadoId;
   }
 //funccion que crea directorio para guardar imagenes
-  function crearDirectorio($hashtag,$tweet,$imagen){
-    $idTweet = PublicacionManager::getByIdTweet($tweet);
-    $ruta = "./public/imgs/'$hashtag'/'$idTweet'/";
-    mkdir($ruta, 0777,false);
-    
+/*  function crearDirectorio($hashtag,$tweet,$imagen){
+
+    /*$idTweet = PublicacionManager::getByIdTweet($tweet);*/
+    /*$ruta = "$ROOT/public/imagenes/$hashtag/$tweet/";
+    as_debug($tweet);
+    as_debug($ruta);
+
+    mkdir($ruta,0777,false);
+
+    file_put_contents($ruta,$imagen, FILE_APPEND);
+
+  }*/
+
+  /*function crearDirectorio($hashtag,$tweet,$imagen){
+
+    $ruta = "$ROOT/public/imagenes/";
+    as_debug($ruta,"ruta ");
+    mkdir("$hashtag/$tweet/",0777,true);
+    file_put_contents("$hashtag/$tweet/",$imagen, FILE_APPEND | LOCK_EX);
+    move_uploaded_file ( "$hashtag/$tweet/", $ruta );
+
+  }*/
+
+  //funciona te crea el directorio
+  function crearDirectorioSencillo($hashtag,$id,$imagen){
+
+    $fichero = explode('/',$imagen);
+    as_debug($fichero,"Fichero de la imagen ");
+    as_debug($fichero[count($fichero)-1],"imagen sola ");
+    $ruta = "./././public/imagenes/$hashtag/$id";
+    as_debug($ruta,"Ruta ");
+    mkdir($ruta,0777,true);
+    /*$rutaNueva = "public/imagenes/$hashtag/$id";
+    as_debug($rutaNueva,"Ruta nueva");*/
+    file_put_contents($ruta,$fichero[count($fichero)-1]);
   }
-  
+
   function descargaImg($algo){
 
 

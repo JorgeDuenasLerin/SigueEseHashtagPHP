@@ -5,8 +5,10 @@ $obj = peticionApi($hashtag);
 
 $todoslosHashtag = HashtagManager::getAll();
 
+
 foreach ($todoslosHashtag as $fila) {
-    $resultado = peticionApi($fila['NOMBRE']);
+    $nombreHashtag = $fila['NOMBRE'];
+    $resultado = peticionApi($nombreHashtag);
     $ids = seleccionaById($resultado);
     as_debug($ids,"ids principal");
 
@@ -19,12 +21,35 @@ foreach ($todoslosHashtag as $fila) {
            $contenido = $tweet->{'full_text'};
            $usuario = $tweet->{'user'}->{'name'}; //o screen_nameç
 
-           //para traernos la imagen puede ser esto 
+           //para traernos la imagen puede ser esto
            //$URLImg =$tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
            //$imagen->files->get($URLImg, array('alt' => 'media'));
-           
+
            $imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
-           
+
+           as_debug($imagen,"imagen antes del if");
+
+           if($imagen != ''){
+             crearDirectorioSencillo($nombreHashtag,$idExterno,$imagen);
+           }else{
+             $imagen= " no contiene imagen";
+           }
+
+           /*if($imagen != null){
+             $archivo = file_get_contents($imagen);
+             as_debug($archivo,"Url de la imagen");
+             if( $archivo != false){
+              // crearDirectorio($nombreHashtag,$idExterno,$archivo);
+             }
+             //PublicacionManager::insert($usuario,$contenido,$imagen,$fecha,$twitter,$idExterno);
+             }else{
+             $imagen = "null";
+             //PublicacionManager::insert($usuario,$contenido,$imagen,$fecha,$twitter,$idExterno);
+           }
+
+
+
+
 
           /* as_debug($usuario,"usuario");
            as_debug($fecha,"fecha");
@@ -34,18 +59,12 @@ foreach ($todoslosHashtag as $fila) {
 
            $twitter= "Twitter";
            //USUARIO,CONTENIDO,IMAGEN,FECHA,APLICACION,ID_TWITTER
-           if($imagen != null){
-             //PublicacionManager::insert($usuario,$contenido,$imagen,$fecha,$twitter,$idExterno);
-           }else{
-             $imagen = "null";
-             //PublicacionManager::insert($usuario,$contenido,$imagen,$fecha,$twitter,$idExterno);
-           }
 
-           as_debug($usuario,"usuario");
-           as_debug($fecha,"fecha");
-           as_debug($contenido,"contenido");
+          // as_debug($usuario,"usuario");
+          // as_debug($fecha,"fecha");
+           //as_debug($contenido,"contenido");
            as_debug($imagen,"imagen");
-           as_debug($idExterno,"idExterno");
+          // as_debug($idExterno,"idExterno");
 
       }
 }

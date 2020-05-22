@@ -28,7 +28,7 @@ function areaPrivada(){
   }
 }
 
-  function peticionApi($hashtag){
+function peticionApi($hashtag){
 
     require('vendor/autoload.php');
 
@@ -57,8 +57,8 @@ function areaPrivada(){
 
     return $obj;
 
-  }
-  function peticionTweetByID($id){
+}
+function peticionTweetByID($id){
     require('vendor/autoload.php');
     require("config/configuracion.php");
 
@@ -84,14 +84,12 @@ function areaPrivada(){
     return $obj;
   }
 
-
-  function seleccionaById($obj){
+function seleccionaById($obj){
 
     $resultadoId = [];
     for($indice = 0; $indice < count($obj); $indice++){
       $resultadoId[$indice] = $obj[$indice]->{'id'};
     }
-  //  as_debug($resultadoId);
     return $resultadoId;
   }
 //funccion que crea directorio para guardar imagenes
@@ -108,18 +106,9 @@ function areaPrivada(){
 
   }*/
 
-  /*function crearDirectorio($hashtag,$tweet,$imagen){
-
-    $ruta = "$ROOT/public/imagenes/";
-    as_debug($ruta,"ruta ");
-    mkdir("$hashtag/$tweet/",0777,true);
-    file_put_contents("$hashtag/$tweet/",$imagen, FILE_APPEND | LOCK_EX);
-    move_uploaded_file ( "$hashtag/$tweet/", $ruta );
-
-  }*/
 
   //funciona te crea el directorio
-  function crearDirectorioSencillo($hashtag,$id,$imagen){
+function crearDirectorioSencillo($hashtag,$id,$imagen){
     global $ROOT;
     global $config;
 
@@ -156,7 +145,7 @@ function areaPrivada(){
     file_put_contents($ruta,$fichero);*/
   }
 
-  function descargaImg($algo){
+function descargaImg($algo){
 
 
   }

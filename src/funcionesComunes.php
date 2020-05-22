@@ -121,15 +121,15 @@ function areaPrivada(){
   //funciona te crea el directorio
   function crearDirectorioSencillo($hashtag,$id,$imagen){
 
-    $fichero = explode('/',$imagen);
-    as_debug($fichero,"Fichero de la imagen ");
-    as_debug($fichero[count($fichero)-1],"imagen sola ");
+    $fichero = file_get_contents($imagen);
+    //as_debug($fichero,"Fichero de la imagen ");
+    //as_debug($fichero[count($fichero)-1],"imagen sola ");
     $ruta = "./././public/imagenes/$hashtag/$id";
     as_debug($ruta,"Ruta ");
     mkdir($ruta,0777,true);
-    /*$rutaNueva = "public/imagenes/$hashtag/$id";
-    as_debug($rutaNueva,"Ruta nueva");*/
-    file_put_contents($ruta,$fichero[count($fichero)-1]);
+    //$rutaNueva = "./././public/imagenes/$hashtag/$id";
+    //as_debug($rutaNueva,"Ruta nueva");
+    file_put_contents($ruta,$fichero);
   }
 
   function descargaImg($algo){

@@ -13,7 +13,12 @@ class PublicacionManager implements IDWESEntidadManager{
     $db->ejecuta("SELECT * FROM PUBLICACION WHERE ID = ?",$id);
     return $db->obtenDatos();
   }
-
+//para obtenerlo mefdiante id de twitter
+public static function getByIdTweet($id){
+  $db = DWESBaseDatos::obtenerInstancia();
+  $db->ejecuta("SELECT ID FROM PUBLICACION WHERE ID_TWiTTER = ?",$id);
+  return $db->obtenDatos();
+}
   public static function insert(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("INSERT INTO PUBLICACION

@@ -17,7 +17,12 @@ foreach ($todoslosHashtag as $fila) {
            $fecha = $tweet->{'created_at'};
            $idExterno = $tweet->{'id'};
            $contenido = $tweet->{'full_text'};
-           $usuario = $tweet->{'user'}->{'name'}; //o screen_name
+           $usuario = $tweet->{'user'}->{'name'}; //o screen_nameç
+
+           //para traernos la imagen puede ser esto 
+           //$URLImg =$tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
+           //$imagen->files->get($URLImg, array('alt' => 'media'));
+           
            $imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
            
 

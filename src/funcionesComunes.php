@@ -94,14 +94,17 @@ function areaPrivada(){
   //  as_debug($resultadoId);
     return $resultadoId;
   }
-
-  function crearDirectorio($hashtag,$tweet){
-    $ruta = "./public/imgs/'$hashtag'/'$tweet'/";
+//funccion que crea directorio para guardar imagenes
+  function crearDirectorio($hashtag,$tweet,$imagen){
+    $idTweet = PublicacionManager::getByIdTweet($tweet);
+    $ruta = "./public/imgs/'$hashtag'/'$idTweet'/";
     mkdir($ruta, 0777,false);
+    
   }
+  
   function descargaImg($algo){
 
-    
+
   }
 
 ?>

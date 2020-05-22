@@ -7,8 +7,8 @@ $todoslosHashtag = HashtagManager::getAll();
 
 
 foreach ($todoslosHashtag as $fila) {
-    $nombreHashtag = $fila['NOMBRE'];
-    $resultado = peticionApi($nombreHashtag);
+    
+    $resultado = peticionApi($fila['NOMBRE']);
     $ids = seleccionaById($resultado);
     as_debug($ids,"ids principal");
 
@@ -30,7 +30,7 @@ foreach ($todoslosHashtag as $fila) {
            as_debug($imagen,"imagen antes del if");
 
            if($imagen != ''){
-             crearDirectorioSencillo($nombreHashtag,$idExterno,$imagen);
+             crearDirectorioSencillo($fila['NOMBRE'],$idExterno,$imagen);
            }else{
              $imagen= " no contiene imagen";
            }
@@ -63,7 +63,7 @@ foreach ($todoslosHashtag as $fila) {
           // as_debug($usuario,"usuario");
           // as_debug($fecha,"fecha");
            //as_debug($contenido,"contenido");
-           as_debug($imagen,"imagen");
+           //as_debug($imagen,"imagen");
           // as_debug($idExterno,"idExterno");
 
       }

@@ -115,12 +115,15 @@ function crearDirectorioSencillo($hashtag,$id,$imagen){
     as_debug($imagen, "url");
 
     $fichero = file_get_contents($imagen);
+    $nombreImg = explode('/',$imagen);
     //as_debug($fichero,"Fichero de la imagen ");
-    //as_debug($fichero[count($fichero)-1],"imagen sola ");
+    as_debug($nombreImg,"imagen sola ");
+    
+    $dirHashtag = "$hashtag";
+    $dirID = "$id";
+    $nombre = $nombreImg[count($nombreImg)-1];
+    as_debug($nombre,"posicion count ");
 
-    $dirHashtag = "pizza";
-    $dirID = "1234";
-    $nombre = "imagendeTT.jpg";
 
     $rutaSEHDir = "/$dirHashtag/$dirID/";
     $rutaSEH = "$rutaSEHDir$nombre";
@@ -129,26 +132,18 @@ function crearDirectorioSencillo($hashtag,$id,$imagen){
     $rutaFísicaDeFichero = $ROOT . $config['img_path'] . $rutaSEH;
 
 
-    as_debug($rutaFísicaDeFichero, "Fichero físico en -> "); // Donde debéis guardar el fichero
+    /*as_debug($rutaFísicaDeFichero, "Fichero físico en -> "); // Donde debéis guardar el fichero
     as_debug($rutaURLImagenParaBD, "Ruta imgen en base de datos -> ");
+    */
 
     mkdir($ROOT . $config['img_path'] . $rutaSEHDir, 0777, true);
 
     file_put_contents($rutaFísicaDeFichero, $fichero);
 
-    /*
-    $ruta = "./././public/imagenes/$hashtag/$id";
-    as_debug($ruta,"Ruta ");
-    mkdir($ruta,0777,true);
-    //$rutaNueva = "./././public/imagenes/$hashtag/$id";
-    //as_debug($rutaNueva,"Ruta nueva");
-    file_put_contents($ruta,$fichero);*/
+   
   }
 
-function descargaImg($algo){
 
-
-  }
 
 
 function startsWith ($string, $startString) {

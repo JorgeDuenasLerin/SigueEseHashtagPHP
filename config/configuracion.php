@@ -33,9 +33,8 @@ spl_autoload_register(function ($name){
       require($class_file);
     }
   }
-  if(file_exists($class_file = "$ROOT/uploaded/images/")){
-    require($class_file);
-  }else{
+
+  if(!file_exists($class_file = "$ROOT.img_path'")){
     mkdir("$ROOT/uploaded/images",0777,true);
   }
 });

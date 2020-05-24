@@ -14,6 +14,12 @@
       $db->ejecuta("SELECT * FROM HASHTAG  WHERE ID = ?",$id);
       return $db->obtenDatos();
     }
+    //posicion
+    public static function getIdByNombre($nombre){
+      $db = DWESBaseDatos::obtenerInstancia();
+      $db->ejecuta("SELECT ID FROM HASHTAG  WHERE NOMBRE = ?",$nombre);
+      return $db->obtenDatos()[0]['ID'];
+    }
 
     public static function insert(...$campos){
       $db = DWESBaseDatos::obtenerInstancia();

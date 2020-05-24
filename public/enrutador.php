@@ -3,6 +3,7 @@
 $ROOT = realpath(__DIR__."/..");
 require_once("$ROOT/config/configuracion.php");
 require_once("$ROOT/src/funcionesComunes.php");
+require_once("$ROOT/src/funcionesApiTwitter.php");
 
 if (preg_match('/\.(?:css|js|ico|png|jpg|jpeg|gif)$/', $_SERVER["REQUEST_URI"])){
 
@@ -42,8 +43,6 @@ if (preg_match('/\.(?:css|js|ico|png|jpg|jpeg|gif)$/', $_SERVER["REQUEST_URI"]))
       header("Location: ".$config['ruta_defecto']);
       die();
     }
-
-
 
     // Aquí es dónde la magia ocurre
     // ver también resources/templates/template.php

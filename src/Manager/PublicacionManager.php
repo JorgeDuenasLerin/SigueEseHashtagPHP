@@ -13,11 +13,11 @@ class PublicacionManager implements IDWESEntidadManager{
     $db->ejecuta("SELECT * FROM PUBLICACION WHERE ID = ?",$id);
     return $db->obtenDatos();
   }
-//para obtenerlo mefdiante id de twitter
-public static function getByIdTweet($id){
+//para obtenerlo mediante id de twitter
+public static function getIdByIdTweet($id){
   $db = DWESBaseDatos::obtenerInstancia();
-  $db->ejecuta("SELECT ID FROM PUBLICACION WHERE ID_TWiTTER = ?",$id);
-  return $db->obtenDatos();
+  $db->ejecuta("SELECT ID FROM PUBLICACION WHERE ID_TWITTER = ?",$id);
+  return $db->obtenDatos()[0]['ID'];
 }
   public static function insert(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
@@ -59,11 +59,11 @@ public static function getByIdTweet($id){
   public static function getAllPublicacionByHashtag(){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("SELECT *
-                  FROM HASHPUB
+                  FROM HASHTAG
+                  LEFT JOIN HASHPUB
+                  ON HASHTAG.ID = HASHPUB.ID_HASHTAG
                   LEFT JOIN PUBLICACION
-                  ON HASHPUB.ID_PUBLICACION = PUBLICACION.ID
-                  LEFT JOIN HASHTAG
-                  ON HASHPUB.ID_HASHTAG = HASHTAG.ID");
+                  ON HASHPUB.ID_PUBLICACION = PUBLICACION.ID");
     return $db->obtenDatos();
 
   }
@@ -101,6 +101,7 @@ public static function getByIdTweet($id){
     return $db->obtenDatos();
 
   }
+
 
   // ...
   /*

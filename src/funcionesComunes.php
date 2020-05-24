@@ -108,7 +108,7 @@ function seleccionaById($obj){
 
 
   //funciona te crea el directorio
-function crearDirectorioSencillo($hashtag,$id,$imagen){
+function guardarImagen($hashtag,$id,$imagen){
     global $ROOT;
     global $config;
 
@@ -118,7 +118,7 @@ function crearDirectorioSencillo($hashtag,$id,$imagen){
     $nombreImg = explode('/',$imagen);
     //as_debug($fichero,"Fichero de la imagen ");
     as_debug($nombreImg,"imagen sola ");
-    
+
     $dirHashtag = "$hashtag";
     $dirID = "$id";
     $nombre = $nombreImg[count($nombreImg)-1];
@@ -140,10 +140,53 @@ function crearDirectorioSencillo($hashtag,$id,$imagen){
 
     file_put_contents($rutaFísicaDeFichero, $fichero);
 
-   
+    return $rutaURLImagenParaBD;
+
   }
 
+function insercionEnBBDD(){
+  $todoslosHashtag = HashtagManager::getAll();
 
+  foreach ($todoslosHashtag as $fila) {
+
+      $resultado = peticionApi($fila['NOMBRE']);
+      $ids = seleccionaById($resultado);
+      as_debug($ids,"ids principal");
+
+        for($indice = 0; $indice < count($ids); $indice++){
+
+             $tweet = peticionTweetByID($ids[$indice]);
+
+             $fecha = $tweet->{'created_at'};
+             $idExterno = $tweet->{'id'};
+             $contenido = $tweet->{'full_text'};
+             $convertidoContenido = utf8_decode($contenido);
+             $usuario = $tweet->{'user'}->{'name'}; //o screen_name
+             $convertidoUsuario = utf8_decode($usuario);
+             $twitter= "Twitter";
+             //para traernos la imagen puede ser esto
+             //$URLImg =$tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
+             //$imagen->files->get($URLImg, array('alt' => 'media'));
+
+             $imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
+
+             as_debug($imagen,"imagen antes del if");
+
+             if($imagen != ''){
+               $urlImagen = guardarImagen($fila['NOMBRE'],$idExterno,$imagen);
+               PublicacionManager::insert($convertidoUsuario,$convertidoContenido,$urlImagen,$fecha,$twitter,$idExterno);
+             }else{
+               $imagen= " no contiene imagen";
+               PublicacionManager::insert($convertidoUsuario,$convertidoContenido,$imagen,$fecha,$twitter,$idExterno);
+             }
+            /* as_debug($usuario,"usuario");
+             as_debug($fecha,"fecha");
+             as_debug($contenido,"contenido");
+             as_debug($imagen,"imagen");
+             as_debug($idExterno,"idExterno");*/
+        }
+  }
+}
 
 
 function startsWith ($string, $startString) {

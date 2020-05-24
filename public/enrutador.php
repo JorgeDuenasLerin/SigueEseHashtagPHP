@@ -11,7 +11,7 @@ if (preg_match('/\.(?:css|js|ico|png|jpg|jpeg|gif)$/', $_SERVER["REQUEST_URI"]))
       // Imagen subida por el usuario
 
       // Solo aceptamos PNG
-      header('Content-Type: image/png');
+      header('Content-Type: image/jpg');
 
       // Quitamos subir de directorio
       $file_path = str_replace("..","",$_SERVER["REQUEST_URI"]);

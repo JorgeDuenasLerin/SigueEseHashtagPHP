@@ -8,7 +8,6 @@ else
     port="$1"
 fi
 
-php peticion.php
 
 php -S localhost:$port -t public public/enrutador.php 
 

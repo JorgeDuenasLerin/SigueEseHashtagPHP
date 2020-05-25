@@ -13,17 +13,23 @@ class PublicacionManager implements IDWESEntidadManager{
     $db->ejecuta("SELECT * FROM PUBLICACION WHERE ID = ?",$id);
     return $db->obtenDatos();
   }
-//para obtenerlo mediante id de twitter
-public static function getIdByIdTweet($id){
-  $db = DWESBaseDatos::obtenerInstancia();
-  $db->ejecuta("SELECT ID FROM PUBLICACION WHERE ID_TWITTER = ?",$id);
-  return $db->obtenDatos()[0]['ID'];
-}
+  //para obtenerlo mediante id de twitter
+  public static function getIdByIdTweet($id){
+    $db = DWESBaseDatos::obtenerInstancia();
+    $db->ejecuta("SELECT ID FROM PUBLICACION WHERE ID_TWITTER = ?",$id);
+    return $db->obtenDatos()[0]['ID'];
+  }
+  //para obtenerlo mediante id de twitter
+  public static function getAllIdTweet($id){
+    $db = DWESBaseDatos::obtenerInstancia();
+    $db->ejecuta("SELECT ID_TWITTER FROM PUBLICACION WHERE ID_TWITTER = ?",$id);
+    return $db->obtenDatos()[0]['ID'];
+  }
   public static function insert(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("INSERT INTO PUBLICACION
                     (USUARIO,CONTENIDO,IMAGEN,FECHA,APLICACION,ID_TWITTER)
-                   VALUES(?,?,?,?,?,?)",$campos);
+                  VALUES(?,?,?,?,?,?)",$campos);
   }
 
   public static function update($id, ...$campos){

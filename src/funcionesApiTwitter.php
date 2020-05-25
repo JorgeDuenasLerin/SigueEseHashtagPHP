@@ -134,7 +134,8 @@ function insercionEnBBDD(){
 
                //as_debug($imagen,"imagen antes del if");
                as_debug(idTwetExists($idExterno),"existe el id del twet ");
-               if(!idTwetExists($idExterno) || count($countPublicaciones)==0){
+               if(idTwetExists($idExterno) != 0 || count($countPublicaciones)==0){
+
                 if($imagen != ''){
                   $urlImagen = guardarImagen($fila['NOMBRE'],$idExterno,$imagen);
                 }else{
@@ -156,7 +157,7 @@ function insercionEnBBDD(){
 
 function idTwetExists($idExterno){
   $idBd = PublicacionManager::getAllIdTweet($idExterno);
-
+  as_debug($idBd,"id de la funcion");
   if(!$idBd){
     return true;
   }else {

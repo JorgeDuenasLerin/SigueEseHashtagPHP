@@ -72,9 +72,6 @@ function guardarImagen($hashtag,$id,$imagen){
     $rutaURLImagenParaBD = $config['img_in_url'] . $rutaSEH;
     $rutaFísicaDeFichero = $ROOT . $config['img_path'] . $rutaSEH;
 
-    /*as_debug($rutaFísicaDeFichero, "Fichero físico en -> "); // Donde debéis guardar el fichero
-    as_debug($rutaURLImagenParaBD, "Ruta imgen en base de datos -> ");
-    */
 
     mkdir($ROOT . $config['img_path'] . $rutaSEHDir, 0777, true);
     file_put_contents($rutaFísicaDeFichero, $fichero);
@@ -105,62 +102,37 @@ function insercionEnBBDD(){
                $usuario = $tweet->{'user'}->{'name'}; //o screen_name
                $convertidoUsuario = utf8_encode($usuario);
                $twitter= "Twitter";
-               //para traernos la imagen puede ser esto
-               //$URLImg =$tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
-               //$imagen->files->get($URLImg, array('alt' => 'media'));
-
-               //$imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
-
-               //as_debug($imagen,"imagen antes del if");
-
-               /*if($imagen != ''){
-                 $urlImagen = guardarImagen($fila['NOMBRE'],$idExterno,$imagen);
-                 PublicacionManager::insert($convertidoUsuario,$convertidoContenido,$urlImagen,$fecha,$twitter,$idExterno);
-
-                 $idPublicacion = PublicacionManager::getIdByIdTweet($idExterno);
-                 $idHashtag = HashtagManager::getIdByNombre($fila['NOMBRE']);
-                 HashpubManager::insert($idHashtag,$idPublicacion);
-
-               }else{
-                 $imagen= " no contiene imagen";
-
-                 PublicacionManager::insert($convertidoUsuario,$convertidoContenido,$imagen,$fecha,$twitter,$idExterno);
-                 $idPublicacion = PublicacionManager::getIdByIdTweet($idExterno);
-                 $idHashtag = HashtagManager::getIdByNombre($fila['NOMBRE']);
-                 HashpubManager::insert($idHashtag,$idPublicacion);
-               }*/
-
                $imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
 
                //as_debug($imagen,"imagen antes del if");
-               as_debug(idTwetExists($idExterno),"existe el id del twet ");
-               if(idTwetExists($idExterno) != 0 || count($countPublicaciones)==0){
-
-                if($imagen != ''){
-                  $urlImagen = guardarImagen($fila['NOMBRE'],$idExterno,$imagen);
-                }else{
-                  $urlImagen= " no contiene imagen";
-                }
-                PublicacionManager::insert($convertidoUsuario,$convertidoContenido,$urlImagen,$fecha,$twitter,$idExterno);
-                $idPublicacion = PublicacionManager::getIdByIdTweet($idExterno);
-                $idHashtag = HashtagManager::getIdByNombre($fila['NOMBRE']);
-                HashpubManager::insert($idHashtag,$idPublicacion);
+               //as_debug(idTwetExists($idExterno),"existe el id del twet ");
+               if(idTwetExists($idExterno) || count($countPublicaciones)==0){
+                  if($imagen != ''){
+                    $urlImagen = guardarImagen($fila['NOMBRE'],$idExterno,$imagen);
+                  }else{
+                    $urlImagen= " no contiene imagen";
+                  }
+                  PublicacionManager::insert($convertidoUsuario,$convertidoContenido,$urlImagen,$fecha,$twitter,$idExterno);
+                  $idPublicacion = PublicacionManager::getIdByIdTweet($idExterno);
+                  $idHashtag = HashtagManager::getIdByNombre($fila['NOMBRE']);
+                  HashpubManager::insert($idHashtag,$idPublicacion);
                }
-              /* as_debug($usuario,"usuario");
-               as_debug($fecha,"fecha");
-               as_debug($contenido,"contenido");
-               as_debug($imagen,"imagen");
-               as_debug($idExterno,"idExterno");*/
+
           }
     }
 }
 
 function idTwetExists($idExterno){
   $idBd = PublicacionManager::getAllIdTweet($idExterno);
-  as_debug($idBd,"id de la funcion");
+  as_debug($idBd,"id de la funcion ");
+  
   if(!$idBd){
+    as_debug($idBd,"si existe");
+    as_debug(true);
     return true;
   }else {
+    as_debug($idBd,"no existe");
+    as_debug(false);
     return false;
   }
 }

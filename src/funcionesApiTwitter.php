@@ -133,13 +133,7 @@ function insercionEnBBDD(){
 
 function idTwetExists($idExterno){
   $idBd = PublicacionManager::getAllIdTweet($idExterno);
-<<<<<<< HEAD
-  as_debug($idBd,"id de la funcion");
-  if(!$idBd){
-    return true;
-  }else {
-    return false;
-=======
+
   //as_debug($idBd,"id de la funcion ");
   $existe = '';
   if($idBd != $idExterno){
@@ -150,7 +144,7 @@ function idTwetExists($idExterno){
     //as_debug($idBd,"si existe");
     //as_debug(false);
     return $existe = false;
->>>>>>> 6b196da9fcf9c40eaf5adfd66666ae1595391bc3
+
   }
 }
 function startsWith ($string, $startString) {

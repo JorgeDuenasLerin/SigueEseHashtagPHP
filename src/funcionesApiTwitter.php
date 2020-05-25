@@ -107,47 +107,7 @@ function insercionEnBBDD(){
                $convertidoUsuario = utf8_encode($usuario);
                $twitter= "Twitter";
                //para traernos la imagen puede ser esto
-               //$URLImg =$tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
-               //$imagen->files->get($URLImg, array('alt' => 'media'));
 
-               //$imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
-
-               //as_debug($imagen,"imagen antes del if");
-
-               /*if($imagen != ''){
-                 $urlImagen = guardarImagen($fila['NOMBRE'],$idExterno,$imagen);
-                 PublicacionManager::insert($convertidoUsuario,$convertidoContenido,$urlImagen,$fecha,$twitter,$idExterno);
-
-                 $idPublicacion = PublicacionManager::getIdByIdTweet($idExterno);
-                 $idHashtag = HashtagManager::getIdByNombre($fila['NOMBRE']);
-                 HashpubManager::insert($idHashtag,$idPublicacion);
-
-               }else{
-                 $imagen= " no contiene imagen";
-
-                 PublicacionManager::insert($convertidoUsuario,$convertidoContenido,$imagen,$fecha,$twitter,$idExterno);
-                 $idPublicacion = PublicacionManager::getIdByIdTweet($idExterno);
-                 $idHashtag = HashtagManager::getIdByNombre($fila['NOMBRE']);
-                 HashpubManager::insert($idHashtag,$idPublicacion);
-               }*/
-
-               $imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
-
-               //as_debug($imagen,"imagen antes del if");
-<<<<<<< HEAD
-               as_debug(idTwetExists($idExterno),"existe el id del twet ");
-               if(idTwetExists($idExterno) != 0 || count($countPublicaciones)==0){
-
-                if($imagen != ''){
-                  $urlImagen = guardarImagen($fila['NOMBRE'],$idExterno,$imagen);
-                }else{
-                  $urlImagen= " no contiene imagen";
-                }
-                PublicacionManager::insert($convertidoUsuario,$convertidoContenido,$urlImagen,$fecha,$twitter,$idExterno);
-                $idPublicacion = PublicacionManager::getIdByIdTweet($idExterno);
-                $idHashtag = HashtagManager::getIdByNombre($fila['NOMBRE']);
-                HashpubManager::insert($idHashtag,$idPublicacion);
-=======
                //as_debug(idTwetExists($idExterno),"existe el id del twet ");
                if(idTwetExists($idExterno) /*|| count($countPublicaciones)== 0*/ ){
                 print_r('entro')  ;
@@ -160,7 +120,7 @@ function insercionEnBBDD(){
                   $idPublicacion = PublicacionManager::getIdByIdTweet($idExterno);
                   $idHashtag = HashtagManager::getIdByNombre($fila['NOMBRE']);
                   HashpubManager::insert($idHashtag,$idPublicacion);
->>>>>>> 6b196da9fcf9c40eaf5adfd66666ae1595391bc3
+
                }
               /* as_debug($usuario,"usuario");
                as_debug($fecha,"fecha");

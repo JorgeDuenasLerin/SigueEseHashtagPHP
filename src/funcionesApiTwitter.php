@@ -107,8 +107,9 @@ function insercionEnBBDD(){
 
                //as_debug($imagen,"imagen antes del if");
                //as_debug(idTwetExists($idExterno),"existe el id del twet ");
-               if(!idTwetExists($idExterno) || count($countPublicaciones)==0 ){
-                  if($imagen != ''){
+               if(idTwetExists($idExterno) /*|| count($countPublicaciones)== 0*/ ){
+                print_r('entro')  ;
+                if($imagen != ''){
                     $urlImagen = guardarImagen($fila['NOMBRE'],$idExterno,$imagen);
                   }else{
                     $urlImagen= " no contiene imagen";
@@ -125,16 +126,16 @@ function insercionEnBBDD(){
 
 function idTwetExists($idExterno){
   $idBd = PublicacionManager::getAllIdTweet($idExterno);
-  as_debug($idBd,"id de la funcion ");
-  
-  if(!$idBd){
-    as_debug($idBd,"no existe");
-    as_debug(true);
-    return true;
+  //as_debug($idBd,"id de la funcion ");
+  $existe = '';
+  if($idBd != $idExterno){
+    //as_debug($idBd,"no existe");
+    //as_debug(true);
+    return $existe = true;
   }else {
-    as_debug($idBd,"si existe");
-    as_debug(false);
-    return false;
+    //as_debug($idBd,"si existe");
+    //as_debug(false);
+    return $existe = false;
   }
 }
 function startsWith ($string, $startString) {

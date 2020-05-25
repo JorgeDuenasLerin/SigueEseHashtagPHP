@@ -18,7 +18,7 @@ class PublicacionManager implements IDWESEntidadManager{
   public static function getAllIdTweet($id){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("SELECT ID_TWITTER FROM PUBLICACION WHERE ID_TWITTER = ?",$id);
-    return $db->obtenDatos()[0]['ID'];
+    return $db->obtenDatos()[0]['ID_TWITTER'];
   }
 
   //para obtenerlo mediante id de twitter

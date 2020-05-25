@@ -108,34 +108,8 @@ function insercionEnBBDD(){
                $twitter= "Twitter";
                //para traernos la imagen puede ser esto
 
-<<<<<<< HEAD
-               //$imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
-
-               //as_debug($imagen,"imagen antes del if");
-
-               /*if($imagen != ''){
-                 $urlImagen = guardarImagen($fila['NOMBRE'],$idExterno,$imagen);
-                 PublicacionManager::insert($convertidoUsuario,$convertidoContenido,$urlImagen,$fecha,$twitter,$idExterno);
-
-                 $idPublicacion = PublicacionManager::getIdByIdTweet($idExterno);
-                 $idHashtag = HashtagManager::getIdByNombre($fila['NOMBRE']);
-                 HashpubManager::insert($idHashtag,$idPublicacion);
-
-               }else{
-                 $imagen= " no contiene imagen";
-
-                 PublicacionManager::insert($convertidoUsuario,$convertidoContenido,$imagen,$fecha,$twitter,$idExterno);
-                 $idPublicacion = PublicacionManager::getIdByIdTweet($idExterno);
-                 $idHashtag = HashtagManager::getIdByNombre($fila['NOMBRE']);
-                 HashpubManager::insert($idHashtag,$idPublicacion);
-               }*/
-
                $imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
 
-               //as_debug($imagen,"imagen antes del if");
-=======
->>>>>>> 8637197707a74d4c991b5eda5cbec843e4e7e98c
-               //as_debug(idTwetExists($idExterno),"existe el id del twet ");
                if(idTwetExists($idExterno) /*|| count($countPublicaciones)== 0*/ ){
                 print_r('entro')  ;
                 if($imagen != ''){
@@ -149,18 +123,12 @@ function insercionEnBBDD(){
                   HashpubManager::insert($idHashtag,$idPublicacion);
 
                }
-              /* as_debug($usuario,"usuario");
-               as_debug($fecha,"fecha");
-               as_debug($contenido,"contenido");
-               as_debug($imagen,"imagen");
-               as_debug($idExterno,"idExterno");*/
           }
     }
 }
 
 function idTwetExists($idExterno){
   $idBd = PublicacionManager::getAllIdTweet($idExterno);
-
 
   //as_debug($idBd,"id de la funcion ");
   $existe = '';

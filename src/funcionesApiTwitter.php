@@ -108,7 +108,8 @@ function insercionEnBBDD(){
                $twitter= "Twitter";
                //para traernos la imagen puede ser esto
 
-               //as_debug(idTwetExists($idExterno),"existe el id del twet ");
+               $imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
+
                if(idTwetExists($idExterno) /*|| count($countPublicaciones)== 0*/ ){
                 print_r('entro')  ;
                 if($imagen != ''){
@@ -122,11 +123,6 @@ function insercionEnBBDD(){
                   HashpubManager::insert($idHashtag,$idPublicacion);
 
                }
-              /* as_debug($usuario,"usuario");
-               as_debug($fecha,"fecha");
-               as_debug($contenido,"contenido");
-               as_debug($imagen,"imagen");
-               as_debug($idExterno,"idExterno");*/
           }
     }
 }

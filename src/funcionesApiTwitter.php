@@ -107,9 +107,8 @@ function insercionEnBBDD(){
                $convertidoUsuario = utf8_encode($usuario);
                $twitter= "Twitter";
                //para traernos la imagen puede ser esto
-               //$URLImg =$tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
-               //$imagen->files->get($URLImg, array('alt' => 'media'));
 
+<<<<<<< HEAD
                //$imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
 
                //as_debug($imagen,"imagen antes del if");
@@ -134,6 +133,8 @@ function insercionEnBBDD(){
                $imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
 
                //as_debug($imagen,"imagen antes del if");
+=======
+>>>>>>> 8637197707a74d4c991b5eda5cbec843e4e7e98c
                //as_debug(idTwetExists($idExterno),"existe el id del twet ");
                if(idTwetExists($idExterno) /*|| count($countPublicaciones)== 0*/ ){
                 print_r('entro')  ;

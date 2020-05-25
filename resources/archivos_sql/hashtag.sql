@@ -6,7 +6,7 @@
 USE hashtag;
 /* SET FOREIGN_KEY_CHECKS=0;   si es que se agregan las tablas mas de una vez */
 SET FOREIGN_KEY_CHECKS=0;
-
+ALTER DATABASE hashtag charset=utf8;
 
 
 DROP TABLE IF EXISTS USUARIO;

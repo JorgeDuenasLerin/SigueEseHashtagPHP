@@ -8,7 +8,7 @@ function peticionApi($hashtag){
     global $config;
     $turl = 'https://api.twitter.com';
     $petciónURL = "/1.1/search/tweets.json";
-    $getfield = "?q=from:$hashtag&tweet_mode=extended";
+    $getfield = "?q=from:#$hashtag&tweet_mode=extended";
     $url = "$turl$petciónURL";
     $requestMethod = 'GET';
 
@@ -101,9 +101,9 @@ function insercionEnBBDD(){
                $fecha = $tweet->{'created_at'};
                $idExterno = $tweet->{'id'};
                $contenido = $tweet->{'full_text'};
-               $convertidoContenido = utf8_decode($contenido);
+               $convertidoContenido = utf8_encode($contenido);
                $usuario = $tweet->{'user'}->{'name'}; //o screen_name
-               $convertidoUsuario = utf8_decode($usuario);
+               $convertidoUsuario = utf8_encode($usuario);
                $twitter= "Twitter";
                //para traernos la imagen puede ser esto
                //$URLImg =$tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};

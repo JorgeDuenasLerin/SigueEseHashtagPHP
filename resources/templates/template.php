@@ -7,6 +7,7 @@ Son necesarias las variables
   $ruta_contenido
 
 */
+
 ?>
 
 

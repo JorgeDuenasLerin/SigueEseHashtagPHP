@@ -6,7 +6,7 @@ $hashtag = "#";
 if (isset($_POST) && count($_POST)!=0 ) {
   if (isset($_POST['hashtag']) && strlen($_POST['hashtag'])>=1 ) {
     $nombreHashtag = clear_input($_POST['hashtag']);
-    $nombreCompleto = $hashtag . $nombreHashtag;
+    $nombreCompleto = $nombreHashtag;  //$nombreCompleto = $hashtag . $nombreHashtag;
     HashtagManager::insert($nombreCompleto,$_SESSION['ID']);
   }
   header('Location: administrador.php');

@@ -37,8 +37,8 @@ if(isset($_GET['id'])){
 
 			<tbody>
         <?php foreach($datos as $fila) {
-            $usuarioNuevo = utf8_encode($fila['USUARIO']);
-            $contenidoNuevo = utf8_encode($fila['CONTENIDO']);
+            $usuarioNuevo = utf8_decode($fila['USUARIO']);
+            $contenidoNuevo = utf8_decode($fila['CONTENIDO']);
           ?>
 					<tr>
 							<td><?=$fila['ID']?></td>

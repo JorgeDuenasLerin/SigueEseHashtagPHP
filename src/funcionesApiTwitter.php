@@ -87,13 +87,12 @@ function insercionEnBBDD(){
     global $ROOT;
     global $config;
     $todoslosHashtag = HashtagManager::getAll();
-    $countPublicaciones  = PublicacionManager::getAll();
+
     foreach ($todoslosHashtag as $fila) {
 
         $resultado = peticionApi($fila['NOMBRE']);
         $ids = seleccionaById($resultado);
         //as_debug($ids,"ids principal");
-        as_debug($fila['NOMBRE'],"HASHTAHS ");
 
           for($indice = 0; $indice < count($ids); $indice++){
 
@@ -113,7 +112,6 @@ function insercionEnBBDD(){
                //$imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
 
                //as_debug($imagen,"imagen antes del if");
-<<<<<<< HEAD
 
                /*if($imagen != ''){
                  $urlImagen = guardarImagen($fila['NOMBRE'],$idExterno,$imagen);
@@ -135,25 +133,18 @@ function insercionEnBBDD(){
                $imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
 
                //as_debug($imagen,"imagen antes del if");
-=======
->>>>>>> 6480d7a569a26a79697763c926db6772342885db
                as_debug(idTwetExists($idExterno),"existe el id del twet ");
                if(!idTwetExists($idExterno) || count($countPublicaciones)==0){
                 if($imagen != ''){
                   $urlImagen = guardarImagen($fila['NOMBRE'],$idExterno,$imagen);
                 }else{
-<<<<<<< HEAD
                   $urlImagen= " no contiene imagen";
-=======
-                  $urlImagen= " no contiene imagen";  
->>>>>>> 6480d7a569a26a79697763c926db6772342885db
                 }
                 PublicacionManager::insert($convertidoUsuario,$convertidoContenido,$urlImagen,$fecha,$twitter,$idExterno);
                 $idPublicacion = PublicacionManager::getIdByIdTweet($idExterno);
                 $idHashtag = HashtagManager::getIdByNombre($fila['NOMBRE']);
                 HashpubManager::insert($idHashtag,$idPublicacion);
                }
-               
               /* as_debug($usuario,"usuario");
                as_debug($fecha,"fecha");
                as_debug($contenido,"contenido");
@@ -162,16 +153,10 @@ function insercionEnBBDD(){
           }
     }
 }
-<<<<<<< HEAD
 
 function idTwetExists($idExterno){
   $idBd = PublicacionManager::getAllIdTweet($idExterno);
 
-=======
-function idTwetExists($idExterno){
-  $idBd = PublicacionManager::getAllIdTweet($idExterno);
-  
->>>>>>> 6480d7a569a26a79697763c926db6772342885db
   if(!$idBd){
     return true;
   }else {

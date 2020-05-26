@@ -1,9 +1,9 @@
 <?php
 
-$totalPublicaciones = count(PublicacionManager::getAll());
-
-if($totalPublicaciones != 0 || $totalPublicaciones == 0){
+//$totalPublicaciones = count(PublicacionManager::getAll());
+ insercionEnBBDD();
+/*if($totalPublicaciones != 0 || $totalPublicaciones == 0){
   insercionEnBBDD();
 }
-
+*/
 ?>

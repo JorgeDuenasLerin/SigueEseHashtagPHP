@@ -12,13 +12,9 @@ $datos = PublicacionManager::getPublicacionIdByHashtag($id);
 <?php foreach($datos as $fila ){?>
 <h1 id='principal'># <?=$fila['NOMBRE']?></h1>
 <div class="detallePublicacion">
-      <?php if($fila['IMAGEN'] != null || $fila['IMAGEN'] != ''){ ?>
-        <figure>
-          <img src="<?=$fila['IMAGEN']?>" alt="">
-        </figure>
-      <?php }else{?>
-        <h1>No contiene imagen </h1>
-      <?php }?>
+    <?php if($fila['IMAGEN'] != 'null'){ ?>
+      <figure><img src="<?=$fila['IMAGEN']?>" alt=""></figure>
+    <?php }?>
     <h3 id='titulo'>Contenido</h3>
     <p id='contenido'><?=$fila['CONTENIDO'] ?></p>
     <h4 id='usuarioTitulo'>Usuario: </h4> <p id='usuario'> <?=$fila['USUARIO']?> </p>

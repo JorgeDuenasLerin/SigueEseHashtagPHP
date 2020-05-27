@@ -110,27 +110,6 @@ class PublicacionManager implements IDWESEntidadManager{
     return $db->obtenDatos();
 
   }
-
-
-  // ...
-  /*
-
-  SQL para la función: getByHastagId
-
-  SELECT pu.*
-  FROM HASHPUB hp
-    LEFT JOIN PUBLICACION pu ON hp.ID_PUBLICACION = pu.ID
-  WHERE hp.ID_HASHTAG = 2
-
-
-  SELECT *
-FROM HASHPUB
-LEFT JOIN PUBLICACION
-ON HASHPUB.ID_PUBLICACION = PUBLICACION.ID
-LEFT JOIN HASHTAG
-ON HASHPUB.ID_HASHTAG = HASHTAG.ID
-  */
-
 }
 
 ?>

@@ -88,42 +88,33 @@ function insercionEnBBDD(){
     global $config;
     $todoslosHashtag = HashtagManager::getAll();
     $countPublicaciones  = PublicacionManager::getAll();
-
     foreach ($todoslosHashtag as $fila) {
-
-        $resultado = peticionApi($fila['NOMBRE']);
-        $ids = seleccionaById($resultado);
-        //as_debug($ids,"ids principal");
-
-          for($indice = 0; $indice < count($ids); $indice++){
-
-               $tweet = peticionTweetByID($ids[$indice]);
-
-               $fecha = $tweet->{'created_at'};
-               $idExterno = $tweet->{'id'};
-               $contenido = $tweet->{'full_text'};
-               $convertidoContenido = utf8_encode($contenido);
-               $usuario = $tweet->{'user'}->{'name'}; //o screen_name
-               $convertidoUsuario = utf8_encode($usuario);
-               $twitter= "Twitter";
-               //para traernos la imagen puede ser esto
-
-               $imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
-
-               if(idTwetExists($idExterno) /*|| count($countPublicaciones)== 0*/ ){
-                print_r('entro')  ;
-                if($imagen != ''){
-                    $urlImagen = guardarImagen($fila['NOMBRE'],$idExterno,$imagen);
-                  }else{
-                    $urlImagen= " no contiene imagen";
-                  }
-                  PublicacionManager::insert($convertidoUsuario,$convertidoContenido,$urlImagen,$fecha,$twitter,$idExterno);
-                  $idPublicacion = PublicacionManager::getIdByIdTweet($idExterno);
-                  $idHashtag = HashtagManager::getIdByNombre($fila['NOMBRE']);
-                  HashpubManager::insert($idHashtag,$idPublicacion);
-
-               }
+      $resultado = peticionApi($fila['NOMBRE']);
+      $ids = seleccionaById($resultado);
+      //as_debug($ids,"ids principal");
+      for($indice = 0; $indice < count($ids); $indice++){
+        $tweet = peticionTweetByID($ids[$indice]);
+        $fecha = $tweet->{'created_at'};
+        $idExterno = $tweet->{'id'};
+        $contenido = $tweet->{'full_text'};
+        $convertidoContenido = utf8_encode($contenido);
+        $usuario = $tweet->{'user'}->{'name'}; //o screen_name
+        $convertidoUsuario = utf8_encode($usuario);
+        $twitter= "Twitter";
+        //para traernos la imagen puede ser esto
+        $imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
+        if(idTwetExists($idExterno) /*|| count($countPublicaciones)== 0*/ ){
+          if($imagen != ''){
+            $urlImagen = guardarImagen($fila['NOMBRE'],$idExterno,$imagen);
+          }else{
+            $urlImagen= "null";
           }
+        PublicacionManager::insert($convertidoUsuario,$convertidoContenido,$urlImagen,$fecha,$twitter,$idExterno);
+        $idPublicacion = PublicacionManager::getIdByIdTweet($idExterno);
+        $idHashtag = HashtagManager::getIdByNombre($fila['NOMBRE']);
+        HashpubManager::insert($idHashtag,$idPublicacion);
+        }
+      }
     }
 }
 

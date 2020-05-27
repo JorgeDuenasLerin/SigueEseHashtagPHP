@@ -17,6 +17,7 @@ Son necesarias las variables
     <meta charset="utf-8">
     <title><?=$titulo?></title>
   </head>
+  <link rel="stylesheet" href="/css/general.css">
   <body>
     <?php
         require("$ROOT/resources/templates/autentificacion.php");
@@ -25,7 +26,7 @@ Son necesarias las variables
         require("$ROOT/resources/templates/pie.php");
      ?>
      <script>
-      
+
      </script>
   </body>
 </html>

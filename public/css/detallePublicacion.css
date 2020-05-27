@@ -6,23 +6,47 @@
   margin: 0 auto;
   width: 35em;
   height: 25em;
+  border: 3px dashed black;
+  padding: 2em;
+  height: 100%;
 }
-div.detallePublicacion > figure {
-  background-color: violet;
+
+div.detallePublicacion > figure{
   margin: 0 auto;
-  width:15em ;
+  width: 15em;
   height: 15em;
 }
 div.detallePublicacion > figure > img{
   width: 100%;
+  height: 100%;
 }
-#contenido{
-  padding: 1em;
+#principal{
+  margin:2em;
+  text-align: center;
+}
+#titulo{
+  text-align:center;
+}
+#fechaTitulo{
+  text-align: start;
+  float: left;
+}
+#fecha{
+  text-align: left;
+}
+
+#usuarioTitulo{
+  text-align: start;
+  float: left;
 }
 #usuario{
+  text-align: left;
+}
+
+#aplicacionTitulo{
   text-align: start;
   float: left;
 }
 #aplicacion{
-  text-align: end;
+  text-align: left;
 }

@@ -6,26 +6,22 @@
   text-align:center;
 }
 footer{
+  position:fixed;
+  left:0px;
+  bottom:-15px;
   color:white;
   background-color: #1c1c1b;
+  width: 100%;
   height: 6em;
   text-align: center;
 }
-
-
-/*html {
-  min-height: 100%;
-  position: relative;
-}
-body {
-  margin: 0;
-  margin-bottom: 40px;
-}
-footer {
-  background-color: black;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  color: white;
+/*footer{
+  color:white;
+  background-color: #1c1c1b;
+  height: 50px;
+  width:100%;
+  position:absolute;
+  bottom:;
+  left:;
+  text-align: center;
 }*/

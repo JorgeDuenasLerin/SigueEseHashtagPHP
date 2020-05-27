@@ -1,6 +1,6 @@
 <?php
 
-insercionEnBBDD();
+//insercionEnBBDD();
 
 if(isset($_GET['id'])){
   $id = $_GET['id'];
@@ -32,9 +32,11 @@ if(isset($_GET['id'])){
 				</tr>
 			</thead>
 			<tbody>
+    
         <?php foreach($datos as $fila) {
             $usuarioNuevo = utf8_decode($fila['USUARIO']);
             $contenidoNuevo = utf8_decode($fila['CONTENIDO']);
+            
           ?>
 					<tr>
 						<td><?=$fila['ID']?></td>
@@ -43,7 +45,7 @@ if(isset($_GET['id'])){
               <a href="listadoHashtag.php?id_hashtag=<?= $fila['ID_HASHTAG']?>"><?=$fila['NOMBRE']?></a>
             </td>
             <td>
-              <a href="detallePublicacion.php?id=<?= $fila['ID']?>"><?=$contenidoNuevo?></a>
+              <a href="detallePublicacion.php?id=<?= $fila['ID_PUBLICACION']?>"><?=$contenidoNuevo?></a>
             </td>
             <td><?=$fila['FECHA']?></td>
             <td><?=$fila['APLICACION']?></td>

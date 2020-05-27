@@ -1,7 +1,6 @@
 <?php
     require("$ROOT/vendor/autoload.php");
     require("$ROOT/config/configuracion.php");
-    require_once("config/configuracion.php");
 
 function peticionApi($hashtag){
     global $ROOT;

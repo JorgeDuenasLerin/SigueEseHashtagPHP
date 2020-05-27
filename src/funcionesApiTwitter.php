@@ -111,7 +111,7 @@ function insercionEnBBDD(){
                $imagen = $tweet->{'retweeted_status'}->{'extended_entities'}->{'media'}[0]->{'media_url'};
 
                if(idTwetExists($idExterno) /*|| count($countPublicaciones)== 0*/ ){
-                print_r('entro')  ;
+                //print_r('entro');
                 if($imagen != ''){
                     $urlImagen = guardarImagen($fila['NOMBRE'],$idExterno,$imagen);
                   }else{
